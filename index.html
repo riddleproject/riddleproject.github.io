@@ -72,24 +72,12 @@
 <body>
   <div id='map'></div>
   <div id='console'>
-    <h1>Motor vehicle collisions</h1>
-    <p>Data: <a href='https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions/h9gi-nx95'>Motor vehicle collision injuries and death</a> in NYC, Jan 2016</p>
-    <div class='session'>
-      <h2>Casualty</h2>
-      <div class='row colors'>
-      </div>
-      <div class='row labels'>
-        <div class='label'>0</div>
-        <div class='label'>1</div>
-        <div class='label'>2</div>
-        <div class='label'>3</div>
-        <div class='label'>4</div>
-        <div class='label'>5+</div>
-      </div>
-    </div>
+    <h1>Riddling Patterns in North America</h1>
+    <p>Data: Riddling patterns in North America, 1883-1982</p>
+
     <div class='session' id='sliderbar'>
-      <h2>Year: <label id='active-year'>1850</label></h2>
-      <input id='slider' class='row' type='range' min='1883' max='1982' step='1' value='1850' />
+      <h2>Year: <label id='active-year'>1920</label></h2>
+      <input id='slider' class='row' type='range' min='1883' max='1982' step='1' value='1920' />
     </div>
   </div>
   <script>
@@ -131,7 +119,7 @@
         ],
         'circle-opacity': 0.8
       },
-      'filter': ['==', ['number',['get', 'Year']], 1850]
+      'filter': ['==', ['number',['get', 'Year']], 1920]
     });
 
     // update hour filter when the slider is dragged
