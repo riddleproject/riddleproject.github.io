@@ -108,7 +108,7 @@
       type: 'circle',
       source: {
         type: 'geojson',
-        data: 'data/collisions1601.geojson' // replace this with the url of your own geojson
+        data: 'data/map_data.geojson' // replace this with the url of your own geojson
       },
       paint: {
         'circle-radius': [
@@ -131,21 +131,21 @@
         ],
         'circle-opacity': 0.8
       },
-      'filter': ['==', ['number',['get', 'Hour']], 12]
+      'filter': ['==', ['number',['get', 'Year']], 1850]
     });
 
     // update hour filter when the slider is dragged
     document.getElementById('slider').addEventListener('input', function(e) {
       var hour = parseInt(e.target.value);
       // update the map
-      map.setFilter('collisions', ['==', ['number', ['get', 'Hour']], hour]);
+      map.setFilter('collisions', ['==', ['number', ['get', 'Year']], hour]);
 
       // converting 0-23 hour to AMPM format
-      var ampm = hour >= 12 ? 'PM' : 'AM';
-      var hour12 = hour % 12 ? hour % 12 : 12;
+      // var ampm = hour >= 12 ? 'PM' : 'AM';
+      // var hour12 = hour % 12 ? hour % 12 : 12;
 
       // update text in the UI
-      document.getElementById('active-hour').innerText = hour12 + ampm;
+      document.getElementById('active-hour').innerText = hour;
     });
 
 
