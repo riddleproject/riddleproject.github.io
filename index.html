@@ -3,7 +3,7 @@
 
 <head>
   <meta charset='utf-8' />
-  <title>NYC vehicle collisions</title>
+  <title>Riddling patterns in North America</title>
   <meta name='robots' content='noindex, nofollow'>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js'></script>
@@ -94,8 +94,8 @@
   var map = new mapboxgl.Map({
     container: 'map', // container id specified in the HTML
     style: 'mapbox://styles/mapbox/light-v10', // style URL
-    center: [-74.0059, 40.7128], // initial map center in [lon, lat]
-    zoom: 12
+    center: [-100.546666667, 46.0730555556], // initial map center in [lon, lat]
+    zoom: 3
   });
 
   map.on('load', function() {
@@ -104,7 +104,7 @@
       type: 'circle',
       source: {
         type: 'geojson',
-        data: 'data/map_data.geojson' // replace this with the url of your own geojson
+        data: 'data/collisions1601.geojson' // replace this with the url of your own geojson
       },
       paint: {
         'circle-radius': [
