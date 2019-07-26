@@ -138,7 +138,7 @@
     document.getElementById('slider').addEventListener('input', function(e) {
       var hour = parseInt(e.target.value);
       // update the map
-      map.setFilter('collisions', ['==', ['number', ['get', 'Hour']], hour]);
+      map.setFilter('collisions', ['==', ['number', ['get', 'Year']], year]);
 
       // converting 0-23 hour to AMPM format
       var ampm = hour >= 12 ? 'PM' : 'AM';
