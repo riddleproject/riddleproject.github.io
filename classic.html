@@ -3,7 +3,7 @@
 
 <head>
   <meta charset='utf-8' />
-  <title>NYC vehicle collisions</title>
+  <title>North American Riddling</title>
   <meta name='robots' content='noindex, nofollow'>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js'></script>
@@ -65,16 +65,15 @@
     display: inline-block;
     text-align: center;
   }
-
   </style>
 </head>
 
 <body>
   <div id='map'></div>
   <div id='console'>
-    <h1>Motor vehicle collisions</h1>
-    <p>Data: <a href='https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions/h9gi-nx95'>Motor vehicle collision injuries and death</a> in NYC, Jan 2016</p>
-    <div class='session'>
+    <h1>Riddling Patterns Across North America</h1>
+    <p>Data: Riddling in North America, 1883-1982</p>
+    <!-- <div class='session'>
       <h2>Casualty</h2>
       <div class='row colors'>
       </div>
@@ -86,20 +85,17 @@
         <div class='label'>4</div>
         <div class='label'>5+</div>
       </div>
-    </div>
-    <div class='session' id='sliderbar'>
-      <h2>Hour: <label id='active-hour'>12PM</label></h2>
-      <input id='slider' class='row' type='range' min='0' max='23' step='1' value='12' />
-    </div>
+    </div> -->
   </div>
   <script>
-  mapboxgl.accessToken = 'pk.eyJ1IjoiZXhhbXBsZXMiLCJhIjoiY2p0MG01MXRqMW45cjQzb2R6b2ptc3J4MSJ9.zA2W0IkI0c6KaAhJfk9bWg';
+
+  mapboxgl.accessToken = 'pk.eyJ1IjoibmRyZXpuIiwiYSI6ImNqeHFjZjRsejByNTgzbHIyMm9zbjFmbWgifQ.lhlKTmE1XQBLoEyWr6MTZA';
   // This adds the map to your page
   var map = new mapboxgl.Map({
     container: 'map', // container id specified in the HTML
     style: 'mapbox://styles/mapbox/light-v10', // style URL
-    center: [-74.0059, 40.7128], // initial map center in [lon, lat]
-    zoom: 12
+    center: [-100.546666667, 46.0730555556], // initial map center in [lon, lat]
+    zoom: 3
   });
 
   map.on('load', function() {
@@ -108,15 +104,17 @@
       type: 'circle',
       source: {
         type: 'geojson',
-        data: './collisions1601.geojson' // replace this with the url of your own geojson
+        data: 'data/map_data.geojson' // replace this with the url of your own geojson
       },
       paint: {
         'circle-radius': [
           'interpolate',
-          ['linear'],
+          ['exponential', 1],
           ['number', ['get', 'Casualty']],
-          0, 4,
-          5, 24
+          0,
+          4,
+          5,
+          24
         ],
         'circle-color': [
           'interpolate',
@@ -131,25 +129,8 @@
         ],
         'circle-opacity': 0.8
       },
-      'filter': ['==', ['number',['get', 'Hour']], 12]
     });
+});
 
-    // update hour filter when the slider is dragged
-    document.getElementById('slider').addEventListener('input', function(e) {
-      var hour = parseInt(e.target.value);
-      // update the map
-      map.setFilter('collisions', ['==', ['number', ['get', 'Hour']], hour]);
-
-      // converting 0-23 hour to AMPM format
-      var ampm = hour >= 12 ? 'PM' : 'AM';
-      var hour12 = hour % 12 ? hour % 12 : 12;
-
-      // update text in the UI
-      document.getElementById('active-hour').innerText = hour12 + ampm;
-    });
-
-
-  });
   </script>
 </body>
-</html>
