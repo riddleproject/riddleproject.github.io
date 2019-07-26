@@ -87,6 +87,10 @@
       </div>
     </div> -->
   </div>
+  <div class='session' id='sliderbar'>
+    <h2>Hour: <label id='active-hour'>12PM</label></h2>
+    <input id='slider' class='row' type='range' min='0' max='23' step='1' value='12' />
+  </div>
   <script>
 
   mapboxgl.accessToken = 'pk.eyJ1IjoibmRyZXpuIiwiYSI6ImNqeHFjZjRsejByNTgzbHIyMm9zbjFmbWgifQ.lhlKTmE1XQBLoEyWr6MTZA';
@@ -100,7 +104,7 @@
 
   map.on('load', function() {
     map.addLayer({
-      id: 'collisions',
+      id: 'riddles',
       type: 'circle',
       source: {
         type: 'geojson',
@@ -128,9 +132,18 @@
           5, '#AA5E79'
         ],
         'circle-opacity': 0.8
-      }
+      },
+      filter: ['==', ['number', ['get', 'Year']], 1850]
     });
-});
+    // update hour filter when the slider is dragged
+    document.getElementById('slider').addEventListener('input', function(e) {
+      var year = parseInt(e.target.value);
+      // update the map
+      map.setFilter('riddles', ['==', ['number', ['get', 'Year']], year]);
 
-  </script>
-</body>
+      // update text in the UI
+      document.getElementById('active-hour').innerText = year;
+    });
+    </script>
+  </body>
+</html>
