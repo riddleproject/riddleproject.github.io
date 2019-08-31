@@ -74,11 +74,11 @@
   <div id='map'></div>
   <div id='console'>
     <h1>Conundrum suppers in North America</h1>
-    <p>Archives: NYS Historical Newspapers, BanQ, BC Historical Newspapers, Old Fulton New York Postcards, 1883-1982</p>
+    <p>Archives: NYS Historical Newspapers, BanQ, BC Historical Newspapers, Old Fulton New York Postcards, 1883-1901</p>
 
     <div class='session' id='sliderbar'>
       <h2>Year: <label id='active-year'>1920</label></h2>
-      <input id='slider' class='row' type='range' min='1883' max='1982' step='1' value='1920' />
+      <input id='slider' class='row' type='range' min='1883' max='1901' step='1' value='1890' />
     </div>
   </div>
   <script>
@@ -118,7 +118,7 @@
         ],
         'circle-opacity': 0.8
       },
-      'filter': ['==', ['number',['get', 'Year']], 1920]
+      'filter': ['==', ['number',['get', 'Year']], 1890]
     });
 
     // update hour filter when the slider is dragged
