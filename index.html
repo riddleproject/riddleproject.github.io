@@ -107,15 +107,15 @@
           0, 4,
           5, 24
         ],
-        // 'circle-color': [
-        //   'interpolate',
-        //   ['exponential', 1],
-        //   ['number', ['get', 'Type']],
-        //   'Supper', '#2DC4B2',
-        //   'Tea', '#3BB3C3',
-        //   'Social', '#669EC4',
-        //   'North American Supper', '#8B88B6',
-        // ],
+        'circle-color': [
+          'interpolate',
+          ['exponential', 1],
+          ['number', ['get', 'Type']],
+          0, '#2DC4B2',
+          1, '#3BB3C3',
+          2, '#669EC4',
+          3, '#8B88B6',
+        ],
         'circle-opacity': 0.8
       },
       'filter': ['==', ['number',['get', 'Year']], 1920]
