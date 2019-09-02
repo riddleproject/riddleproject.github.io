@@ -35,7 +35,7 @@
     // location of the feature, with description HTML from its properties.
     map.on('click', 'places', function (e) {
     var coordinates = e.features[0].geometry.coordinates.slice();
-    var description = e.features[0].properties.Newspaper;
+    var description = e.features[0].properties.description;
      
     // Ensure that if the map is zoomed out such that multiple
     // copies of the feature are visible, the popup appears
