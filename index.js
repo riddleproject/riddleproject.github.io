@@ -31,6 +31,16 @@
       'filter': ['==', ['number',['get', 'Year']], 1892]
     });
 
+    // update hour filter when the slider is dragged
+    document.getElementById('slider').addEventListener('input', function(e) {
+      var year = parseInt(e.target.value);
+      // update the map
+      map.setFilter('conundrums', ['==', ['number', ['get', 'Year']], year]);
+
+      // update text in the UI
+      document.getElementById('active-year').innerText = year;
+    });
+
     // When a click event occurs on a feature in the places layer, open a popup at the
     // location of the feature, with description HTML from its properties.
     map.on('click', 'places', function (e) {
@@ -58,16 +68,6 @@
     // Change it back to a pointer when it leaves.
     map.on('mouseleave', 'places', function () {
     map.getCanvas().style.cursor = '';
-    });
-
-    // update hour filter when the slider is dragged
-    document.getElementById('slider').addEventListener('input', function(e) {
-      var year = parseInt(e.target.value);
-      // update the map
-      map.setFilter('conundrums', ['==', ['number', ['get', 'Year']], year]);
-
-      // update text in the UI
-      document.getElementById('active-year').innerText = year;
     });
 
 });
