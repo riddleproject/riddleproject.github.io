@@ -74,19 +74,4 @@
     map.getCanvas().style.cursor = '';
     });
 
-
-    // SHOW ALL/FILTER BY YEAR
-    document.getElementById('filters').addEventListener('change', function(e) {
-      var day = e.target.value;
-      // update the map filter
-      if (day === 'show all') {
-        filterAll = ['!=', ['string', ['get', 'Year']], 'placeholder'];
-      } else if (day === 'filter by year') {
-        filterAll = ['match', ['get', 'Day'], ['Sat', 'Sun'], false, true];
-      } else {
-        console.log('error');
-      }
-      map.setFilter('places', ['all', filterDay]);
-    });
-
 });
