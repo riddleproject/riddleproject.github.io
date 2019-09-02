@@ -47,26 +47,15 @@
     background-color: white;
   }
 
-  .session {
-    margin-bottom: 20px;
-  }
-
-  .row {
-    height: 12px;
-    width: 100%;
-  }
-
-  .colors {
-    background: linear-gradient(to right, #2DC4B2, #3BB3C3, #669EC4, #8B88B6, #A2719B, #AA5E79);
-    margin-bottom: 5px;
-  }
-
-  .label {
-    width: 15%;
-    display: inline-block;
-    text-align: center;
-  }
-
+  /* basic positioning */
+  .legend { list-style: none; }
+  .legend li { float: left; margin-right: 10px; }
+  .legend span { border: 1px solid #ccc; float: left; width: 12px; height: 12px; margin: 2px; }
+  /* your colors */
+  .legend .superawesome { background-color: #ff00ff; }
+  .legend .awesome { background-color: #00ffff; }
+  .legend .kindaawesome { background-color: #0000ff; }
+  .legend .notawesome { background-color: #000000; }
   </style>
 </head>
 
@@ -77,9 +66,17 @@
     <p>Archives: NYS Historical Newspapers, BanQ, BC Historical Newspapers, Old Fulton New York Postcards, 1883-1901</p>
 
     <div class='session' id='sliderbar'>
-      <h2>Year: <label id='active-year'>1920</label></h2>
+      <h2>Year: <label id='active-year'>1890</label></h2>
       <input id='slider' class='row' type='range' min='1883' max='1901' step='1' value='1890' />
     </div>
+   
+    <ul class="legend">
+      <li><span class="superawesome"></span> Super Awesome</li>
+      <li><span class="awesome"></span> Awesome</li>
+      <li><span class="kindaawesome"></span> Kinda Awesome</li>
+      <li><span class="notawesome"></span> Not Awesome</li>
+    </ul>
+
   </div>
   <script>
   mapboxgl.accessToken = 'pk.eyJ1IjoibmRyZXpuIiwiYSI6ImNqeXg2eDlhZzA0MzczZ28xeDdzNnNqY3kifQ.lxS44L-xGMpt-Wcv0vpHng';
