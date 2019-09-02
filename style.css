@@ -37,8 +37,8 @@
 
   /* basic positioning */
   .legend { list-style: none; }
-  .legend li { float: left; margin-right: 10px; }
-  .legend span { border: 1px solid #ccc; float: left; width: 12px; height: 12px; margin: 0px; }
+  .legend li { float: left; margin-right: 0px; }
+  .legend span { border: 1px solid #ccc; float: left; width: 12px; height: 12px; margin: 2px; }
   /* your colors */
   .legend .suppers1 { background-color: #ff00ff; }
   .legend .suppers2 { background-color: #00ffff; }
