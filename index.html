@@ -9,54 +9,9 @@
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css' rel='stylesheet' />
-  <style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Helvetica Neue', Helvetica, Arial, Sans-serif;
-  }
+  
+  <style src='index.css'></style>
 
-  #map {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-  }
-
-  h1 {
-    font-size: 20px;
-    line-height: 30px;
-  }
-
-  h2 {
-    font-size: 14px;
-    line-height: 20px;
-    margin-bottom: 10px;
-  }
-
-  a {
-    text-decoration: none;
-    color: #2DC4B2;
-  }
-
-  #console {
-    position: absolute;
-    width: 240px;
-    margin: 10px;
-    padding: 10px 20px;
-    background-color: white;
-  }
-
-  /* basic positioning */
-  .legend { list-style: none; }
-  .legend li { float: left; margin-right: 10px; }
-  .legend span { border: 1px solid #ccc; float: left; width: 12px; height: 12px; margin: 2px; }
-  /* your colors */
-  .legend .superawesome { background-color: #ff00ff; }
-  .legend .awesome { background-color: #00ffff; }
-  .legend .kindaawesome { background-color: #0000ff; }
-  .legend .notawesome { background-color: #000000; }
-  </style>
 </head>
 
 <body>
@@ -78,58 +33,8 @@
     </ul>
 
   </div>
-  <script>
-  mapboxgl.accessToken = 'pk.eyJ1IjoibmRyZXpuIiwiYSI6ImNqeXg2eDlhZzA0MzczZ28xeDdzNnNqY3kifQ.lxS44L-xGMpt-Wcv0vpHng';
-  // This adds the map to your page
-  var map = new mapboxgl.Map({
-    container: 'map', // container id specified in the HTML
-    style: 'mapbox://styles/mapbox/light-v10', // style URL
-    center: [-100.546666667, 46.0730555556], // initial map center in [lon, lat]
-    zoom: 3
-  });
-
-  map.on('load', function() {
-    map.addLayer({
-      id: 'collisions',
-      type: 'circle',
-      source: {
-        type: 'geojson',
-        data: 'data/map_data_all.geojson' // replace this with the url of your own geojson
-      },
-      paint: {
-        'circle-radius': [
-          'interpolate',
-          ['linear'],
-          ['number', ['get', 'Casualty']],
-          0, 4,
-          5, 24
-        ],
-        'circle-color': [
-          'interpolate',
-          ['exponential', 1],
-          ['number', ['get', 'Type']],
-          0, '#2DC4B2',
-          1, '#3BB3C3',
-          2, '#669EC4',
-          3, '#8B88B6',
-        ],
-        'circle-opacity': 0.8
-      },
-      'filter': ['==', ['number',['get', 'Year']], 1890]
-    });
-
-    // update hour filter when the slider is dragged
-    document.getElementById('slider').addEventListener('input', function(e) {
-      var year = parseInt(e.target.value);
-      // update the map
-      map.setFilter('collisions', ['==', ['number', ['get', 'Year']], year]);
-
-      // update text in the UI
-      document.getElementById('active-year').innerText = year;
-    });
-
-
-  });
+  <script src='index.js'>
+ 
   </script>
 </body>
 </html>
