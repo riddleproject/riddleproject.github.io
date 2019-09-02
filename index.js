@@ -1,3 +1,4 @@
+ var filterGroup = document.getElementById('filter-group');
  mapboxgl.accessToken = 'pk.eyJ1IjoibmRyZXpuIiwiYSI6ImNqeXg2eDlhZzA0MzczZ28xeDdzNnNqY3kifQ.lxS44L-xGMpt-Wcv0vpHng';
   // This adds the map to your page
   var map = new mapboxgl.Map({
@@ -40,5 +41,21 @@
       document.getElementById('active-year').innerText = year;
     });
 
-
+  // Add checkbox and label elements for the layer.
+  var input = document.createElement('input');
+  input.type = 'checkbox';
+  input.id = layerID;
+  input.checked = true;
+  filterGroup.appendChild(input);
+   
+  var label = document.createElement('label');
+  label.setAttribute('for', layerID);
+  label.textContent = symbol;
+  filterGroup.appendChild(label);
+   
+  // When the checkbox changes, update the visibility of the layer.
+  input.addEventListener('change', function(e) {
+  map.setLayoutProperty(layerID, 'visibility',
+  e.target.checked ? 'visible' : 'none');
   });
+});
