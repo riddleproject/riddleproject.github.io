@@ -1,6 +1,6 @@
  var filterGroup = document.getElementById('filter-group');
  mapboxgl.accessToken = 'pk.eyJ1IjoibmRyZXpuIiwiYSI6ImNqeXg2eDlhZzA0MzczZ28xeDdzNnNqY3kifQ.lxS44L-xGMpt-Wcv0vpHng';
-  // This adds the map to your page
+  // Add map
   var map = new mapboxgl.Map({
     container: 'map', // container id specified in the HTML
     style: 'mapbox://styles/mapbox/light-v10', // style URL
@@ -14,7 +14,7 @@
       type: 'circle',
       source: {
         type: 'geojson',
-        data: 'data/map_data_all.geojson' // replace this with the url of your own geojson
+        data: 'data/map_data_all.geojson'
       },
       paint: {
         'circle-color': [
@@ -72,6 +72,21 @@
     // Change it back to a pointer when it leaves.
     map.on('mouseleave', 'places', function () {
     map.getCanvas().style.cursor = '';
+    });
+
+
+    // SHOW ALL/FILTER BY YEAR
+    document.getElementById('filters').addEventListener('change', function(e) {
+      var day = e.target.value;
+      // update the map filter
+      if (day === 'show all') {
+        filterAll = ['!=', ['string', ['get', 'Year']], 'placeholder'];
+      } else if (day === 'filter by year') {
+        filterAll = ['match', ['get', 'Day'], ['Sat', 'Sun'], false, true];
+      } else {
+        console.log('error');
+      }
+      map.setFilter('places', ['all', filterDay]);
     });
 
 });

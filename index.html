@@ -22,10 +22,12 @@
     <h1>North American Conundrums</h1>
     <p>Archives: NYS Historical Newspapers, BanQ, BC Historical Newspapers, Old Fulton New York Postcards, 1878-1900</p>
 
+    <!-- Slider bar -->
     <div class='session' id='sliderbar'>
       <h2>Year: <label id='active-year'>1892</label></h2>
       <input id='slider' class='row' type='range' min='1878' max='1900' step='1' value='1892' />
     </div>
+    <!-- Legend -->
     <ul class="legend">
       <li><span class="suppers1"></span> LOC Conundrum Suppers</li>
       <li><span class="suppers2"></span> Conundrum Suppers</li>
@@ -33,6 +35,16 @@
       <li><span class="socials"></span> Conundrum Socials</li>
     </ul>
 
+    <!-- Disable filtering-->
+    <div class='session'>
+      <div class='row' id='filters'>
+        <input id='all' type='radio' name='toggle' value='all' checked='checked'>
+        <label for='all'>Show all</label>
+        <input id='weekday' type='radio' name='toggle' value='weekday'>
+        <label for='weekday'>Filter by year</label>
+      </div>
+    </div>
+    
   </div>
   <script src='index.js'></script>
 </body>
