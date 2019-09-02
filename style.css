@@ -40,7 +40,7 @@ a {
 .legend li { float: left; margin-right: 0px; }
 .legend span { border: 1px solid #ccc; float: left; width: 12px; height: 12px; margin: 2px; }
 /* your colors */
-.legend .suppers1 { background-color: #ff00ff; }
-.legend .suppers2 { background-color: #00ffff; }
-.legend .teas { background-color: #0000ff; }
-.legend .socials { background-color: #000000; }
+.legend .suppers1 { background-color: #747EB3; }
+.legend .suppers2 { background-color: #FF794B; }
+.legend .teas { background-color: #BFCAFF; }
+.legend .socials { background-color: #A5CC85; }
