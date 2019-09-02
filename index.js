@@ -22,9 +22,9 @@
           ['exponential', 1],
           ['number', ['get', 'Type']],
           0, '#747EB3',
-          1, '#FF794B',
-          2, '#BFCAFF',
-          3, '#A5CC85',
+          3, '#FF794B',
+          1, '#BFCAFF',
+          2, '#A5CC85',
         ],
         'circle-opacity': 0.8
       },
