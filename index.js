@@ -27,7 +27,7 @@
         ],
         'circle-opacity': 0.8
       },
-      'filter': ['==', ['number',['get', 'Year']], 1890]
+      'filter': ['==', ['number',['get', 'Year']], 1892]
     });
 
     // update hour filter when the slider is dragged
