@@ -10,7 +10,7 @@
 
   map.on('load', function() {
     map.addLayer({
-      id: 'conundrums',
+      id: 'places',
       type: 'circle',
       source: {
         type: 'geojson',
