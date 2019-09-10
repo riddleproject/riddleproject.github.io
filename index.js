@@ -74,23 +74,25 @@
     map.getCanvas().style.cursor = '';
     });
 
-        // Add a layer for this symbol type if it hasn't been added already.
-    if (!map.getLayer(layerID)) {
-      map.addLayer({
-      "id": layerID,
-      "type": "symbol",
-      "source": "places",
-      "layout": {
-      "icon-image": symbol + "-15",
-      "icon-allow-overlap": true
-      },
-      "filter": ["==", "Type", symbol]
-    });
-     
 
+    // Add selector tool for type
     places.features.forEach(function(feature) {
     var symbol = feature.properties['Type'];
     var layerID = 'poi-' + symbol;
+     
+    // Add a layer for this symbol type if it hasn't been added already.
+    if (!map.getLayer(layerID)) {
+    map.addLayer({
+    "id": layerID,
+    "type": "symbol",
+    "source": "places",
+    "layout": {
+    "icon-image": symbol + "-15",
+    "icon-allow-overlap": true
+    },
+    "filter": ["==", "Type", symbol]
+    });
+     
     // Add checkbox and label elements for the layer.
     var input = document.createElement('input');
     input.type = 'checkbox';
@@ -107,5 +109,7 @@
     input.addEventListener('change', function(e) {
     map.setLayoutProperty(layerID, 'visibility',
     e.target.checked ? 'visible' : 'none');
-
+});
+}
+});
 });
