@@ -78,8 +78,9 @@ map.on('load', function() {
     map.setFilter('places', ['all', filterYear, filterType]);
   });
   
+
   // SHOW ALL BUTTON
-  document.getElementById('showall').addEventListener('change', function(e) {
+  document.getElementById('checkbox').addEventListener('change', function(e) {
     checked = e.target.value;
     // update the map filter
     if checked {
