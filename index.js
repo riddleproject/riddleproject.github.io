@@ -44,8 +44,29 @@ map.on('load', function() {
     document.getElementById('active-year').innerText = year;
   });
 
-  // CLICKABLE POINTS
 
+  // FILTER BUTTONS
+  document.getElementById('filters').addEventListener('change', function(e) {
+    var day = e.target.value;
+    // update the map filter
+    if (day === 'all') {
+      filterDay = ['!=', ['string', ['get', 'Type']], 'placeholder'];
+    } else if (day === 'loc') {
+      filterDay = ['match', ['get', 'Type'], ['nn'], true, false];
+    } else (day === 'supper') {
+      filterDay = ['match', ['get', 'Type'], ['dd'], true, false];
+    } else (day === 'tea') {
+      filterDay = ['match', ['get', 'Type'], ['dd'], true, false];
+    } else (day === 'social') {
+      filterDay = ['match', ['get', 'Type'], ['dd'], true, false];
+    } else {
+      console.log('error');
+    };
+    map.setFilter('collisions', ['all', filterDay]);
+  });
+
+
+  // CLICKABLE POINTS
   // When a click event occurs on a feature in the places layer, open a popup at the
   // location of the feature, with description HTML from its properties.
   map.on('click', 'places', function (e) {
@@ -73,25 +94,6 @@ map.on('load', function() {
   // Change it back to a pointer when it leaves.
   map.on('mouseleave', 'places', function () {
     map.getCanvas().style.cursor = '';
-  });
-
-  document.getElementById('filters').addEventListener('change', function(e) {
-    var day = e.target.value;
-    // update the map filter
-    if (day === 'all') {
-      filterDay = ['!=', ['string', ['get', 'Type']], 'placeholder'];
-    } else if (day === 'loc') {
-      filterDay = ['match', ['get', 'Type'], [0], true, false];
-    } else (day === 'supper') {
-      filterDay = ['match', ['get', 'Type'], [1], true, false];
-    } else (day === 'tea') {
-      filterDay = ['match', ['get', 'Type'], [2], true, false];
-    } else (day === 'social') {
-      filterDay = ['match', ['get', 'Type'], [3], true, false];
-    } else {
-      console.log('error');
-    };
-    map.setFilter('collisions', ['all', filterDay]);
   });
 
 });
