@@ -83,6 +83,11 @@ map.on('load', function() {
   // SHOW ALL BUTTON
   document.getElementById('checkbox').addEventListener('change', function(e) {
     var checked = e.target.value;
+    if (checked){
+      console.log("Box checked!");
+    } else {
+      console.log("Unchecked!");
+    }
     // update the map filter
     if (checked) {
       filterType = ['match', ['get', 'Type'], [0, 1, 2, 3], true, false];
