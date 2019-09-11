@@ -10,7 +10,7 @@ var map = new mapboxgl.Map({
 });
 
 map.on('load', function() {
-  var filterYear = ['==', ['number', ['get', 'Year']], 12];
+  var filterYear = ['==', ['number', ['get', 'Year']], 1892];
   var filterType = ['!=', ['string', ['get', 'Type']], 'placeholder'];
 
   map.addLayer({
@@ -41,12 +41,10 @@ map.on('load', function() {
   // update hour filter when the slider is dragged
   document.getElementById('slider').addEventListener('input', function(e) {
     var year = parseInt(e.target.value);
-    // update the map    
-    filterHour = ['==', ['number', ['get', 'Year']], year];
+    // update the map
+    filterYear = ['==', ['number', ['get', 'Year']], year];
     map.setFilter('places', ['all', filterYear, filterType]);
 
-    filterYear = ['==', ['number', ['get', 'Hour']], hour];
-    map.setFilter('places', ['all', filterYear, filterType]);
     // update text in the UI
     document.getElementById('active-year').innerText = year;
   });
