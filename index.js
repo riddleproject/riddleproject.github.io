@@ -55,6 +55,7 @@ map.on('load', function() {
     var day = e.target.value;
     // update the map filter
     if (day === 'all') {
+      // `null` would not work for combining filters
       filterType = ['!=', ['string', ['get', 'Type']], 'placeholder'];
     } else if (day === 'loc') {
       filterType= ['match', ['get', 'Type'], [0], true, false];
