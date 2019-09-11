@@ -56,8 +56,6 @@ map.on('load', function() {
     }
   });
 
-  prevFilterType = filterType = ['!=', ['number', ['get', 'Type']], -1];
-
   // FILTER BUTTONS
   document.getElementById('filters').addEventListener('change', function(e) {
     var type = e.target.value;
@@ -75,7 +73,6 @@ map.on('load', function() {
     } else {
       console.log('error');
     }
-    prevFilterType = filterType
     map.setFilter('places', ['all', filterYear, filterType]);
   });
   
@@ -85,12 +82,14 @@ map.on('load', function() {
     checked = !checked;
     // update the map filter
     if (checked) {
+      // disable slider
       document.getElementById('slider').disabled=true;
-      filterType = prevFilterType;
+      // reset filter
       filterYear = ['!=', ['number', ['get', 'Year']], 0];
     } else {
+      // enable slider
       document.getElementById('slider').disabled=false;
-      filterType = prevFilterType
+      // reset filter
       filterYear = ['==', ['number', ['get', 'Year']], curyear];
     }
     map.setFilter('places', ['all', filterYear, filterType]);
