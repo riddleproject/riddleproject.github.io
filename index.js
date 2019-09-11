@@ -37,14 +37,14 @@ map.on('load', function() {
     'filter': ['all', filterYear, filterType]
   });
 
-  var showall = 'byyear'
+  var checked = false
   var curyear = 1892
   // SLIDER
   // update hour filter when the slider is dragged
   document.getElementById('slider').addEventListener('input', function(e) {
     var year = parseInt(e.target.value);
     curyear = year
-    if showall === 'byyear':
+    if !checked:
       // update the map
       filterYear = ['==', ['number', ['get', 'Year']], year];
       map.setFilter('places', ['all', filterYear, filterType]);
