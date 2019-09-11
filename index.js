@@ -1,7 +1,7 @@
-var filterGroup = document.getElementById('filter-group');
 mapboxgl.accessToken = 'pk.eyJ1IjoibmRyZXpuIiwiYSI6ImNqeXg2eDlhZzA0MzczZ28xeDdzNnNqY3kifQ.lxS44L-xGMpt-Wcv0vpHng';
-// Add map
 
+
+// STARTING POINT
 var map = new mapboxgl.Map({
   container: 'map', // container id specified in the HTML
   style: 'mapbox://styles/mapbox/light-v10', // style URL
@@ -9,10 +9,11 @@ var map = new mapboxgl.Map({
   zoom: 3
 });
 
+
+// BUILD MAP
 map.on('load', function() {
   var filterYear = ['==', ['number', ['get', 'Year']], 1892];
-  var filterType = ['!=', ['string', ['get', 'Type']], 'placeholder'];
-
+  var filterType = ['!=', ['number', ['get', 'Type']], -1];
 
   map.addLayer({
     id: 'places',
@@ -36,8 +37,8 @@ map.on('load', function() {
     'filter': ['all', filterYear, filterType]
   });
 
-  // SLIDER
 
+  // SLIDER
   // update hour filter when the slider is dragged
   document.getElementById('slider').addEventListener('input', function(e) {
     var year = parseInt(e.target.value);
@@ -49,13 +50,14 @@ map.on('load', function() {
     document.getElementById('active-year').innerText = year;
   });
 
+
   // FILTER BUTTONS
   document.getElementById('filters').addEventListener('change', function(e) {
     var day = e.target.value;
     // update the map filter
     if (day === 'all') {
       // `null` would not work for combining filters
-    filterType = ['!=', ['string', ['get', 'Type']], 'placeholder'];
+    filterType = ['!=', ['number', ['get', 'Type']], -1];
     } else if (day === 'loc') {
       filterType= ['match', ['get', 'Type'], [0], true, false];
     } else if (day === 'supper') {
@@ -69,6 +71,8 @@ map.on('load', function() {
     }
     map.setFilter('places', ['all', filterYear, filterType]);
   });
+
+
 
   // CLICKABLE POINTS
   // When a click event occurs on a feature in the places layer, open a popup at the
