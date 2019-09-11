@@ -75,15 +75,6 @@ map.on('load', function() {
     map.setFilter('places', ['all', filterYear, filterType]);
   });
 
-  document.getElementByID('showallbox').addEventListener('everything', function(e){
-    var on = e.target.value;
-    if (on === 'on') {
-      filterType = ['match', ['get', 'Type'], [0, 1, 2, 3], true, false];
-      filterYear = ['!=', ['number', ['get', 'Year']], 0];
-    }
-    map.setFilter('places', ['all', filterYear, filterType])
-  });
-
 
 
   // CLICKABLE POINTS
