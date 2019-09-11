@@ -15,15 +15,18 @@ map.on('load', function() {
   var filterYear = ['==', ['number', ['get', 'Year']], 1892];
   var filterType = ['!=', ['number', ['get', 'Type']], -1];
 
+  map.addSource("conundrums", {
+    type: "geojson",
+    data: "data.geojson",
+    cluster: true,
+    clusterMaxZoom: 14, // Max zoom to cluster points on
+    clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
+  });
+
   map.addLayer({
-    id: 'places',
-    type: 'circle',
-    source: {
-      type: 'geojson',
-      data: 'data.geojson',
-      // cluster:true,
-      // clusterMaxZoom: 14, // Max zoom to cluster points on
-      // clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
+      id: 'places',
+      type: 'circle',
+      source: 'conundrums'
     },
     paint: {
       'circle-color': [
@@ -38,6 +41,31 @@ map.on('load', function() {
       'circle-opacity': 0.8
     },
     'filter': ['all', filterYear, filterType]
+  });
+
+  map.addLayer({
+    id: "cluster-count",
+    type: "symbol",
+    source: "conundrums",
+    filter: ["has", "point_count"],
+  layout: {
+    "text-field": "{point_count_abbreviated}",
+    "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
+    "text-size": 12
+    }
+  });
+     
+  map.addLayer({
+    id: "unclustered-point",
+    type: "circle",
+    source: "conundrums",
+    filter: ["!", ["has", "point_count"]],
+  paint: {
+    "circle-color": "#11b4da",
+    "circle-radius": 4,
+    "circle-stroke-width": 1,
+    "circle-stroke-color": "#fff"
+    }
   });
 
   var checked = false
