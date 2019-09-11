@@ -80,16 +80,14 @@ map.on('load', function() {
   
   // SHOW ALL BUTTON
   document.getElementById('showall').addEventListener('change', function(e) {
-    type = e.target.value;
+    checked = e.target.value;
     // update the map filter
-    if (type === 'all') {
-      filterType = ['match', ['get', 'Type'], [0, 1, 2, 3], true, false];
-      filterYear = ['!=', ['number', ['get', 'Year']], 0];
-    } else if (type === 'byyear'){
+    if checked {
       filterType = ['!=', ['number', ['get', 'Type']], -1];
       filterYear = ['==', ['number', ['get', 'Year']], curyear];
     } else {
-      console.log('error');
+      filterType = ['match', ['get', 'Type'], [0, 1, 2, 3], true, false];
+      filterYear = ['!=', ['number', ['get', 'Year']], 0];
     }
     map.setFilter('places', ['all', filterYear, filterType]);
   });
