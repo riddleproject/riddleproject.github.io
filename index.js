@@ -86,7 +86,7 @@ map.on('load', function() {
     // update the map filter
     if (checked) {
       document.getElementById('slider').disabled=true;
-      filterType = ['match', ['get', 'Type'], [0, 1, 2, 3], true, false];
+      filterType = prevFilterType;
       filterYear = ['!=', ['number', ['get', 'Year']], 0];
     } else {
       document.getElementById('slider').disabled=false;
