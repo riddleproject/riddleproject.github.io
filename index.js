@@ -54,20 +54,21 @@ map.on('load', function() {
 
   // FILTER BUTTONS
   document.getElementById('filters').addEventListener('change', function(e) {
-    var day = e.target.value;
+    var type = e.target.value;
     // update the map filter
-    if (day === 'all') {
+    if (type === 'all') {
       // `null` would not work for combining filters
-    filterType = ['!=', ['number', ['get', 'Type']], -1];
-    } else if (day === 'loc') {
+      filterType = ['!=', ['number', ['get', 'Type']], -1];
+      filterYear = ['!=', ['number', ['get', 'Year']], 1892];
+    } else if (type === 'loc') {
       filterType= ['match', ['get', 'Type'], [0], true, false];
-    } else if (day === 'supper') {
+    } else if (type === 'supper') {
       filterType = ['match', ['get', 'Type'], [1], true, false];
-    } else if (day === 'tea') {
+    } else if (type === 'tea') {
       filterType = ['match', ['get', 'Type'], [2], true, false];
-    } else if (day === 'social') {
+    } else if (type === 'social') {
       filterType = ['match', ['get', 'Type'], [3], true, false];
-    } else if (day === 'showall') {
+    } else if (type === 'showall') {
       filterType = ['match', ['get', 'Type'], [0, 1, 2, 3], true, false];
       filterYear = ['!=', ['number', ['get', 'Year']], 0];
     } else {
