@@ -33,7 +33,7 @@ map.on('load', function() {
       ],
       'circle-opacity': 0.8
     },
-    'filter': ['==', ['number',['get', 'Year']], 1892]
+    'filter': ['all', filterYear, filterType]
   });
 
   // SLIDER
@@ -47,6 +47,17 @@ map.on('load', function() {
 
     // update text in the UI
     document.getElementById('active-year').innerText = year;
+  });
+
+
+  document.getElementById('filters').addEventListener('change', function(e) {
+    var day = e.target.value;
+    if (day === 'all') {
+      // `null` would not work for combining filters
+      filterDay = ['!=', ['string', ['get', 'Day']], 'placeholder'];
+    }
+    /* the rest of the if statement */
+    map.setFilter('collisions', ['all', filterHour, filterDay]);
   });
 
 
