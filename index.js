@@ -52,13 +52,13 @@ map.on('load', function() {
     if (day === 'all') {
       filterType = ['!=', ['string', ['get', 'Type']], 'placeholder'];
     } else if (day === 'loc') {
-      filterType= ['match', ['get', 'Type'], ['nn'], true, false];
+      filterType= ['match', ['get', 'Type'], [0], true, false];
     } else (day === 'supper') {
-      filterType = ['match', ['get', 'Type'], ['dd'], true, false];
+      filterType = ['match', ['get', 'Type'], [1], true, false];
     } else (day === 'tea') {
-      filterType = ['match', ['get', 'Type'], ['dd'], true, false];
+      filterType = ['match', ['get', 'Type'], [2], true, false];
     } else (day === 'social') {
-      filterType = ['match', ['get', 'Type'], ['dd'], true, false];
+      filterType = ['match', ['get', 'Type'], [3], true, false];
     } else {
       console.log('error');
     };
