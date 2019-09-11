@@ -56,7 +56,7 @@ map.on('load', function() {
     }
   });
 
-
+  prevFilterType = filterType = ['!=', ['number', ['get', 'Type']], -1];
 
   // FILTER BUTTONS
   document.getElementById('filters').addEventListener('change', function(e) {
@@ -75,6 +75,7 @@ map.on('load', function() {
     } else {
       console.log('error');
     }
+    prevFilterType = filterType
     map.setFilter('places', ['all', filterYear, filterType]);
   });
   
@@ -89,7 +90,7 @@ map.on('load', function() {
       filterYear = ['!=', ['number', ['get', 'Year']], 0];
     } else {
       document.getElementById('slider').disabled=false;
-      filterType = ['!=', ['number', ['get', 'Type']], -1];
+      filterType = prevFilterType
       filterYear = ['==', ['number', ['get', 'Year']], curyear];
     }
     map.setFilter('places', ['all', filterYear, filterType]);
