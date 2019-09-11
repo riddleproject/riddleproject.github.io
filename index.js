@@ -77,7 +77,7 @@ map.on('load', function() {
 
   document.getElementByID('showallbox').addEventListener('everything', function(e){
     var on = e.target.value;
-    if (on === 'showall') {
+    if (on === 'on') {
       filterType = ['match', ['get', 'Type'], [0, 1, 2, 3], true, false];
       filterYear = ['!=', ['number', ['get', 'Year']], 0];
     }
