@@ -37,7 +37,7 @@ map.on('load', function() {
     'filter': ['all', filterYear, filterType]
   });
 
-  // var checked = false
+  var checked = false
   // var curyear = 1892
   // SLIDER
   // update hour filter when the slider is dragged
@@ -81,8 +81,8 @@ map.on('load', function() {
   
 
   // SHOW ALL BUTTON
-  document.getElementById('checkbox').addEventListener('change', function(e) {
-    var checked = e.target.value;
+  document.getElementById('checkbox').addEventListener('change', function() {
+    checked = !checked;
     if (checked){
       console.log("Box checked!");
     } else {
