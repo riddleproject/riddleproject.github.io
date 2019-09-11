@@ -37,21 +37,21 @@ map.on('load', function() {
     'filter': ['all', filterYear, filterType]
   });
 
-  var checked = false
+  // var checked = false
   // var curyear = 1892
   // SLIDER
   // update hour filter when the slider is dragged
   document.getElementById('slider').addEventListener('input', function(e) {
     var year = parseInt(e.target.value);
     // curyear = year
-    if (!checked){
+    // if (!checked){
       // update the map
       filterYear = ['==', ['number', ['get', 'Year']], year];
       map.setFilter('places', ['all', filterYear, filterType]);
 
       // update text in the UI
       document.getElementById('active-year').innerText = year;
-    }
+    // }
   });
 
 
@@ -82,14 +82,14 @@ map.on('load', function() {
 
   // SHOW ALL BUTTON
   document.getElementById('checkbox').addEventListener('change', function(e) {
-    checked = e.target.value;
+    var checked = e.target.value;
     // update the map filter
     if (checked) {
-      filterType = ['!=', ['number', ['get', 'Type']], -1];
-      // filterYear = ['==', ['number', ['get', 'Year']], curyear];
-    } else {
       filterType = ['match', ['get', 'Type'], [0, 1, 2, 3], true, false];
       filterYear = ['!=', ['number', ['get', 'Year']], 0];
+    } else {
+      filterType = ['!=', ['number', ['get', 'Type']], -1];
+      // filterYear = ['==', ['number', ['get', 'Year']], curyear];
     }
     map.setFilter('places', ['all', filterYear, filterType]);
   });
