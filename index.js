@@ -50,21 +50,20 @@ map.on('load', function() {
     var day = e.target.value;
     // update the map filter
     if (day === 'all') {
-      filterDay = ['!=', ['string', ['get', 'Type']], 'placeholder'];
+      filterType = ['!=', ['string', ['get', 'Type']], 'placeholder'];
     } else if (day === 'loc') {
-      filterDay = ['match', ['get', 'Type'], ['nn'], true, false];
+      filterType= ['match', ['get', 'Type'], ['nn'], true, false];
     } else (day === 'supper') {
-      filterDay = ['match', ['get', 'Type'], ['dd'], true, false];
+      filterType = ['match', ['get', 'Type'], ['dd'], true, false];
     } else (day === 'tea') {
-      filterDay = ['match', ['get', 'Type'], ['dd'], true, false];
+      filterType = ['match', ['get', 'Type'], ['dd'], true, false];
     } else (day === 'social') {
-      filterDay = ['match', ['get', 'Type'], ['dd'], true, false];
+      filterType = ['match', ['get', 'Type'], ['dd'], true, false];
     } else {
       console.log('error');
     };
-    map.setFilter('collisions', ['all', filterDay]);
+    map.setFilter('places', ['all', filterType]);
   });
-
 
   // CLICKABLE POINTS
   // When a click event occurs on a feature in the places layer, open a popup at the
