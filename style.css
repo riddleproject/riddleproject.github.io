@@ -87,8 +87,8 @@ margin-right: 5px;
 
 /* LEGEND */
 /* basic positioning */
-/*.session { list-style: none; }
-.session li { float: left; margin-right: 0px; }*/
+.session { list-style: none; }
+.session li { float: left; margin-right: 0px; }
 .session span { border: 1px solid #ccc; float: left; width: 12px; height: 12px; margin: 2px; }
 /* your colors */
 .session .suppers1 { background-color: #747EB3; }
