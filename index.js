@@ -59,7 +59,6 @@ map.on('load', function() {
     if (type === 'all') {
       // `null` would not work for combining filters
       filterType = ['!=', ['number', ['get', 'Type']], -1];
-      filterYear = ['!=', ['number', ['get', 'Year']], 1892];
     } else if (type === 'loc') {
       filterType= ['match', ['get', 'Type'], [0], true, false];
     } else if (type === 'supper') {
