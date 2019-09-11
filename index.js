@@ -44,13 +44,14 @@ map.on('load', function() {
   document.getElementById('slider').addEventListener('input', function(e) {
     var year = parseInt(e.target.value);
     curyear = year
-    if !checked:
+    if (!checked){
       // update the map
       filterYear = ['==', ['number', ['get', 'Year']], year];
       map.setFilter('places', ['all', filterYear, filterType]);
 
       // update text in the UI
       document.getElementById('active-year').innerText = year;
+    }
   });
 
 
