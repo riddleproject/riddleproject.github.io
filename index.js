@@ -49,25 +49,13 @@ map.on('load', function() {
     document.getElementById('active-year').innerText = year;
   });
 
-
-  document.getElementById('filters').addEventListener('change', function(e) {
-    var day = e.target.value;
-    if (day === 'all') {
-      // `null` would not work for combining filters
-      filterDay = ['!=', ['string', ['get', 'Day']], 'placeholder'];
-    }
-    /* the rest of the if statement */
-    map.setFilter('collisions', ['all', filterHour, filterDay]);
-  });
-
-
   // FILTER BUTTONS
   document.getElementById('filters').addEventListener('change', function(e) {
     var day = e.target.value;
     // update the map filter
     if (day === 'all') {
       // `null` would not work for combining filters
-      filterType = ['!=', ['string', ['get', 'Type']], 'placeholder'];
+    filterType = ['!=', ['string', ['get', 'Type']], 'placeholder'];
     } else if (day === 'loc') {
       filterType= ['match', ['get', 'Type'], [0], true, false];
     } else if (day === 'supper') {
@@ -78,7 +66,7 @@ map.on('load', function() {
       filterType = ['match', ['get', 'Type'], [3], true, false];
     } else {
       console.log('error');
-    };
+    }
     map.setFilter('places', ['all', filterYear, filterType]);
   });
 
