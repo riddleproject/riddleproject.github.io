@@ -15,18 +15,16 @@ map.on('load', function() {
   var filterYear = ['==', ['number', ['get', 'Year']], 1892];
   var filterType = ['!=', ['number', ['get', 'Type']], -1];
 
-  map.addSource('conundrums'{
-    type = 'geojson',
-    data = 'data.geojson',
-    cluster = 'true',
-    clusterMaxZoom: 14, // Max zoom to cluster points on
-    clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
-  })
-
   map.addLayer({
     id: 'places',
     type: 'circle',
-    source: 'conundrums'
+    source: {
+      type: 'geojson',
+      data: 'data.geojson',
+      cluster:true,
+      clusterMaxZoom: 14, // Max zoom to cluster points on
+      clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
+    },
     paint: {
       'circle-color': [
         'interpolate',
