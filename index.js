@@ -46,24 +46,24 @@ map.on('load', function() {
 
 
   // FILTER BUTTONS
-  // document.getElementById('filters').addEventListener('change', function(e) {
-  //   var day = e.target.value;
-  //   // update the map filter
-  //   if (day === 'all') {
-  //     filterType = ['!=', ['string', ['get', 'Type']], 'placeholder'];
-  //   } else if (day === 'loc') {
-  //     filterType= ['match', ['get', 'Type'], [0], true, false];
-  //   } else (day === 'supper') {
-  //     filterType = ['match', ['get', 'Type'], [1], true, false];
-  //   } else (day === 'tea') {
-  //     filterType = ['match', ['get', 'Type'], [2], true, false];
-  //   } else (day === 'social') {
-  //     filterType = ['match', ['get', 'Type'], [3], true, false];
-  //   } else {
-  //     console.log('error');
-  //   };
-  //   map.setFilter('places', ['all', filterType]);
-  // });
+  document.getElementById('filters').addEventListener('change', function(e) {
+    var day = e.target.value;
+    // update the map filter
+    if (day === 'all') {
+      filterType = ['!=', ['string', ['get', 'Type']], 'placeholder'];
+    } else if (day === 'loc') {
+      filterType= ['match', ['get', 'Type'], [0], true, false];
+    } else if (day === 'supper') {
+      filterType = ['match', ['get', 'Type'], [1], true, false];
+    } else if (day === 'tea') {
+      filterType = ['match', ['get', 'Type'], [2], true, false];
+    } else if (day === 'social') {
+      filterType = ['match', ['get', 'Type'], [3], true, false];
+    } else {
+      console.log('error');
+    };
+    map.setFilter('places', ['all', filterType]);
+  });
 
   // CLICKABLE POINTS
   // When a click event occurs on a feature in the places layer, open a popup at the
