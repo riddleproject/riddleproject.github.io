@@ -79,19 +79,19 @@ map.on('load', function() {
   });
   
 
-  // // SHOW ALL BUTTON
-  // document.getElementById('checkbox').addEventListener('change', function(e) {
-  //   checked = e.target.value;
-  //   // update the map filter
-  //   if checked {
-  //     filterType = ['!=', ['number', ['get', 'Type']], -1];
-  //     filterYear = ['==', ['number', ['get', 'Year']], curyear];
-  //   } else {
-  //     filterType = ['match', ['get', 'Type'], [0, 1, 2, 3], true, false];
-  //     filterYear = ['!=', ['number', ['get', 'Year']], 0];
-  //   }
-  //   map.setFilter('places', ['all', filterYear, filterType]);
-  // });
+  // SHOW ALL BUTTON
+  document.getElementById('checkbox').addEventListener('change', function(e) {
+    checked = e.target.value;
+    // update the map filter
+    if (checked) {
+      filterType = ['!=', ['number', ['get', 'Type']], -1];
+      filterYear = ['==', ['number', ['get', 'Year']], curyear];
+    } else {
+      filterType = ['match', ['get', 'Type'], [0, 1, 2, 3], true, false];
+      filterYear = ['!=', ['number', ['get', 'Year']], 0];
+    }
+    map.setFilter('places', ['all', filterYear, filterType]);
+  });
 
 
   // CLICKABLE POINTS
