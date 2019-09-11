@@ -17,7 +17,7 @@ map.on('load', function() {
   var filterType = ['!=', ['number', ['get', 'Type']], -1];
   
   // Initialize toggles
-  document.getElementById("showall").checked = false;
+  // document.getElementById("showall").checked = false;
   // document.getElementByID('filters').target.value = 'all'
 
   map.addSource("conundrums", {
