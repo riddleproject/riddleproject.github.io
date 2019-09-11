@@ -74,42 +74,22 @@
     map.getCanvas().style.cursor = '';
     });
 
-
-    // Add selector tool for type
-    places.features.forEach(function(feature) {
-    var symbol = feature.properties['Type'];
-    var layerID = 'poi-' + symbol;
-     
-    // Add a layer for this symbol type if it hasn't been added already.
-    if (!map.getLayer(layerID)) {
-    map.addLayer({
-    "id": layerID,
-    "type": "symbol",
-    "source": "places",
-    "layout": {
-    "icon-image": symbol + "-15",
-    "icon-allow-overlap": true
-    },
-    "filter": ["==", "Type", symbol]
+    document.getElementById('filters').addEventListener('change', function(e) {
+      var day = e.target.value;
+      // update the map filter
+      if (day === 'all') {
+        filterDay = ['!=', ['string', ['get', 'Type']], 'placeholder'];
+      } else if (day === 'loc') {
+        filterDay = ['match', ['get', 'Type'], [0], true, false];
+      } else (day === 'supper') {
+        filterDay = ['match', ['get', 'Type'], [1], true, false];
+      } else (day === 'tea') {
+        filterDay = ['match', ['get', 'Type'], [2], true, false];
+      } else (day === 'social') {
+        filterDay = ['match', ['get', 'Type'], [3], true, false];
+      } else {
+        console.log('error');
+      }
+      map.setFilter('collisions', ['all', filterDay]);
     });
-     
-    // Add checkbox and label elements for the layer.
-    var input = document.createElement('input');
-    input.type = 'checkbox';
-    input.id = layerID;
-    input.checked = true;
-    filterGroup.appendChild(input);
-     
-    var label = document.createElement('label');
-    label.setAttribute('for', layerID);
-    label.textContent = symbol;
-    filterGroup.appendChild(label);
-     
-    // When the checkbox changes, update the visibility of the layer.
-    input.addEventListener('change', function(e) {
-    map.setLayoutProperty(layerID, 'visibility',
-    e.target.checked ? 'visible' : 'none');
-});
-}
-});
-});
+  });
