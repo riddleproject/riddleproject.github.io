@@ -10,9 +10,6 @@ var map = new mapboxgl.Map({
 });
 
 map.on('load', function() {
-  var filterYear = ['==', ['number', ['get', 'Year']], 1892];
-  var filterType = ['!=', ['string', ['get', 'Type']], 'placeholder'];
-
   map.addLayer({
     id: 'places',
     type: 'circle',
@@ -33,7 +30,6 @@ map.on('load', function() {
       'circle-opacity': 0.8
     },
     'filter': ['==', ['number',['get', 'Year']], 1892]
-
   });
 
   // SLIDER
@@ -42,8 +38,7 @@ map.on('load', function() {
   document.getElementById('slider').addEventListener('input', function(e) {
     var year = parseInt(e.target.value);
     // update the map
-    filterYear = ['==', ['number', ['get', 'Year']], year];
-    map.setFilter('places', ['all', filterYear, filterType]);
+    map.setFilter('places', ['==', ['number', ['get', 'Year']], year]);
 
     // update text in the UI
     document.getElementById('active-year').innerText = year;
@@ -67,7 +62,7 @@ map.on('load', function() {
     } else {
       console.log('error');
     };
-    map.setFilter('places', ['all', filterYear, filterType]);
+    map.setFilter('places', ['all', filterType]);
   });
 
   // CLICKABLE POINTS
