@@ -79,7 +79,7 @@ map.on('load', function() {
   });
   
   // SHOW ALL BUTTON
-  document.getElementById('filters').addEventListener('change', function(e) {
+  document.getElementById('showall').addEventListener('change', function(e) {
     type = e.target.value;
     // update the map filter
     if (type === 'all') {
