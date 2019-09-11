@@ -24,10 +24,9 @@ map.on('load', function() {
   });
 
   map.addLayer({
-      id: 'places',
-      type: 'circle',
-      source: 'conundrums'
-    },
+    id: 'places',
+    type: 'circle',
+    source: 'conundrums',
     paint: {
           // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
           // with three steps to implement three types of circles:
