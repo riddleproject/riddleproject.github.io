@@ -51,6 +51,7 @@ map.on('load', function() {
   });
 
 
+
   // FILTER BUTTONS
   document.getElementById('filters').addEventListener('change', function(e) {
     var day = e.target.value;
