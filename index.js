@@ -38,12 +38,12 @@ map.on('load', function() {
   });
 
   var checked = false
-  var curyear = 1892
+  // var curyear = 1892
   // SLIDER
   // update hour filter when the slider is dragged
   document.getElementById('slider').addEventListener('input', function(e) {
     var year = parseInt(e.target.value);
-    curyear = year
+    // curyear = year
     if (!checked){
       // update the map
       filterYear = ['==', ['number', ['get', 'Year']], year];
@@ -86,7 +86,7 @@ map.on('load', function() {
     // update the map filter
     if (checked) {
       filterType = ['!=', ['number', ['get', 'Type']], -1];
-      filterYear = ['==', ['number', ['get', 'Year']], curyear];
+      // filterYear = ['==', ['number', ['get', 'Year']], curyear];
     } else {
       filterType = ['match', ['get', 'Type'], [0, 1, 2, 3], true, false];
       filterYear = ['!=', ['number', ['get', 'Year']], 0];
