@@ -18,7 +18,7 @@ map.on('load', function() {
   
   // Initialize toggles
   document.getElementById("showall").checked = false;
-  document.getElementByID('filters').target.value = 'all'
+  // document.getElementByID('filters').target.value = 'all'
 
   map.addSource("conundrums", {
     type: "geojson",
