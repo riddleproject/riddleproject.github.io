@@ -67,6 +67,9 @@ map.on('load', function() {
       filterType = ['match', ['get', 'Type'], [2], true, false];
     } else if (day === 'social') {
       filterType = ['match', ['get', 'Type'], [3], true, false];
+    } else if (day === 'showall') {
+      filterType = ['match', ['get', 'Type'], [0, 1, 2, 3], true, false];
+      filterYear = ['!=', ['number', ['get', 'Year']], 0];
     } else {
       console.log('error');
     }
