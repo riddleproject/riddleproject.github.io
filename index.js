@@ -20,7 +20,7 @@ map.on('load', function() {
     type: 'circle',
     source: {
       type: 'geojson',
-      data: 'data/map_data_all.geojson'
+      data: 'data.geojson'
     },
     paint: {
       'circle-color': [
