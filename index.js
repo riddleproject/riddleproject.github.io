@@ -4,7 +4,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoibmRyZXpuIiwiYSI6ImNqeXg2eDlhZzA0MzczZ28xeDdzN
 // STARTING POINT
 var map = new mapboxgl.Map({
   container: 'map', // container id specified in the HTML
-  style: 'mapbox://styles/mapbox/light-v10', // style URL
+  style: 'mapbox://styles/mapbox/dark-v9', // style URL
   center: [-100.546666667, 46.0730555556], // initial map center in [lon, lat]
   zoom: 3
 });
