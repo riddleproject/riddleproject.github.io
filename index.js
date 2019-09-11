@@ -9,10 +9,6 @@ var map = new mapboxgl.Map({
   zoom: 3
 });
 
-// Initialize toggles
-document.getElementById("showall").checked = false;
-document.getElementByID('filters').target.value = 'all'
-
 // BUILD MAP
 map.on('load', function() {
   // Initialize filters
