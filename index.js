@@ -57,7 +57,6 @@ map.on('load', function() {
     var type = e.target.value;
     // update the map filter
     if (type === 'all') {
-      // `null` would not work for combining filters
       filterType = ['!=', ['number', ['get', 'Type']], -1];
     } else if (type === 'loc') {
       filterType= ['match', ['get', 'Type'], [0], true, false];
@@ -74,6 +73,15 @@ map.on('load', function() {
       console.log('error');
     }
     map.setFilter('places', ['all', filterYear, filterType]);
+  });
+
+  document.getElementByID('showallbox').addEventListener('everything', function(e){
+    var on = e.target.value;
+    if (value === 'showall') {
+      filterType = ['match', ['get', 'Type'], [0, 1, 2, 3], true, false];
+      filterYear = ['!=', ['number', ['get', 'Year']], 0];
+    }
+    map.setFilter('places', ['all', filterYear, filterType])
   });
 
 
