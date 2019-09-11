@@ -75,22 +75,23 @@ map.on('load', function() {
     map.getCanvas().style.cursor = '';
   });
 
-  // document.getElementById('filters').addEventListener('change', function(e) {
-  //   var day = e.target.value;
-  //   // update the map filter
-  //   if (day === 'all') {
-  //     filterDay = ['!=', ['string', ['get', 'Type']], 'placeholder'];
-  //   } else if (day === 'loc') {
-  //     filterDay = ['match', ['get', 'Type'], [0], true, false];
-  //   } else (day === 'supper') {
-  //     filterDay = ['match', ['get', 'Type'], [1], true, false];
-  //   } else (day === 'tea') {
-  //     filterDay = ['match', ['get', 'Type'], [2], true, false];
-  //   } else (day === 'social') {
-  //     filterDay = ['match', ['get', 'Type'], [3], true, false];
-  //   } else {
-  //     console.log('error');
-  //   }
-  //   map.setFilter('collisions', ['all', filterDay]);
-  // });
+  document.getElementById('filters').addEventListener('change', function(e) {
+    var day = e.target.value;
+    // update the map filter
+    if (day === 'all') {
+      filterDay = ['!=', ['string', ['get', 'Type']], 'placeholder'];
+    } else if (day === 'loc') {
+      filterDay = ['match', ['get', 'Type'], [0], true, false];
+    } else (day === 'supper') {
+      filterDay = ['match', ['get', 'Type'], [1], true, false];
+    } else (day === 'tea') {
+      filterDay = ['match', ['get', 'Type'], [2], true, false];
+    } else (day === 'social') {
+      filterDay = ['match', ['get', 'Type'], [3], true, false];
+    } else {
+      console.log('error');
+    };
+    map.setFilter('collisions', ['all', filterDay]);
+  });
+
 });
