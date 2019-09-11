@@ -44,14 +44,14 @@ map.on('load', function() {
   document.getElementById('slider').addEventListener('input', function(e) {
     var year = parseInt(e.target.value);
     // curyear = year
-    // if (!checked){
+    if (!checked){
       // update the map
       filterYear = ['==', ['number', ['get', 'Year']], year];
       map.setFilter('places', ['all', filterYear, filterType]);
 
       // update text in the UI
       document.getElementById('active-year').innerText = year;
-    // }
+    }
   });
 
 
@@ -70,9 +70,6 @@ map.on('load', function() {
       filterType = ['match', ['get', 'Type'], [2], true, false];
     } else if (type === 'social') {
       filterType = ['match', ['get', 'Type'], [3], true, false];
-    } else if (type === 'showall') {
-      filterType = ['match', ['get', 'Type'], [0, 1, 2, 3], true, false];
-      filterYear = ['!=', ['number', ['get', 'Year']], 0];
     } else {
       console.log('error');
     }
@@ -83,11 +80,6 @@ map.on('load', function() {
   // SHOW ALL BUTTON
   document.getElementById('checkbox').addEventListener('change', function() {
     checked = !checked;
-    if (checked){
-      console.log("Box checked!");
-    } else {
-      console.log("Unchecked!");
-    }
     // update the map filter
     if (checked) {
       filterType = ['match', ['get', 'Type'], [0, 1, 2, 3], true, false];
