@@ -33,6 +33,10 @@ map.on('load', function() {
         1, '#FF794B',
         2, '#BFCAFF',
         3, '#A5CC85',
+        4, '#FFD4A1',
+        5, '#58CC70',
+        6, '#901499',
+        7, '#2D2240',
       ],
       'circle-opacity': 0.8
     },
