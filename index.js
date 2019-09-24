@@ -61,24 +61,32 @@ map.on('load', function() {
   });
 
   // FILTER BUTTONS
-  // document.getElementById('filters').addEventListener('change', function(e) {
-  //   var type = e.target.value;
-  //   // update the map filter
-  //   if (type === 'all') {
-  //     filterType = ['!=', ['number', ['get', 'Type']], -1];
-  //   } else if (type === 'loc') {
-  //     filterType= ['match', ['get', 'Type'], [0], true, false];
-  //   } else if (type === 'supper') {
-  //     filterType = ['match', ['get', 'Type'], [1], true, false];
-  //   } else if (type === 'tea') {
-  //     filterType = ['match', ['get', 'Type'], [2], true, false];
-  //   } else if (type === 'social') {
-  //     filterType = ['match', ['get', 'Type'], [3], true, false];
-  //   } else {
-  //     console.log('error');
-  //   }
-  //   map.setFilter('places', ['all', filterYear, filterType]);
-  // });
+  document.getElementById('filters').addEventListener('change', function(e) {
+    var type = e.target.value;
+    // update the map filter
+    if (type === 'all') {
+      filterType = ['!=', ['number', ['get', 'Type']], -1];
+    } else if (type === 'banq') {
+      filterType= ['match', ['get', 'Type'], [0], true, false];
+    } else if (type === 'bchn') {
+      filterType = ['match', ['get', 'Type'], [1], true, false];
+    } else if (type === 'bna') {
+      filterType = ['match', ['get', 'Type'], [2], true, false];
+    } else if (type === 'lcsoc') {
+      filterType = ['match', ['get', 'Type'], [3], true, false];
+    } else if (type === 'lcsup') {
+      filterType = ['match', ['get', 'Type'], [4], true, false];
+    } else if (type === 'lctea') {
+      filterType = ['match', ['get', 'Type'], [5], true, false];
+    } else if (type === 'ca') {
+      filterType = ['match', ['get', 'Type'], [6], true, false];
+    } else if (type === 'nys') {
+      filterType = ['match', ['get', 'Type'], [7], true, false];
+    } else {
+      console.log('error');
+    }
+    map.setFilter('places', ['all', filterYear, filterType]);
+  });
   
 
   // SHOW ALL BUTTON
