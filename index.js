@@ -78,10 +78,10 @@ map.on('load', function() {
       filterType = ['match', ['get', 'Type'], [4], true, false];
     } else if (type === 'lctea') {
       filterType = ['match', ['get', 'Type'], [5], true, false];
-    } else if (type === 'ca') {
-      filterType = ['match', ['get', 'Type'], [6], true, false];
     } else if (type === 'nys') {
-      filterType = ['match', ['get', 'Type'], [7], true, false];
+      filterType = ['match', ['get', 'Type'], [6], true, false];
+    } else if (type === 'ca') {
+      filterType = ['match', ['get', 'Type'], [3,4,5], true, false];
     } else {
       console.log('error');
     }
