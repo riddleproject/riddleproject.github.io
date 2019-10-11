@@ -105,7 +105,7 @@ map.on('load', function() {
 
   // SHOW ALL BUTTON
   document.getElementById('checkbox').addEventListener('change', function(e) {
-    console.log(e.target.value)
+    console.log(e)
     checked = !checked;
     // update the map filter
     if (checked) {
