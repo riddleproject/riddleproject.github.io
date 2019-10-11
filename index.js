@@ -111,6 +111,8 @@ map.on('load', function() {
     if (checked) {
       // disable slider
       document.getElementById('slider').disabled=true;
+      document.getElementById('endyear').disabled=true;
+
       // reset filter
       map.setFilter('places', ['all', filterType]);
 
