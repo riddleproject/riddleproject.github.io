@@ -45,8 +45,6 @@ map.on('load', function() {
   });
 
   var checked = false
-  var curyear = 1892
-  var endyear = 0
   // SLIDER
   // update start year filter when the slider is dragged
   document.getElementById('slider').addEventListener('input', function(e) {
@@ -112,13 +110,14 @@ map.on('load', function() {
       // disable slider
       document.getElementById('slider').disabled=true;
       document.getElementById('endyear').disabled=true;
-
       // reset filter
       map.setFilter('places', ['all', filterType]);
 
     } else {
       // enable slider
       document.getElementById('slider').disabled=false;
+      document.getElementById('endyear').disabled=false;
+
       map.setFilter('places', ['all', startYear, endYear, filterType]);
     }
   });
