@@ -56,10 +56,11 @@ map.on('load', function() {
     
     //if the start year hits the end year, then update the text in the box and the filters
     // now the two filters should be the same. 
-    if startyear >= endyear:
+    if (startyear >= endyear){
       endYear = ['<=', ['number', ['get', 'Year']], startyear]
       document.getElementById('end-slider').target.value = startyear
       document.getElementById('active-end-year').innerText = startyear;
+    }
 
     map.setFilter('places', ['all', startYear, endYear, filterType]);
     // update text in the UI
@@ -72,10 +73,11 @@ map.on('load', function() {
     // update the map
     endYear = ['>=', ['number', ['get', 'Year']], endyear]
     
-    if endyear <= startyear:
+    if (endyear <= startyear):{
       startYear = ['>=', ['number', ['get', 'Year']], endyear];
       document.getElementById('start-slider').target.value = endyear
       document.getElementById('active-start-year').innerText = endyear;
+    }
 
     map.setFilter('places', ['all', startYear, endYear, filterType]);
     // update text in the UI
