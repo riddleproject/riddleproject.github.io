@@ -59,7 +59,7 @@ map.on('load', function() {
     if (startyear >= endyear){
       endYear = ['>=', ['number', ['get', 'Year']], startyear]
       // document.getElementById('end-slider').target.value = startyear
-      document.getElementById('active-end-year').innerText = startyear;
+      // document.getElementById('active-end-year').innerText = startyear;
     }
 
     map.setFilter('places', ['all', startYear, endYear, filterType]);
@@ -76,7 +76,7 @@ map.on('load', function() {
     if (endyear <= startyear){
       startYear = ['>=', ['number', ['get', 'Year']], endyear];
       // document.getElementById('start-slider').target.value = endyear
-      document.getElementById('active-start-year').innerText = endyear;
+      // document.getElementById('active-start-year').innerText = endyear;
     }
 
     map.setFilter('places', ['all', startYear, endYear, filterType]);
