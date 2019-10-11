@@ -13,6 +13,8 @@ var map = new mapboxgl.Map({
 map.on('load', function() {
   // Initialize filters
   var startYear = ['==', ['number', ['get', 'Year']], 1892];
+  var endYear = ['<=', ['number', ['get', 'Year']], 1892];
+
   var filterType = ['!=', ['number', ['get', 'Type']], -1];
 
   map.addSource("conundrums", {
@@ -40,7 +42,7 @@ map.on('load', function() {
       ],
       'circle-opacity': 0.8
     },
-    'filter': ['all', startYear, filterType]
+    'filter': ['all', startYear, endYear, filterType]
   });
 
   var startyear = 1892
@@ -51,10 +53,15 @@ map.on('load', function() {
     startyear = parseInt(e.target.value);
     // update the map
     startYear = ['==', ['number', ['get', 'Year']], startyear];
-    map.setFilter('places', ['all', startYear, filterType]);
     
+    //if the start year hits the end year, then update the text in the box and the filters
+    // now the two filters should be the same. 
     if startyear >= endyear:
+      endYear = ['<=', ['number', ['get', 'Year']], startyear]
       document.getElementById('end-slider').target.value = startyear
+      document.getElementById('active-end-year').innerText = startyear;
+
+    map.setFilter('places', ['all', startYear, endYear, filterType]);
     // update text in the UI
     document.getElementById('active-start-year').innerText = startyear;
   });
@@ -63,12 +70,14 @@ map.on('load', function() {
   document.getElementById('end-slider').addEventListener('input', function(e) {
     endyear = parseInt(e.target.value);
     // update the map
-    var endYear = ['<=', ['number', ['get', 'Year']], endyear];
-    startYear = ['>=', ['number', ['get', 'Year']], startyear]
-    map.setFilter('places', ['all', startYear, endYear, filterType]);
+    endYear = ['>=', ['number', ['get', 'Year']], endyear]
     
     if endyear <= startyear:
+      startYear = ['>=', ['number', ['get', 'Year']], endyear];
       document.getElementById('start-slider').target.value = endyear
+      document.getElementById('active-start-year').innerText = endyear;
+
+    map.setFilter('places', ['all', startYear, endYear, filterType]);
     // update text in the UI
     document.getElementById('active-end-year').innerText = endyear;
   });
