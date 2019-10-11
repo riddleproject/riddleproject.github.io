@@ -44,7 +44,6 @@ map.on('load', function() {
     'filter': ['all', startYear, filterType]
   });
 
-  var checked = false
   // SLIDER
   // update start year filter when the slider is dragged
   document.getElementById('slider').addEventListener('input', function(e) {
@@ -103,8 +102,7 @@ map.on('load', function() {
 
   // SHOW ALL BUTTON
   document.getElementById('checkbox').addEventListener('change', function(e) {
-    console.log(e.target)
-    checked = !checked;
+    checked = e.target.checked
     // update the map filter
     if (checked) {
       // disable slider
