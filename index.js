@@ -12,7 +12,7 @@ var map = new mapboxgl.Map({
 // BUILD MAP
 map.on('load', function() {
   // Initialize filters
-  var startYear = ['==', ['number', ['get', 'Year']], 1892];
+  var startYear = ['>=', ['number', ['get', 'Year']], 1892];
   var endYear = ['<=', ['number', ['get', 'Year']], 1892];
 
   var filterType = ['!=', ['number', ['get', 'Type']], -1];
@@ -52,7 +52,7 @@ map.on('load', function() {
   document.getElementById('start-slider').addEventListener('input', function(e) {
     startyear = parseInt(e.target.value);
     // update the map
-    startYear = ['==', ['number', ['get', 'Year']], startyear];
+    startYear = ['>=', ['number', ['get', 'Year']], startyear];
     
     //if the start year hits the end year, then update the text in the box and the filters
     // now the two filters should be the same. 
