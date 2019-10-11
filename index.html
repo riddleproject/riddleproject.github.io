@@ -23,15 +23,28 @@
     <h1>Conundrum Events, 1878-1982</h1>
     <p>Click on a point to learn more about the event that occurred there!</p>
     
-    <p>The Riddle Project aims to bring together traditional methods from cultural studies and emerging tools from digital humanities in order to study riddling culture from the 18thcentury onward.</p>
+    <p>The Riddle Project aims to bring together traditional methods from cultural studies and emerging tools from digital humanities in order to study riddling culture from the 18th century onward.</p>
 
-    <p>To learn more about the Riddles Project, click <a href="https://news.library.mcgill.ca/tag/timeless-riddles/">here</a>.
+    <p>To learn more about the Riddle Project, click <a href="https://news.library.mcgill.ca/tag/timeless-riddles/">here</a>.
     <!-- <p>Archives: NYS Historical Newspapers, BanQ, BC Historical Newspapers, Old Fulton New York Postcards, 1878-1900</p> -->
 
     <!-- Slider bar -->
     <div class='session' id='sliderbar'>
-      <h2>Year: <label id='active-year'>1892</label></h2>
+      <h2> Start year: <label id='active-year'>1892</label></h2>
       <input id='slider' class='row' type='range' min='1878' max='1982' step='1' value='1892' />
+    </div>
+
+    <!-- Show all checkbox -->
+    <div class='session'>
+      <h2> Date range</h2>
+      <div class='row' id='checkbox'>  
+        <input type="checkbox" name="daterange" value="box"> Enable<br>
+      </div>
+    </div>
+    <!-- Slider bar -->
+    <div class='session' id='sliderbar'>
+      <h2> End year: <label id='end-year'>1892</label></h2>
+      <input id='endyear' class='row' type='range' min='1878' max='1982' step='1' value='1892' />
     </div>
     
     <!-- Disable filtering-->

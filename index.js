@@ -12,8 +12,9 @@ var map = new mapboxgl.Map({
 // BUILD MAP
 map.on('load', function() {
   // Initialize filters
-  var filterYear = ['==', ['number', ['get', 'Year']], 1892];
+  var startYear = ['==', ['number', ['get', 'Year']], 1892];
   var filterType = ['!=', ['number', ['get', 'Type']], -1];
+  var endYear = ['>=', ['number', ['get', 'Year']], 0]
 
   map.addSource("conundrums", {
     type: "geojson",
@@ -40,23 +41,38 @@ map.on('load', function() {
       ],
       'circle-opacity': 0.8
     },
-    'filter': ['all', filterYear, filterType]
+    'filter': ['all', startYear, filterType]
   });
 
   var checked = false
   var curyear = 1892
+  var endyear = 0
   // SLIDER
-  // update hour filter when the slider is dragged
+  // update start year filter when the slider is dragged
   document.getElementById('slider').addEventListener('input', function(e) {
     var year = parseInt(e.target.value);
     curyear = year
     // update the map
-    filterYear = ['==', ['number', ['get', 'Year']], year];
-    map.setFilter('places', ['all', filterYear, filterType]);
+    startYear = ['==', ['number', ['get', 'Year']], year];
+    map.setFilter('places', ['all', startYear, filterType]);
 
     // update text in the UI
     document.getElementById('active-year').innerText = year;
   });
+
+  // update end year filter when the slider is dragged
+  document.getElementById('endyear').addEventListener('input', function(e) {
+    var year2 = parseInt(e.target.value);
+    endyear = year2
+    // update the map
+    endYear = ['<=', ['number', ['get', 'Year']], year2];
+    startYear = ['>=', ['number', ['get', 'Year']], year2]
+    map.setFilter('places', ['all', startYear, endYear, filterType]);
+
+    // update text in the UI
+    document.getElementById('end-year').innerText = year2;
+  });
+
 
   // FILTER BUTTONS
   document.getElementById('filters').addEventListener('change', function(e) {
@@ -83,26 +99,26 @@ map.on('load', function() {
     } else {
       console.log('error');
     }
-    map.setFilter('places', ['all', filterYear, filterType]);
+    map.setFilter('places', ['all', startYear, endYear, filterType]);
   });
   
 
   // SHOW ALL BUTTON
-  document.getElementById('checkbox').addEventListener('change', function() {
+  document.getElementById('checkbox').addEventListener('change', function(e) {
+    console.log(e.target.value)
     checked = !checked;
     // update the map filter
     if (checked) {
       // disable slider
       document.getElementById('slider').disabled=true;
       // reset filter
-      filterYear = ['!=', ['number', ['get', 'Year']], 0];
+      map.setFilter('places', ['all', filterType]);
+
     } else {
       // enable slider
       document.getElementById('slider').disabled=false;
-      // reset filter
-      filterYear = ['==', ['number', ['get', 'Year']], curyear];
+      map.setFilter('places', ['all', startYear, endYear, filterType]);
     }
-    map.setFilter('places', ['all', filterYear, filterType]);
   });
 
 
