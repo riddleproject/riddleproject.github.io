@@ -12,10 +12,10 @@ var map = new mapboxgl.Map({
 // BUILD MAP
 map.on('load', function() {
   // Initialize filters
-  var startYear = ['>=', ['number', ['get', 'Year']], 1892];
-  var endYear = ['<=', ['number', ['get', 'Year']], 1892];
+  var startYearFilter = ['>=', ['number', ['get', 'Year']], 1892];
+  var endYearFilter = ['<=', ['number', ['get', 'Year']], 1892];
 
-  var filterType = ['!=', ['number', ['get', 'Type']], -1];
+  var typeFilter = ['!=', ['number', ['get', 'Type']], -1];
 
   map.addSource("conundrums", {
     type: "geojson",
@@ -42,7 +42,7 @@ map.on('load', function() {
       ],
       'circle-opacity': 0.8
     },
-    'filter': ['all', startYear, endYear, filterType]
+    'filter': ['all', startYearFilter, endYearFilter, typeFilter]
   });
 
   var startyear = 1892
@@ -52,17 +52,17 @@ map.on('load', function() {
   document.getElementById('start-slider').addEventListener('input', function(e) {
     startyear = parseInt(e.target.value);
     // update the map
-    startYear = ['<=', ['number', ['get', 'Year']], startyear];
+    startYearFilter = ['>=', ['number', ['get', 'Year']], startyear];
     
     //if the start year hits the end year, then update the text in the box and the filters
     // now the two filters should be the same. 
     if (startyear >= endyear){
-      endYear = ['>=', ['number', ['get', 'Year']], startyear]
+      endYearFilter = ['<=', ['number', ['get', 'Year']], startyear]
       // document.getElementById('end-slider').target.value = startyear
       // document.getElementById('active-end-year').innerText = startyear;
     }
 
-    map.setFilter('places', ['all', startYear, endYear, filterType]);
+    map.setFilter('places', ['all', startYearFilter, endYearFilter, typeFilter]);
     // update text in the UI
     document.getElementById('active-start-year').innerText = startyear;
   });
@@ -71,15 +71,15 @@ map.on('load', function() {
   document.getElementById('end-slider').addEventListener('input', function(e) {
     endyear = parseInt(e.target.value);
     // update the map
-    endYear = ['<=', ['number', ['get', 'Year']], endyear]
+    endYearFilter = ['<=', ['number', ['get', 'Year']], endyear]
     
     if (endyear <= startyear){
-      startYear = ['>=', ['number', ['get', 'Year']], endyear];
+      startYearFilter = ['>=', ['number', ['get', 'Year']], endyear];
       // document.getElementById('start-slider').target.value = endyear
       // document.getElementById('active-start-year').innerText = endyear;
     }
 
-    map.setFilter('places', ['all', startYear, endYear, filterType]);
+    map.setFilter('places', ['all', startYearFilter, endYearFilter, typeFilter]);
     // update text in the UI
     document.getElementById('active-end-year').innerText = endyear;
   });
@@ -90,27 +90,27 @@ map.on('load', function() {
     var type = e.target.value;
     // update the map filter
     if (type === 'all') {
-      filterType = ['!=', ['number', ['get', 'Type']], -1];
+      typeFilter = ['!=', ['number', ['get', 'Type']], -1];
     } else if (type === 'banq') {
-      filterType= ['match', ['get', 'Type'], [0], true, false];
+      typeFilter= ['match', ['get', 'Type'], [0], true, false];
     } else if (type === 'bchn') {
-      filterType = ['match', ['get', 'Type'], [1], true, false];
+      typeFilter = ['match', ['get', 'Type'], [1], true, false];
     } else if (type === 'bna') {
-      filterType = ['match', ['get', 'Type'], [2], true, false];
+      typeFilter = ['match', ['get', 'Type'], [2], true, false];
     } else if (type === 'lcsoc') {
-      filterType = ['match', ['get', 'Type'], [3], true, false];
+      typeFilter = ['match', ['get', 'Type'], [3], true, false];
     } else if (type === 'lcsup') {
-      filterType = ['match', ['get', 'Type'], [4], true, false];
+      typeFilter = ['match', ['get', 'Type'], [4], true, false];
     } else if (type === 'lctea') {
-      filterType = ['match', ['get', 'Type'], [5], true, false];
+      typeFilter = ['match', ['get', 'Type'], [5], true, false];
     } else if (type === 'nys') {
-      filterType = ['match', ['get', 'Type'], [6], true, false];
+      typeFilter = ['match', ['get', 'Type'], [6], true, false];
     } else if (type === 'ca') {
-      filterType = ['match', ['get', 'Type'], [3,4,5], true, false];
+      typeFilter = ['match', ['get', 'Type'], [3,4,5], true, false];
     } else {
       console.log('error');
     }
-    map.setFilter('places', ['all', startYear, endYear, filterType]);
+    map.setFilter('places', ['all', startYearFilter, endYearFilter, typeFilter]);
   });
   
 
@@ -123,14 +123,14 @@ map.on('load', function() {
       document.getElementById('start-slider').disabled=true;
       document.getElementById('end-slider').disabled=true;
       // reset filter
-      map.setFilter('places', ['all', filterType]);
+      map.setFilter('places', ['all', typeFilter]);
 
     } else {
       // enable slider
       document.getElementById('start-slider').disabled=false;
       document.getElementById('end-slider').disabled=false;
 
-      map.setFilter('places', ['all', startYear, endYear, filterType]);
+      map.setFilter('places', ['all', startYearFilter, endYearFilter, typeFilter]);
     }
   });
 
