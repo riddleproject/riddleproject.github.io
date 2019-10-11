@@ -73,7 +73,7 @@ map.on('load', function() {
     // update the map
     endYear = ['>=', ['number', ['get', 'Year']], endyear]
     
-    if (endyear <= startyear):{
+    if (endyear <= startyear){
       startYear = ['>=', ['number', ['get', 'Year']], endyear];
       document.getElementById('start-slider').target.value = endyear
       document.getElementById('active-start-year').innerText = endyear;
