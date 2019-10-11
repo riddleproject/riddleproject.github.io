@@ -14,7 +14,6 @@ map.on('load', function() {
   // Initialize filters
   var startYear = ['==', ['number', ['get', 'Year']], 1892];
   var filterType = ['!=', ['number', ['get', 'Type']], -1];
-  var endYear = ['>=', ['number', ['get', 'Year']], 0]
 
   map.addSource("conundrums", {
     type: "geojson",
@@ -44,30 +43,34 @@ map.on('load', function() {
     'filter': ['all', startYear, filterType]
   });
 
+  var startyear = 1892
+  var endyear = 1892
   // SLIDER
   // update start year filter when the slider is dragged
-  document.getElementById('slider').addEventListener('input', function(e) {
-    var year = parseInt(e.target.value);
-    curyear = year
+  document.getElementById('start-slider').addEventListener('input', function(e) {
+    startyear = parseInt(e.target.value);
     // update the map
-    startYear = ['==', ['number', ['get', 'Year']], year];
+    startYear = ['==', ['number', ['get', 'Year']], startyear];
     map.setFilter('places', ['all', startYear, filterType]);
-
+    
+    if startyear >= endyear:
+      document.getElementById('end-slider').target.value = startyear
     // update text in the UI
-    document.getElementById('active-year').innerText = year;
+    document.getElementById('active-start-year').innerText = startyear;
   });
 
   // update end year filter when the slider is dragged
-  document.getElementById('endyear').addEventListener('input', function(e) {
-    var year2 = parseInt(e.target.value);
-    endyear = year2
+  document.getElementById('end-slider').addEventListener('input', function(e) {
+    endyear = parseInt(e.target.value);
     // update the map
-    endYear = ['<=', ['number', ['get', 'Year']], year2];
-    startYear = ['>=', ['number', ['get', 'Year']], year2]
+    var endYear = ['<=', ['number', ['get', 'Year']], endyear];
+    startYear = ['>=', ['number', ['get', 'Year']], startyear]
     map.setFilter('places', ['all', startYear, endYear, filterType]);
-
+    
+    if endyear <= startyear:
+      document.getElementById('start-slider').target.value = endyear
     // update text in the UI
-    document.getElementById('end-year').innerText = year2;
+    document.getElementById('active-end-year').innerText = endyear;
   });
 
 
