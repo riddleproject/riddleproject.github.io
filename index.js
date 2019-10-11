@@ -120,15 +120,15 @@ map.on('load', function() {
     // update the map filter
     if (checked) {
       // disable slider
-      document.getElementById('slider').disabled=true;
-      document.getElementById('endyear').disabled=true;
+      document.getElementById('start-slider').disabled=true;
+      document.getElementById('end-slider').disabled=true;
       // reset filter
       map.setFilter('places', ['all', filterType]);
 
     } else {
       // enable slider
-      document.getElementById('slider').disabled=false;
-      document.getElementById('endyear').disabled=false;
+      document.getElementById('start-slider').disabled=false;
+      document.getElementById('end-slider').disabled=false;
 
       map.setFilter('places', ['all', startYear, endYear, filterType]);
     }
