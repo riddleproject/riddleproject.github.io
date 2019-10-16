@@ -8,6 +8,15 @@ var map = new mapboxgl.Map({
   zoom: 2.2
 });
 
+function hideFilters(){
+  var x = document.getElementById("filters");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
 var nav = new mapboxgl.NavigationControl();
 map.addControl(nav, 'bottom-right');
 
