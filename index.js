@@ -28,7 +28,7 @@ map.on('load', function() {
     id: "clusters",
     type: "circle",
     source: "conundrums",
-    filter: ['all', ["has", "point_count"], startYearFilter, endYearFilter, typeFilter],
+    filter: ["has", "point_count"],
     paint: {
       // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
       // with three steps to implement three types of circles:
@@ -56,7 +56,7 @@ map.on('load', function() {
     id: "unclustered-point",
     type: "circle",
     source: "conundrums",
-    filter: ["!", ["has", "point_count"]],
+    filter: ['all', ["!", ["has", "point_count"]], startYearFilter, endYearFilter, typeFilter],
     paint: {
       'circle-color': [
         'interpolate',
