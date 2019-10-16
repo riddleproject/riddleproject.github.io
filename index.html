@@ -30,12 +30,12 @@
 
     <!-- Slider bar -->
     <div class='session' id='sliderbar'>
-      <h2> Start year: <label id='active-start-year'> <input id='input-start' type="text" name="textStartYear" value="1892"> </label></h2>
+      <h2> Start year: <label id='active-start-year'> <input id='input-start' type="text" name="textStartYear" value="1892" onKeyPress="checkEnter(event)"> </label></h2>
       <input id='start-slider' class='row' type='range' min='1878' max='1982' step='1' value='1892' />
     </div>
     <!-- Slider bar -->
     <div class='session' id='sliderbar2'>
-      <h2> End year: <label id='active-end-year'> <input id='input-end' type="text" name="textEndYear" value="1892"> </label></h2>
+      <h2> End year: <label id='active-end-year'> <input id='input-end' type="text" name="textEndYear" value="1892" onKeyPress="checkEnter(event)"> </label></h2>
       <input id='end-slider' class='row' type='range' min='1878' max='1982' step='1' value='1892' />
     </div>
     
