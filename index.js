@@ -127,24 +127,31 @@ map.on('load', function() {
     changeEndYear();
   });
 
-
+  var curTypes = [0,1,2,3,4,5,6]
+  var checkedAll = true
   // FILTER BUTTONS
   document.getElementById('filters').addEventListener('change', function(e) {
     var type = e.target.value;
     var toggles = ['banq', 'bchn', 'bna', 'lcsoc', 'lcsup', 'lctea', 'nys']
-    var curTypes = []
 
     // update the map filter
+    // if the all archives button is checked
     if (type === 'all') {
       curTypes = [0,1,2,3,4,5,6];
+      checkedAll = true
       for (toggle of toggles){
         document.getElementById(toggle).checked = false
       }
+    // if any one of the other boxes is checked
     } else {
-      if (e.target.checked){
-        curTypes.concat(toggles.indexOf(type));
-      }
-      else{
+      // if one of the boxes is checked and the all button was previously checked
+      if (e.target.checked && checkedAll) {
+        // set curTypes to only be the value that was checked
+        curTypes = [toggles.indexOf(type)];
+        checkedAll = false
+      } else if (e.target.checked && !checkedAll) {
+        curTypes.push(toggles.indexOf(type))
+      } else {
         if (curTypes.length) == 1{
           document.getElementById('all').checked = true
           curTypes = [0,1,2,3,4,5,6];
