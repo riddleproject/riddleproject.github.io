@@ -59,55 +59,53 @@ map.on('load', function() {
       endYearFilter = ['<=', ['number', ['get', 'Year']], startyear]
       document.getElementById('end-slider').valueAsNumber = startyear;
       document.getElementById('input-end').value = startyear;
-      endyear = startyear+1
+      endyear = startyear+1;
 
-    }
+    };
 
     map.setFilter('places', ['all', startYearFilter, endYearFilter, typeFilter]);
     // update text in the UI
     document.getElementById('input-start').value = startyear;
-  }
+  };
 
   function changeEndYear(){
     // update the map
-    endYearFilter = ['<=', ['number', ['get', 'Year']], endyear]
+    endYearFilter = ['<=', ['number', ['get', 'Year']], endyear];
 
     if (endyear <= startyear){
       startYearFilter = ['>=', ['number', ['get', 'Year']], endyear];
       document.getElementById('start-slider').valueAsNumber = endyear;
       document.getElementById('input-start').value = endyear;
-      startyear = endyear-1
-
-
-    }
+      startyear = endyear-1;
+    };
 
     map.setFilter('places', ['all', startYearFilter, endYearFilter, typeFilter]);
     // update text in the UI
     document.getElementById('input-end').value = endyear;
-  }
+  };
 
   // update start year when text is entered
   document.getElementById('input-start').addEventListener('input', function(e)) {
-    startyear = parseInt(e.value)
-    changeStartYear()
+    startyear = parseInt(e.value);
+    changeStartYear();
   }
 
   // update end year when text is entered
   document.getElementById('input-end').addEventListener('input', function(e)) {
-    endyear = parseInt(e.value)
-    changeEndYear()
-  }
+    endyear = parseInt(e.value);
+    changeEndYear();
+  };
 
   // update start year filter when the slider is dragged
   document.getElementById('start-slider').addEventListener('input', function(e) {
     startyear = parseInt(e.target.value);
-    changeStartYear()
+    changeStartYear();
   });
 
   // update end year filter when the slider is dragged
   document.getElementById('end-slider').addEventListener('input', function(e) {
     endyear = parseInt(e.target.value);
-    changeEndYear()
+    changeEndYear();
   });
 
 
