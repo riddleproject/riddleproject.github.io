@@ -78,7 +78,7 @@ map.on('load', function() {
         ['number', ['get', 'Type']],
         0, '#747EB3',
         1, '#FF794B',
-        2, '#BFCAFF',
+        2, '#E8B5DE',
         3, '#A5CC85',
         4, '#FFD4A1',
         5, '#58CC70',
@@ -279,7 +279,7 @@ map.on('load', function() {
       for (id of ids) {
         document.getElementById(id).disabled = false;
       }
-      map.setFilter('unclustered-point', ['all',startYearFilter, endYearFilter, typeFilter]);
+      map.setFilter('unclustered-point', ['all', startYearFilter, endYearFilter, typeFilter]);
     }
   });
 
