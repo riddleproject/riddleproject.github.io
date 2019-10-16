@@ -107,48 +107,57 @@ map.on('load', function() {
     endyear = parseInt(e.target.value);
     changeEndYear();
   });
+
+  // global states for the time slider
   var ignoreSlider = false;
   var curTypes = [0,1,2,3,4,5,6];
   var checkedAll = true;
   var toggles = ['banq', 'bchn', 'bna', 'lcsoc', 'lcsup', 'lctea', 'nys'];
+  
   // FILTER BUTTONS
   document.getElementById('filters').addEventListener('change', function(e) {
+    // type indicates the archive which was just checked
     var type = e.target.value;
 
-    // update the map filter
     // if the all archives button is checked
     if (type === 'all') {
       curTypes = [0,1,2,3,4,5,6];
       checkedAll = true
-
+      // uncheck all the other toggles
       for (toggle of toggles){
         document.getElementById(toggle).checked = false
       }
-    // if any one of the other boxes is checked
+    
+    // if one of the boxes is checked and the all button was previously checked
+    } else if (e.target.checked && checkedAll) {
+      // set curTypes to only be the value that was checked
+      curTypes = [toggles.indexOf(type)];
+      // change the state of the show all archives button
+      checkedAll = false
+
+    // if one of the individual archives boxes was already checked
+    } else if (e.target.checked) {
+      // add it to the existing array or archives to show
+      curTypes.push(toggles.indexOf(type))
+    
+    // if an individual archives box is unchecked, and there are multiple individual archives currently checked
+    } else if (curTypes.length > 1){
+      var index = curTypes.indexOf(toggles.indexOf(type))
+      // remove the archive which was unchecked from the array
+      curTypes.splice(index, 1)
+    
+    // if the current archive is the only one which is checked and it is unchecked
     } else {
-      // if one of the boxes is checked and the all button was previously checked
-      if (e.target.checked && checkedAll) {
-        // set curTypes to only be the value that was checked
-        curTypes = [toggles.indexOf(type)];
-        document.getElementById('all').checked = false
-        checkedAll = false
-      // if one of the boxes is checked and another is already checked
-      } else if (e.target.checked && !checkedAll) {
-        curTypes.push(toggles.indexOf(type))
-      // if one of the boxes is unchecked
-      } else {
-        if (curTypes.length > 1) {
-          curTypes.pop(toggles.indexOf(type))
-        } else {
-          document.getElementById('all').checked = true
-          curTypes = [0,1,2,3,4,5,6];
-          checkedAll = true
-        }
-      }
+      // revert to show all filter
+      curTypes = [0,1,2,3,4,5,6];
+      checkedAll = true
     }
+    console.log(curTypes)
+    // assign the proper state to the show all archives checkbox
     document.getElementById('all').disabled = checkedAll
+    document.getElementById('all').checked = checkedAll
     typeFilter = ['match', ['get', 'Type'], curTypes, true, false]
-    console.log(typeFilter)
+    // assign the correct filter depending on whether the time slider should be ignored
     if (ignoreSlider){
       map.setFilter('places', ['all', typeFilter])
     } else{
