@@ -1,24 +1,5 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibmRyZXpuIiwiYSI6ImNqeXg2eDlhZzA0MzczZ28xeDdzNnNqY3kifQ.lxS44L-xGMpt-Wcv0vpHng';
 
-// only accept input to the text boxes if enter is pressed
-function checkEnter(e){ //e is event object passed from function invocation
-  var characterCode; //literal character code will be stored in this variable
-
-  if(e && e.which){ //if which property of event object is supported (NN4)
-    e = e;
-    characterCode = e.which; //character code is contained in NN4's which property
-  } else {
-    e = event;
-    characterCode = e.keyCode; //character code is contained in IE's keyCode property
-  };
-
-  if(characterCode == 13){ //if generated character code is equal to ascii 13 (if enter key)
-    return false;
-  } else {
-    return true;
-  };
-};
-
 // STARTING POINT
 var map = new mapboxgl.Map({
   container: 'map', // container id specified in the HTML
@@ -129,10 +110,10 @@ map.on('load', function() {
 
   var curTypes = [0,1,2,3,4,5,6]
   var checkedAll = true
+  var toggles = ['banq', 'bchn', 'bna', 'lcsoc', 'lcsup', 'lctea', 'nys']
   // FILTER BUTTONS
   document.getElementById('filters').addEventListener('change', function(e) {
     var type = e.target.value;
-    var toggles = ['banq', 'bchn', 'bna', 'lcsoc', 'lcsup', 'lctea', 'nys']
 
     // update the map filter
     // if the all archives button is checked
@@ -166,9 +147,8 @@ map.on('load', function() {
       }
     }
     document.getElementById('all').disabled = checkedAll
-    console.log(curTypes)
     typeFilter = ['match', ['get', 'Type'], curTypes, true, false]
-
+    console.log(typeFilter)
     map.setFilter('places', ['all', startYearFilter, endYearFilter, typeFilter]);
   });
   
