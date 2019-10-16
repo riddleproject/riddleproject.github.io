@@ -49,7 +49,8 @@ map.on('load', function() {
   var endyear = 1892
   // SLIDER
 
-  function changeStartYear(){
+  // method to update all data when the start year is changed
+  function changeYear(){
     // update the map
     startYearFilter = ['>=', ['number', ['get', 'Year']], startyear];
     
@@ -68,11 +69,12 @@ map.on('load', function() {
     document.getElementById('input-start').value = startyear;
   };
 
+  // method to update all data when the endyear is changed
   function changeEndYear(){
     // update the map
     endYearFilter = ['<=', ['number', ['get', 'Year']], endyear];
 
-    if (endyear <= startyear){
+    if (startyear >= endyear){
       startYearFilter = ['>=', ['number', ['get', 'Year']], endyear];
       document.getElementById('start-slider').valueAsNumber = endyear;
       document.getElementById('input-start').value = endyear;
@@ -146,6 +148,8 @@ map.on('load', function() {
       // disable slider
       document.getElementById('start-slider').disabled=true;
       document.getElementById('end-slider').disabled=true;
+      document.getElementById('input-start').disabled = true;
+      document.getElementById('input-end').disabled = true;
       // reset filter
       map.setFilter('places', ['all', typeFilter]);
 
@@ -153,6 +157,8 @@ map.on('load', function() {
       // enable slider
       document.getElementById('start-slider').disabled=false;
       document.getElementById('end-slider').disabled=false;
+      document.getElementById('input-start').disabled = false;
+      document.getElementById('input-end').disabled = false;
 
       map.setFilter('places', ['all', startYearFilter, endYearFilter, typeFilter]);
     }
