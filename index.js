@@ -139,6 +139,8 @@ map.on('load', function() {
     if (type === 'all') {
       curTypes = [0,1,2,3,4,5,6];
       checkedAll = true
+      // disable the all button
+      document.getElementById('all').disabled = true
       for (toggle of toggles){
         document.getElementById(toggle).checked = false
       }
@@ -149,10 +151,15 @@ map.on('load', function() {
         // set curTypes to only be the value that was checked
         curTypes = [toggles.indexOf(type)];
         checkedAll = false
+        // re-enable the all button
+        document.getElementById('all').disabled = false
+
+      // if one of the boxes is checked and another is already checked
       } else if (e.target.checked && !checkedAll) {
         curTypes.push(toggles.indexOf(type))
+      // if one of the boxes is unchecked
       } else {
-        if (curTypes.length) == 1{
+        if (curTypes.length) = 1{
           document.getElementById('all').checked = true
           curTypes = [0,1,2,3,4,5,6];
         } else {
