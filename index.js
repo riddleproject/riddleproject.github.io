@@ -58,7 +58,7 @@ map.on('load', function() {
     // now the two filters should be the same. 
     if (startyear >= endyear){
       endYearFilter = ['<=', ['number', ['get', 'Year']], startyear]
-      document.getElementById('end-slider') = startyear;
+      document.getElementById('end-slider').valueAsNumber = startyear;
       document.getElementById('active-end-year').innerText = startyear;
 
     }
@@ -76,7 +76,7 @@ map.on('load', function() {
 
     if (endyear <= startyear){
       startYearFilter = ['>=', ['number', ['get', 'Year']], endyear];
-      document.getElementById('start-slider') = endyear;
+      document.getElementById('start-slider').valueAsNumber = endyear;
       document.getElementById('active-start-year').innerText = startyear;
 
 
