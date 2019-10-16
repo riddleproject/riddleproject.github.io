@@ -66,7 +66,7 @@ map.on('load', function() {
     id: "cluster-count",
     type: "symbol",
     source: "conundrums",
-    filter: ['all', ["has", "point_count"] startYearFilter, endYearFilter, typeFilter],
+    filter: ['all', ["has", "point_count"], startYearFilter, endYearFilter, typeFilter],
     layout: {
       "text-field": "{point_count_abbreviated}",
       "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
