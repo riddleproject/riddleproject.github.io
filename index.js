@@ -132,13 +132,18 @@ map.on('load', function() {
   document.getElementById('filters').addEventListener('change', function(e) {
     var type = e.target.value;
     var toggles = ['banq', 'bchn', 'bna', 'lcsoc', 'lcsup', 'lctea', 'nys']
+    var curTypes = []
 
     // update the map filter
     if (type === 'all') {
-      typeFilter = ['!=', ['number', ['get', 'Type']], -1];
+      curTypes = [0,1,2,3,4,5,6];
     } else {
-      typeFilter= ['match', ['get', 'Type'], [toggles.indexOf(type)], true, false];
+      if e.target.checked:
+        curTypes.push(toggles.indexOf(type));
+      else:
+        curTypes.pop(toggles.indexOf(type))
     }
+    typeFilter = ['match', ['get', 'Type'], curTypes, true, false]
 
     map.setFilter('places', ['all', startYearFilter, endYearFilter, typeFilter]);
   });
