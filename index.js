@@ -24,6 +24,45 @@ map.on('load', function() {
     clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
   });
 
+  map.addLayer({
+    id: 'places',
+    type: 'circle',
+    source: 'conundrums',
+    paint: {
+      // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
+      // with three steps to implement three types of circles:
+      //   * Blue, 20px circles when point count is less than 100
+      //   * Yellow, 30px circles when point count is between 100 and 750
+      //   * Pink, 40px circles when point count is greater than or equal to 750
+      "circle-color": ["step", ["get", "point_count"], "#51bbd6", 100, "#f1f075", 750, "#f28cb1"],
+      "circle-radius": ["step", ["get", "point_count"], 20, 100, 30, 750, 40]
+      },
+    filter: ['all', startYearFilter, endYearFilter, typeFilter]
+  });
+
+  // inspect a cluster on click
+  map.on('click', 'clusters', function (e) {
+    var features = map.queryRenderedFeatures(e.point, { layers: ['clusters'] });
+    var clusterId = features[0].properties.cluster_id;
+    map.getSource('earthquakes').getClusterExpansionZoom(clusterId, function (err, zoom) {
+      if (err)
+        return;
+     
+      map.easeTo({
+        center: features[0].geometry.coordinates,
+        zoom: zoom
+      });
+    });
+  });
+     
+  map.on('mouseenter', 'clusters', function () {
+    map.getCanvas().style.cursor = 'pointer';
+  });
+  
+  map.on('mouseleave', 'clusters', function () {
+    map.getCanvas().style.cursor = '';
+  });
+
   var startyear = 1892
   var endyear = 1892
   // SLIDER
