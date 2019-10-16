@@ -18,7 +18,6 @@ map.on('load', function() {
   map.addSource("conundrums", {
     type: "geojson",
     data: "data.geojson",
-    filter: ['all', startYearFilter, endYearFilter, typeFilter],
     cluster: true,
     clusterMaxZoom: 14, // Max zoom to cluster points on
     clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
@@ -35,7 +34,7 @@ map.on('load', function() {
       //   * Blue, 20px circles when point count is less than 100
       //   * Yellow, 30px circles when point count is between 100 and 750
       //   * Pink, 40px circles when point count is greater than or equal to 750
-      "circle-color": ["step",["get", "point_count"],"#51bbd6",100,"#f1f075",750,"#f28cb1"],
+      "circle-color": ["step",["get", "point_count"],"#51bbd6",20,"#f1f075",100,"#f28cb1"],
       "circle-radius": ["step",["get", "point_count"],20,100,30,750,40],
     },
   });
