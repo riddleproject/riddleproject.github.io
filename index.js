@@ -59,14 +59,14 @@ map.on('load', function() {
     if (startyear >= endyear){
       endYearFilter = ['<=', ['number', ['get', 'Year']], startyear]
       document.getElementById('end-slider').valueAsNumber = startyear;
-      document.getElementById('active-end-year').innerText = startyear;
+      document.getElementById('textEndYear').value = startyear;
       endyear = startyear+1
 
     }
 
     map.setFilter('places', ['all', startYearFilter, endYearFilter, typeFilter]);
     // update text in the UI
-    document.getElementById('active-start-year').innerText = startyear;
+    document.getElementById('textStartYear').value = startyear;
   });
 
   // update end year filter when the slider is dragged
@@ -78,7 +78,7 @@ map.on('load', function() {
     if (endyear <= startyear){
       startYearFilter = ['>=', ['number', ['get', 'Year']], endyear];
       document.getElementById('start-slider').valueAsNumber = endyear;
-      document.getElementById('active-start-year').innerText = endyear;
+      document.getElementById('textStartYear').value = endyear;
       startyear = endyear-1
 
 
@@ -86,7 +86,7 @@ map.on('load', function() {
 
     map.setFilter('places', ['all', startYearFilter, endYearFilter, typeFilter]);
     // update text in the UI
-    document.getElementById('active-end-year').innerText = endyear;
+    document.getElementById('textEndYear').value = endyear;
   });
 
 
