@@ -87,6 +87,7 @@ map.on('load', function() {
       "circle-radius": 4,
       "circle-stroke-width": 1,
       "circle-stroke-color": "#fff"
+      'circle-opacity': 0
     },
     'filter': ['all', startYearFilter, endYearFilter, typeFilter],
   });
