@@ -137,12 +137,20 @@ map.on('load', function() {
     // update the map filter
     if (type === 'all') {
       curTypes = [0,1,2,3,4,5,6];
+      for (toggle of toggles){
+        document.getElementById(toggle).checked = false
+      }
     } else {
       if (e.target.checked){
-        curTypes.push(toggles.indexOf(type));
+        curTypes.concat(toggles.indexOf(type));
       }
       else{
-        curTypes.pop(toggles.indexOf(type))
+        if (curTypes.length) == 1{
+          document.getElementById('all').checked = true
+          curTypes = [0,1,2,3,4,5,6];
+        } else {
+          curTypes.pop(toggles.indexOf(type))
+        }
       }
     }
     console.log(curTypes)
