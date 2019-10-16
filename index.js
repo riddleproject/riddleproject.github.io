@@ -1,27 +1,5 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibmRyZXpuIiwiYSI6ImNqeXg2eDlhZzA0MzczZ28xeDdzNnNqY3kifQ.lxS44L-xGMpt-Wcv0vpHng';
 
-function checkEnter(e){ //e is event object passed from function invocation
-  console.log(e)
-  var characterCode //literal character code will be stored in this variable
-
-  if(e && e.which){ //if which property of event object is supported (NN4)
-    e = e
-    characterCode = e.which //character code is contained in NN4's which property
-  }
-  else{
-    e = event
-    characterCode = e.keyCode //character code is contained in IE's keyCode property
-  }
-
-  if(characterCode == 13){ //if generated character code is equal to ascii 13 (if enter key)
-    document.forms[0].submit() //submit the form
-    return false
-  }
-    else{
-    return true
-  }
-}
-
 // STARTING POINT
 var map = new mapboxgl.Map({
   container: 'map', // container id specified in the HTML
@@ -48,22 +26,63 @@ map.on('load', function() {
     type: 'circle',
     source: 'conundrums',
     paint: {
-      'circle-color': [
-        'interpolate',
-        ['exponential', 1],
-        ['number', ['get', 'Type']],
-        0, '#747EB3',
-        1, '#FF794B',
-        2, '#BFCAFF',
-        3, '#A5CC85',
-        4, '#FFD4A1',
-        5, '#58CC70',
-        6, '#901499',
-        7, '#2D2240',
-      ],
-      'circle-opacity': 0.8
-    },
+      // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
+      // with three steps to implement three types of circles:
+      //   * Blue, 20px circles when point count is less than 100
+      //   * Yellow, 30px circles when point count is between 100 and 750
+      //   * Pink, 40px circles when point count is greater than or equal to 750
+      "circle-color": ["step", ["get", "point_count"], "#51bbd6", 100, "#f1f075", 750, "#f28cb1"],
+      "circle-radius": ["step", ["get", "point_count"], 20, 100, 30, 750, 40]
+      },
     'filter': ['all', startYearFilter, endYearFilter, typeFilter]
+  });
+
+  map.addLayer({
+    id: "cluster-count",
+    type: "symbol",
+    source: "conundrums",
+    filter: ['all', startYearFilter, endYearFilter, typeFilter]
+    layout: {
+      "text-field": "{point_count_abbreviated}",
+      "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
+      "text-size": 12
+    }
+  });
+   
+  map.addLayer({
+    id: "unclustered-point",
+    type: "circle",
+    source: "conundrums",
+    filter: ['all', startYearFilter, endYearFilter, typeFilter]
+    paint: {
+      "circle-color": "#11b4da",
+      "circle-radius": 4,
+      "circle-stroke-width": 1,
+      "circle-stroke-color": "#fff"
+    }
+  });
+
+  // inspect a cluster on click
+  map.on('click', 'clusters', function (e) {
+    var features = map.queryRenderedFeatures(e.point, { layers: ['clusters'] });
+    var clusterId = features[0].properties.cluster_id;
+    map.getSource('earthquakes').getClusterExpansionZoom(clusterId, function (err, zoom) {
+      if (err)
+        return;
+     
+      map.easeTo({
+        center: features[0].geometry.coordinates,
+        zoom: zoom
+      });
+    });
+  });
+     
+  map.on('mouseenter', 'clusters', function () {
+    map.getCanvas().style.cursor = 'pointer';
+  });
+  
+  map.on('mouseleave', 'clusters', function () {
+    map.getCanvas().style.cursor = '';
   });
 
   var startyear = 1892
