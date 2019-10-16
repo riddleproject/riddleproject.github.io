@@ -107,10 +107,10 @@ map.on('load', function() {
     endyear = parseInt(e.target.value);
     changeEndYear();
   });
-
-  var curTypes = [0,1,2,3,4,5,6]
-  var checkedAll = true
-  var toggles = ['banq', 'bchn', 'bna', 'lcsoc', 'lcsup', 'lctea', 'nys']
+  var ignoreSlider = false;
+  var curTypes = [0,1,2,3,4,5,6];
+  var checkedAll = true;
+  var toggles = ['banq', 'bchn', 'bna', 'lcsoc', 'lcsup', 'lctea', 'nys'];
   // FILTER BUTTONS
   document.getElementById('filters').addEventListener('change', function(e) {
     var type = e.target.value;
@@ -149,13 +149,18 @@ map.on('load', function() {
     document.getElementById('all').disabled = checkedAll
     typeFilter = ['match', ['get', 'Type'], curTypes, true, false]
     console.log(typeFilter)
-    map.setFilter('places', ['all', startYearFilter, endYearFilter, typeFilter]);
+    if ignoreSlider{
+      map.setFilter('places', ['all', typeFilter])
+    } else{
+      map.setFilter('places', ['all', startYearFilter, endYearFilter, typeFilter]);
+    }
   });
   
 
   // SHOW ALL BUTTON
   document.getElementById('checkbox').addEventListener('change', function(e) {
     checked = e.target.checked
+    ignoreSlider = checked
     var ids = ['start-slider', 'end-slider', 'input-start', 'input-end'];
     var id;
     // update the map filter
