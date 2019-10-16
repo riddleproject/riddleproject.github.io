@@ -1,27 +1,5 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibmRyZXpuIiwiYSI6ImNqeXg2eDlhZzA0MzczZ28xeDdzNnNqY3kifQ.lxS44L-xGMpt-Wcv0vpHng';
 
-function checkEnter(e){ //e is event object passed from function invocation
-  console.log(e)
-  var characterCode //literal character code will be stored in this variable
-
-  if(e && e.which){ //if which property of event object is supported (NN4)
-    e = e
-    characterCode = e.which //character code is contained in NN4's which property
-  }
-  else{
-    e = event
-    characterCode = e.keyCode //character code is contained in IE's keyCode property
-  }
-
-  if(characterCode == 13){ //if generated character code is equal to ascii 13 (if enter key)
-    document.forms[0].submit() //submit the form
-    return false
-  }
-    else{
-    return true
-  }
-}
-
 // STARTING POINT
 var map = new mapboxgl.Map({
   container: 'map', // container id specified in the HTML
@@ -50,7 +28,7 @@ map.on('load', function() {
     id: "clusters",
     type: "circle",
     source: "conundrums",
-    filter: ['all', ["has", "point_count"], startYearFilter, endYearFilter, typeFilter],
+    filter: ["has", "point_count"],
     paint: {
       // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
       // with three steps to implement three types of circles:
@@ -66,7 +44,7 @@ map.on('load', function() {
     id: "cluster-count",
     type: "symbol",
     source: "conundrums",
-    filter: ['all', ["has", "point_count"], startYearFilter, endYearFilter, typeFilter],
+    filter: ["has", "point_count"],
     layout: {
       "text-field": "{point_count_abbreviated}",
       "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
@@ -78,13 +56,22 @@ map.on('load', function() {
     id: "unclustered-point",
     type: "circle",
     source: "conundrums",
-    filter: ['all', ["!", ["has", "point_count"]], startYearFilter, endYearFilter, typeFilter],
+    filter: ["!", ["has", "point_count"],
     paint: {
-      "circle-color": "#11b4da",
-      "circle-radius": 4,
-      "circle-stroke-width": 1,
-      "circle-stroke-color": "#fff",
-      'circle-opacity': 0
+      'circle-color': [
+        'interpolate',
+        ['exponential', 1],
+        ['number', ['get', 'Type']],
+        0, '#747EB3',
+        1, '#FF794B',
+        2, '#BFCAFF',
+        3, '#A5CC85',
+        4, '#FFD4A1',
+        5, '#58CC70',
+        6, '#901499',
+        7, '#2D2240',
+      ],
+      'circle-opacity': 0.8
     },
   });
 
