@@ -15,6 +15,7 @@ function checkEnter(e){ //e is event object passed from function invocation
   if(characterCode == 13){ //if generated character code is equal to ascii 13 (if enter key)
     return false;
   } else {
+    console.log(e)
     return true;
   };
 };
@@ -104,16 +105,16 @@ map.on('load', function() {
   };
 
   // update start year when text is entered
-  document.getElementById('input-start').addEventListener('input', function(e) {
-    startyear = parseInt(e.value);
-    changeStartYear();
-  });
+  // document.getElementById('input-start').addEventListener('input', function(e) {
+  //   startyear = parseInt(e.value);
+  //   changeStartYear();
+  // });
 
-  // update end year when text is entered
-  document.getElementById('input-end').addEventListener('input', function(e) {
-    endyear = parseInt(e.value);
-    changeEndYear();
-  });
+  // // update end year when text is entered
+  // document.getElementById('input-end').addEventListener('input', function(e) {
+  //   endyear = parseInt(e.value);
+  //   changeEndYear();
+  // });
 
   // update start year filter when the slider is dragged
   document.getElementById('start-slider').addEventListener('input', function(e) {
