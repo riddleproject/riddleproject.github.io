@@ -145,6 +145,7 @@ map.on('load', function() {
         curTypes.pop(toggles.indexOf(type))
       }
     }
+    console.log(curTypes)
     typeFilter = ['match', ['get', 'Type'], curTypes, true, false]
 
     map.setFilter('places', ['all', startYearFilter, endYearFilter, typeFilter]);
