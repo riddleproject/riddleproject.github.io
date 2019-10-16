@@ -60,7 +60,7 @@ map.on('load', function() {
       endYearFilter = ['<=', ['number', ['get', 'Year']], startyear]
       document.getElementById('end-slider').valueAsNumber = startyear;
       document.getElementById('active-end-year').innerText = startyear;
-      endyear = startyear
+      endyear = startyear+1
 
     }
 
@@ -79,7 +79,7 @@ map.on('load', function() {
       startYearFilter = ['>=', ['number', ['get', 'Year']], endyear];
       document.getElementById('start-slider').valueAsNumber = endyear;
       document.getElementById('active-start-year').innerText = startyear;
-      startyear = endyear
+      startyear = endyear-1
 
 
     }
