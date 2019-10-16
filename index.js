@@ -48,9 +48,8 @@ map.on('load', function() {
   var startyear = 1892
   var endyear = 1892
   // SLIDER
-  // update start year filter when the slider is dragged
-  document.getElementById('start-slider').addEventListener('input', function(e) {
-    startyear = parseInt(e.target.value);
+
+  function changeStartYear(){
     // update the map
     startYearFilter = ['>=', ['number', ['get', 'Year']], startyear];
     
@@ -59,26 +58,24 @@ map.on('load', function() {
     if (startyear >= endyear){
       endYearFilter = ['<=', ['number', ['get', 'Year']], startyear]
       document.getElementById('end-slider').valueAsNumber = startyear;
-      document.getElementById('textEndYear').value = startyear;
+      document.getElementById('input-end').value = startyear;
       endyear = startyear+1
 
     }
 
     map.setFilter('places', ['all', startYearFilter, endYearFilter, typeFilter]);
     // update text in the UI
-    document.getElementById('textStartYear').value = startyear;
-  });
+    document.getElementById('input-start').value = startyear;
+  }
 
-  // update end year filter when the slider is dragged
-  document.getElementById('end-slider').addEventListener('input', function(e) {
-    endyear = parseInt(e.target.value);
+  function changeEndYear(){
     // update the map
     endYearFilter = ['<=', ['number', ['get', 'Year']], endyear]
 
     if (endyear <= startyear){
       startYearFilter = ['>=', ['number', ['get', 'Year']], endyear];
       document.getElementById('start-slider').valueAsNumber = endyear;
-      document.getElementById('textStartYear').value = endyear;
+      document.getElementById('input-start').value = endyear;
       startyear = endyear-1
 
 
@@ -86,7 +83,31 @@ map.on('load', function() {
 
     map.setFilter('places', ['all', startYearFilter, endYearFilter, typeFilter]);
     // update text in the UI
-    document.getElementById('textEndYear').value = endyear;
+    document.getElementById('input-end').value = endyear;
+  }
+
+  // update start year when text is entered
+  document.getElementById('input-start').addEventListener('input', function(e)) {
+    startyear = parseInt(e.value)
+    changeStartYear()
+  }
+
+  // update end year when text is entered
+  document.getElementById('input-end').addEventListener('input', function(e)) {
+    endyear = parseInt(e.value)
+    changeEndYear()
+  }
+
+  // update start year filter when the slider is dragged
+  document.getElementById('start-slider').addEventListener('input', function(e) {
+    startyear = parseInt(e.target.value);
+    changeStartYear()
+  });
+
+  // update end year filter when the slider is dragged
+  document.getElementById('end-slider').addEventListener('input', function(e) {
+    endyear = parseInt(e.target.value);
+    changeEndYear()
   });
 
 
