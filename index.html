@@ -4,7 +4,7 @@
 
 <head>
   <meta charset='utf-8' />
-  <title>Conundrum Events</title>
+  <title>The Riddle Project</title>
   <meta name='robots' content='noindex, nofollow'>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js'></script>
@@ -20,7 +20,7 @@
   <div id='map'></div>
   <nav id='filter-group' class='filter-group'></nav>
   <div id='console'>
-    <h1>Conundrum Events, 1878-1982</h1>
+    <h1>Riddling Events, 1878-1982</h1>
     <p>Click on a point to learn more about the event that occurred there!</p>
     
     <p>The Riddle Project aims to bring together traditional methods from cultural studies and emerging tools from digital humanities in order to study riddling culture from the eighteenth century onward.</p>
@@ -30,12 +30,12 @@
 
     <!-- Slider bar -->
     <div class='session' id='sliderbar'>
-      <h2> Start year: <label id='active-start-year'>1892</label></h2>
+      <h2> Start year: <label id='active-start-year'><input type="text" name="textStartYear" value="1892"></label></h2>
       <input id='start-slider' class='row' type='range' min='1878' max='1982' step='1' value='1892' />
     </div>
     <!-- Slider bar -->
     <div class='session' id='sliderbar2'>
-      <h2> End year: <label id='active-end-year'>1892</label></h2>
+      <h2> End year: <label id='active-end-year'><input type="text" name="textEndYear" value="1892"></label></h2>
       <input id='end-slider' class='row' type='range' min='1878' max='1982' step='1' value='1892' />
     </div>
     
