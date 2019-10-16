@@ -110,7 +110,9 @@ map.on('load', function() {
   document.getElementById('inputstart').onkeydown = function(e) {
     if(e.keyCode == 13){
       var n = parseInt(document.getElementById('inputstart').value)
-      if (n < 1878) {
+      if (isNaN(n)){
+        startyear = startyear
+      } else if (n < 1878) {
         startyear = 1878
       } else if (n > 1982) {
         startyear = 1982
@@ -127,7 +129,10 @@ map.on('load', function() {
   document.getElementById('inputend').onkeydown = function(e) {
     if(e.keyCode == 13){
       var n = parseInt(document.getElementById('inputend').value)
-      if (n < 1878) {
+      
+      if (isNaN(n)){
+        endyear = endyear
+      } else if (n < 1878) {
         endyear = 1878
       } else if (n > 1982) {
         endyear = 1982
