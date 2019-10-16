@@ -37,14 +37,14 @@ map.on('load', function() {
       "circle-color": ["step", ["get", "point_count"], "#51bbd6", 100, "#f1f075", 750, "#f28cb1"],
       "circle-radius": ["step", ["get", "point_count"], 20, 100, 30, 750, 40]
       },
-    'filter': ['all', startYearFilter, endYearFilter, typeFilter]
+    filter: ['all', startYearFilter, endYearFilter, typeFilter]
   });
 
   map.addLayer({
     id: "cluster-count",
     type: "symbol",
     source: "conundrums",
-    filter: ['all', startYearFilter, endYearFilter, typeFilter]
+    filter: ['all', startYearFilter, endYearFilter, typeFilter],
     layout: {
       "text-field": "{point_count_abbreviated}",
       "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
@@ -56,7 +56,7 @@ map.on('load', function() {
     id: "unclustered-point",
     type: "circle",
     source: "conundrums",
-    filter: ['all', startYearFilter, endYearFilter, typeFilter]
+    filter: ['all', startYearFilter, endYearFilter, typeFilter],
     paint: {
       "circle-color": "#11b4da",
       "circle-radius": 4,
