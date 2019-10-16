@@ -55,7 +55,7 @@ map.on('load', function() {
     id: "unclustered-point",
     type: "circle",
     source: "conundrums",
-    filter: ["!", ["has", "point_count"]],
+    filter: ['all', ["!", ["has", "point_count"], startYearFilter, endYearFilter, typeFilter],
     paint: {
       'circle-color': [
         'interpolate',
@@ -74,27 +74,27 @@ map.on('load', function() {
     },
   });
 
-  // inspect a cluster on click
-  map.on('click', 'clusters', function (e) {
-    var features = map.queryRenderedFeatures(e.point, { layers: ['clusters'] });
-    var clusterId = features[0].properties.cluster_id;
-    map.getSource('conundrums').getClusterExpansionZoom(clusterId, function (err, zoom) {
-      if (err)
-        return;
+  // // inspect a cluster on click
+  // map.on('click', 'clusters', function (e) {
+  //   var features = map.queryRenderedFeatures(e.point, { layers: ['clusters'] });
+  //   var clusterId = features[0].properties.cluster_id;
+  //   map.getSource('conundrums').getClusterExpansionZoom(clusterId, function (err, zoom) {
+  //     if (err)
+  //       return;
      
-      map.easeTo({
-        center: features[0].geometry.coordinates,
-        zoom: zoom
-      });
-    });
-  });
+  //     map.easeTo({
+  //       center: features[0].geometry.coordinates,
+  //       zoom: zoom
+  //     });
+  //   });
+  // });
    
-  map.on('mouseenter', 'clusters', function () {
-    map.getCanvas().style.cursor = 'pointer';
-  });
-  map.on('mouseleave', 'clusters', function () {
-    map.getCanvas().style.cursor = '';
-  });
+  // map.on('mouseenter', 'clusters', function () {
+  //   map.getCanvas().style.cursor = 'pointer';
+  // });
+  // map.on('mouseleave', 'clusters', function () {
+  //   map.getCanvas().style.cursor = '';
+  // });
 
   // map.addLayer({
   //   id: 'places',
