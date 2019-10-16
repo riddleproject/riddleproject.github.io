@@ -143,23 +143,22 @@ map.on('load', function() {
   // SHOW ALL BUTTON
   document.getElementById('checkbox').addEventListener('change', function(e) {
     checked = e.target.checked
+    var ids = ['start-slider', 'end-slider', 'input-start', 'input-end'];
+    var id;
     // update the map filter
     if (checked) {
       // disable slider
-      document.getElementById('start-slider').disabled=true;
-      document.getElementById('end-slider').disabled=true;
-      document.getElementById('input-start').disabled = true;
-      document.getElementById('input-end').disabled = true;
+      for (id of ids) {
+        document.getElementById(id).disabled = true;
+      }
       // reset filter
       map.setFilter('places', ['all', typeFilter]);
 
     } else {
       // enable slider
-      document.getElementById('start-slider').disabled=false;
-      document.getElementById('end-slider').disabled=false;
-      document.getElementById('input-start').disabled = false;
-      document.getElementById('input-end').disabled = false;
-
+      for (id of ids) {
+        document.getElementById(id).disabled = false;
+      }
       map.setFilter('places', ['all', startYearFilter, endYearFilter, typeFilter]);
     }
   });
