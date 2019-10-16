@@ -1,5 +1,27 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibmRyZXpuIiwiYSI6ImNqeXg2eDlhZzA0MzczZ28xeDdzNnNqY3kifQ.lxS44L-xGMpt-Wcv0vpHng';
 
+function checkEnter(e){ //e is event object passed from function invocation
+  console.log(e)
+  var characterCode //literal character code will be stored in this variable
+
+  if(e && e.which){ //if which property of event object is supported (NN4)
+    e = e
+    characterCode = e.which //character code is contained in NN4's which property
+  }
+  else{
+    e = event
+    characterCode = e.keyCode //character code is contained in IE's keyCode property
+  }
+
+  if(characterCode == 13){ //if generated character code is equal to ascii 13 (if enter key)
+    document.forms[0].submit() //submit the form
+    return false
+  }
+    else{
+    return true
+  }
+}
+
 // STARTING POINT
 var map = new mapboxgl.Map({
   container: 'map', // container id specified in the HTML
@@ -57,14 +79,14 @@ map.on('load', function() {
     if (startyear >= endyear){
       endYearFilter = ['<=', ['number', ['get', 'Year']], startyear]
       document.getElementById('end-slider').valueAsNumber = startyear;
-      document.getElementById('input-end').value = startyear;
+      document.getElementById('inputend').value = startyear;
       endyear = startyear+1;
 
     };
 
     map.setFilter('places', ['all', startYearFilter, endYearFilter, typeFilter]);
     // update text in the UI
-    document.getElementById('input-start').value = startyear;
+    document.getElementById('inputstart').value = startyear;
   };
 
   // method to update all data when the endyear is changed
@@ -75,26 +97,48 @@ map.on('load', function() {
     if (startyear >= endyear){
       startYearFilter = ['>=', ['number', ['get', 'Year']], endyear];
       document.getElementById('start-slider').valueAsNumber = endyear;
-      document.getElementById('input-start').value = endyear;
+      document.getElementById('inputstart').value = endyear;
       startyear = endyear-1;
     };
 
     map.setFilter('places', ['all', startYearFilter, endYearFilter, typeFilter]);
     // update text in the UI
-    document.getElementById('input-end').value = endyear;
+    document.getElementById('inputend').value = endyear;
   };
 
   // update start year when text is entered
-  // document.getElementById('input-start').addEventListener('input', function(e) {
-  //   startyear = parseInt(e.value);
-  //   changeStartYear();
-  // });
+  document.getElementById('inputstart').onkeydown = function(e) {
+    if(e.keyCode == 13){
+      var n = parseInt(document.getElementById('inputstart').value)
+      if (n < 1878) {
+        startyear = 1878
+      } else if (n > 1982) {
+        startyear = 1982
+      } else{
+        startyear = n
+      }
+      changeStartYear();
+      document.getElementById('start-slider').valueAsNumber = startyear;
+      document.getElementById('inputstart').value = startyear;
+    }
+  };
 
-  // // update end year when text is entered
-  // document.getElementById('input-end').addEventListener('input', function(e) {
-  //   endyear = parseInt(e.value);
-  //   changeEndYear();
-  // });
+  // update end year when text is entered
+  document.getElementById('inputend').onkeydown = function(e) {
+    if(e.keyCode == 13){
+      var n = parseInt(document.getElementById('inputend').value)
+      if (n < 1878) {
+        endyear = 1878
+      } else if (n > 1982) {
+        endyear = 1982
+      } else{
+        endyear = n
+      }
+      changeEndYear();
+      document.getElementById('end-slider').valueAsNumber = endyear
+      document.getElementById('inputend').value = endyear;
+    }
+  };
 
   // update start year filter when the slider is dragged
   document.getElementById('start-slider').addEventListener('input', function(e) {
@@ -152,7 +196,6 @@ map.on('load', function() {
       curTypes = [0,1,2,3,4,5,6];
       checkedAll = true
     }
-    console.log(curTypes)
     // assign the proper state to the show all archives checkbox
     document.getElementById('all').disabled = checkedAll
     document.getElementById('all').checked = checkedAll
@@ -170,7 +213,7 @@ map.on('load', function() {
   document.getElementById('checkbox').addEventListener('change', function(e) {
     checked = e.target.checked
     ignoreSlider = checked
-    var ids = ['start-slider', 'end-slider', 'input-start', 'input-end'];
+    var ids = ['start-slider', 'end-slider', 'inputstart', 'inputend'];
     var id;
     // update the map filter
     if (checked) {
