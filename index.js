@@ -50,7 +50,7 @@ map.on('load', function() {
   // SLIDER
 
   // method to update all data when the start year is changed
-  function changeYear(){
+  function changeStartYear(){
     // update the map
     startYearFilter = ['>=', ['number', ['get', 'Year']], startyear];
     
