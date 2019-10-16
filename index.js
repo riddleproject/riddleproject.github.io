@@ -49,7 +49,7 @@ map.on('load', function() {
   map.addLayer({
     id: "clusters",
     type: "circle",
-    source: "earthquakes",
+    source: "conundrums",
     filter: ["has", "point_count"],
     paint: {
       // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
@@ -65,7 +65,7 @@ map.on('load', function() {
   map.addLayer({
     id: "cluster-count",
     type: "symbol",
-    source: "earthquakes",
+    source: "conundrums",
     filter: ["has", "point_count"],
     layout: {
       "text-field": "{point_count_abbreviated}",
@@ -77,7 +77,7 @@ map.on('load', function() {
   map.addLayer({
     id: "unclustered-point",
     type: "circle",
-    source: "earthquakes",
+    source: "conundrums",
     filter: ["!", ["has", "point_count"]],
     paint: {
       "circle-color": "#11b4da",
@@ -91,7 +91,7 @@ map.on('load', function() {
   map.on('click', 'clusters', function (e) {
     var features = map.queryRenderedFeatures(e.point, { layers: ['clusters'] });
     var clusterId = features[0].properties.cluster_id;
-    map.getSource('earthquakes').getClusterExpansionZoom(clusterId, function (err, zoom) {
+    map.getSource('conundrums').getClusterExpansionZoom(clusterId, function (err, zoom) {
       if (err)
         return;
      
