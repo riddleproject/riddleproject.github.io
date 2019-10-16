@@ -47,29 +47,6 @@ map.on('load', function() {
   });
 
   map.addLayer({
-    id: 'places',
-    type: 'circle',
-    source: 'conundrums',
-    paint: {
-      'circle-color': [
-        'interpolate',
-        ['exponential', 1],
-        ['number', ['get', 'Type']],
-        0, '#747EB3',
-        1, '#FF794B',
-        2, '#BFCAFF',
-        3, '#A5CC85',
-        4, '#FFD4A1',
-        5, '#58CC70',
-        6, '#901499',
-        7, '#2D2240',
-      ],
-      'circle-opacity': 0.8
-    },
-    'filter': ['all', startYearFilter, endYearFilter, typeFilter]
-  });
-
-  map.addLayer({
     id: "clusters",
     type: "circle",
     source: "conundrums",
@@ -130,6 +107,29 @@ map.on('load', function() {
   });
   map.on('mouseleave', 'clusters', function () {
     map.getCanvas().style.cursor = '';
+  });
+
+  map.addLayer({
+    id: 'places',
+    type: 'circle',
+    source: 'conundrums',
+    paint: {
+      'circle-color': [
+        'interpolate',
+        ['exponential', 1],
+        ['number', ['get', 'Type']],
+        0, '#747EB3',
+        1, '#FF794B',
+        2, '#BFCAFF',
+        3, '#A5CC85',
+        4, '#FFD4A1',
+        5, '#58CC70',
+        6, '#901499',
+        7, '#2D2240',
+      ],
+      'circle-opacity': 0.8
+    },
+    'filter': ['all', startYearFilter, endYearFilter, typeFilter]
   });
 
   var startyear = 1892
