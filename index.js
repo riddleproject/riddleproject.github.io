@@ -88,7 +88,7 @@ map.on('load', function() {
   document.getElementById('input-start').addEventListener('input', function(e)) {
     startyear = parseInt(e.value);
     changeStartYear();
-  }
+  };
 
   // update end year when text is entered
   document.getElementById('input-end').addEventListener('input', function(e)) {
