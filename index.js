@@ -167,8 +167,8 @@ map.on('load', function() {
   
 
   // SHOW ALL BUTTON
-  document.getElementById('checkbox').addEventListener('change', function(e) {
-    checked = e.target.checked
+  document.getElementById('disableSlider').addEventListener('change', function(e) {
+    checked = e.checked
     ignoreSlider = checked
     var ids = ['start-slider', 'end-slider', 'input-start', 'input-end'];
     var id;
