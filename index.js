@@ -15,7 +15,6 @@ function checkEnter(e){ //e is event object passed from function invocation
   if(characterCode == 13){ //if generated character code is equal to ascii 13 (if enter key)
     return false;
   } else {
-    console.log(e)
     return true;
   };
 };
@@ -132,28 +131,15 @@ map.on('load', function() {
   // FILTER BUTTONS
   document.getElementById('filters').addEventListener('change', function(e) {
     var type = e.target.value;
+    var toggles = ['banq', 'bchn', 'bna', 'lcsoc', 'lcsup', 'lctea', 'nys']
+
     // update the map filter
     if (type === 'all') {
       typeFilter = ['!=', ['number', ['get', 'Type']], -1];
-    } else if (type === 'banq') {
-      typeFilter= ['match', ['get', 'Type'], [0], true, false];
-    } else if (type === 'bchn') {
-      typeFilter = ['match', ['get', 'Type'], [1], true, false];
-    } else if (type === 'bna') {
-      typeFilter = ['match', ['get', 'Type'], [2], true, false];
-    } else if (type === 'lcsoc') {
-      typeFilter = ['match', ['get', 'Type'], [3], true, false];
-    } else if (type === 'lcsup') {
-      typeFilter = ['match', ['get', 'Type'], [4], true, false];
-    } else if (type === 'lctea') {
-      typeFilter = ['match', ['get', 'Type'], [5], true, false];
-    } else if (type === 'nys') {
-      typeFilter = ['match', ['get', 'Type'], [6], true, false];
-    } else if (type === 'ca') {
-      typeFilter = ['match', ['get', 'Type'], [3,4,5], true, false];
     } else {
-      console.log('error');
+      typeFilter= ['match', ['get', 'Type'], [toggles.indexOf(type)], true, false];
     }
+
     map.setFilter('places', ['all', startYearFilter, endYearFilter, typeFilter]);
   });
   
