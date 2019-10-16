@@ -13,12 +13,12 @@ map.on('load', function() {
   // Initialize filters
   var startYearFilter = ['>=', ['number', ['get', 'Year']], 1892];
   var endYearFilter = ['<=', ['number', ['get', 'Year']], 1892];
-
   var typeFilter = ['!=', ['number', ['get', 'Type']], -1];
 
   map.addSource("conundrums", {
     type: "geojson",
     data: "data.geojson",
+    filter: ['all', startYearFilter, endYearFilter, typeFilter]
     cluster: true,
     clusterMaxZoom: 14, // Max zoom to cluster points on
     clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
@@ -56,7 +56,7 @@ map.on('load', function() {
     id: "unclustered-point",
     type: "circle",
     source: "conundrums",
-    filter: ['all', ["!", ["has", "point_count"]], startYearFilter, endYearFilter, typeFilter],
+    filter: ["!", ["has", "point_count"]],
     paint: {
       'circle-color': [
         'interpolate',
@@ -138,7 +138,7 @@ map.on('load', function() {
 
     };
 
-    map.setFilter('unclustered-point', ['all', ["!", ["has", "point_count"]], startYearFilter, endYearFilter, typeFilter]);
+    map.setFilter('conundrums', ['all', startYearFilter, endYearFilter, typeFilter]);
     // update text in the UI
     document.getElementById('inputstart').value = startyear;
   };
@@ -155,7 +155,7 @@ map.on('load', function() {
       startyear = endyear-1;
     };
 
-    map.setFilter('unclustered-point', ['all', ["!", ["has", "point_count"]], startYearFilter, endYearFilter, typeFilter]);
+    map.setFilter('conundrums', ['all', startYearFilter, endYearFilter, typeFilter]);
     // update text in the UI
     document.getElementById('inputend').value = endyear;
   };
@@ -261,9 +261,9 @@ map.on('load', function() {
     typeFilter = ['match', ['get', 'Type'], curTypes, true, false]
     // assign the correct filter depending on whether the time slider should be ignored
     if (ignoreSlider){
-      map.setFilter('unclustered-point', ['all', ["!", ["has", "point_count"]], typeFilter])
+      map.setFilter('conundrums', ['all', typeFilter])
     } else{
-      map.setFilter('unclustered-point', ['all', ["!", ["has", "point_count"]], startYearFilter, endYearFilter, typeFilter]);
+      map.setFilter('conundrums', ['all', startYearFilter, endYearFilter, typeFilter]);
     }
   });
   
@@ -281,14 +281,14 @@ map.on('load', function() {
         document.getElementById(id).disabled = true;
       }
       // reset filter
-      map.setFilter('unclustered-point', ['all', ["!", ["has", "point_count"]], typeFilter]);
+      map.setFilter('conundrums', ['all', typeFilter]);
 
     } else {
       // enable slider
       for (id of ids) {
         document.getElementById(id).disabled = false;
       }
-      map.setFilter('unclustered-point', ['all', ["!", ["has", "point_count"]], startYearFilter, endYearFilter, typeFilter]);
+      map.setFilter('conundrums', [startYearFilter, endYearFilter, typeFilter]);
     }
   });
 
