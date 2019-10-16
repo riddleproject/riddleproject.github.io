@@ -11,7 +11,7 @@ function hideFilters(){
     y.innerHTML = 'Show key';
   }
 }
-  
+
 // STARTING POINT
 var map = new mapboxgl.Map({
   container: 'map', // container id specified in the HTML
@@ -279,7 +279,7 @@ map.on('load', function() {
       for (id of ids) {
         document.getElementById(id).disabled = false;
       }
-      map.setFilter('unclustered-point', [startYearFilter, endYearFilter, typeFilter]);
+      map.setFilter('unclustered-point', ['all',startYearFilter, endYearFilter, typeFilter]);
     }
   });
 
