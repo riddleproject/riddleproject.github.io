@@ -151,8 +151,9 @@ map.on('load', function() {
   };
 
   // update start year when text is entered
+  
   document.getElementById('inputstart').onkeydown = function(e) {
-    if(e.keyCode == 13){
+    if (e.keyCode == 13 || e.keyCode==9){
       var n = parseInt(document.getElementById('inputstart').value)
       if (isNaN(n)){
         startyear = startyear
@@ -171,7 +172,7 @@ map.on('load', function() {
 
   // update end year when text is entered
   document.getElementById('inputend').onkeydown = function(e) {
-    if(e.keyCode == 13){
+    if (e.keyCode == 13 || e.keyCode==9) {
       var n = parseInt(document.getElementById('inputend').value)
       
       if (isNaN(n)){
