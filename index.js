@@ -138,10 +138,12 @@ map.on('load', function() {
     if (type === 'all') {
       curTypes = [0,1,2,3,4,5,6];
     } else {
-      if (e.target.checked):
+      if (e.target.checked){
         curTypes.push(toggles.indexOf(type));
-      else:
+      }
+      else{
         curTypes.pop(toggles.indexOf(type))
+      }
     }
     typeFilter = ['match', ['get', 'Type'], curTypes, true, false]
 
