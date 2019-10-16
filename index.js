@@ -149,7 +149,7 @@ map.on('load', function() {
     document.getElementById('all').disabled = checkedAll
     typeFilter = ['match', ['get', 'Type'], curTypes, true, false]
     console.log(typeFilter)
-    if ignoreSlider{
+    if (ignoreSlider){
       map.setFilter('places', ['all', typeFilter])
     } else{
       map.setFilter('places', ['all', startYearFilter, endYearFilter, typeFilter]);
