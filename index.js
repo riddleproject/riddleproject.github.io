@@ -56,7 +56,7 @@ map.on('load', function() {
     id: "unclustered-point",
     type: "circle",
     source: "conundrums",
-    filter: ["!", ["has", "point_count"],
+    filter: ["!", ["has", "point_count"]],
     paint: {
       'circle-color': [
         'interpolate',
