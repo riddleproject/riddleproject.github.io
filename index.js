@@ -60,6 +60,7 @@ map.on('load', function() {
       "circle-color": ["step",["get", "point_count"],"#51bbd6",100,"#f1f075",750,"#f28cb1"],
       "circle-radius": ["step",["get", "point_count"],20,100,30,750,40]
     }
+    'filter': ['all', startYearFilter, endYearFilter, typeFilter],
   });
 
   map.addLayer({
@@ -72,6 +73,8 @@ map.on('load', function() {
       "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
       "text-size": 12
     }
+    'filter': ['all', startYearFilter, endYearFilter, typeFilter],
+
   });
 
   map.addLayer({
@@ -85,6 +88,7 @@ map.on('load', function() {
       "circle-stroke-width": 1,
       "circle-stroke-color": "#fff"
     }
+    'filter': ['all', startYearFilter, endYearFilter, typeFilter],
   });
 
   // inspect a cluster on click
