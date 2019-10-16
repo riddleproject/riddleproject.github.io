@@ -18,38 +18,38 @@ map.on('load', function() {
   map.addSource("conundrums", {
     type: "geojson",
     data: "data.geojson",
-    cluster: true,
-    clusterMaxZoom: 14, // Max zoom to cluster points on
-    clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
+    // cluster: true,
+    // clusterMaxZoom: 14, // Max zoom to cluster points on
+    // clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
   });
 
-  map.addLayer({
-    id: "clusters",
-    type: "circle",
-    source: "conundrums",
-    filter: ["has", "point_count"],
-    paint: {
-      // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
-      // with three steps to implement three types of circles:
-      //   * Blue, 20px circles when point count is less than 100
-      //   * Yellow, 30px circles when point count is between 100 and 750
-      //   * Pink, 40px circles when point count is greater than or equal to 750
-      "circle-color": ["step",["get", "point_count"],"#51bbd6",20,"#f1f075",100,"#f28cb1"],
-      "circle-radius": ["step",["get", "point_count"],20,100,30,750,40],
-    },
-  });
+  // map.addLayer({
+  //   id: "clusters",
+  //   type: "circle",
+  //   source: "conundrums",
+  //   filter: ["has", "point_count"],
+  //   paint: {
+  //     // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
+  //     // with three steps to implement three types of circles:
+  //     //   * Blue, 20px circles when point count is less than 100
+  //     //   * Yellow, 30px circles when point count is between 100 and 750
+  //     //   * Pink, 40px circles when point count is greater than or equal to 750
+  //     "circle-color": ["step",["get", "point_count"],"#51bbd6",20,"#f1f075",100,"#f28cb1"],
+  //     "circle-radius": ["step",["get", "point_count"],20,100,30,750,40],
+  //   },
+  // });
 
-  map.addLayer({
-    id: "cluster-count",
-    type: "symbol",
-    source: "conundrums",
-    filter: ["has", "point_count"],
-    layout: {
-      "text-field": "{point_count_abbreviated}",
-      "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
-      "text-size": 12
-    },
-  });
+  // map.addLayer({
+  //   id: "cluster-count",
+  //   type: "symbol",
+  //   source: "conundrums",
+  //   filter: ["has", "point_count"],
+  //   layout: {
+  //     "text-field": "{point_count_abbreviated}",
+  //     "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
+  //     "text-size": 12
+  //   },
+  // });
 
   map.addLayer({
     id: "unclustered-point",
@@ -137,7 +137,7 @@ map.on('load', function() {
 
     };
 
-    map.setFilter('conundrums', ['all', startYearFilter, endYearFilter, typeFilter]);
+    map.setFilter('unclustered-point', ['all', startYearFilter, endYearFilter, typeFilter]);
     // update text in the UI
     document.getElementById('inputstart').value = startyear;
   };
@@ -154,7 +154,7 @@ map.on('load', function() {
       startyear = endyear-1;
     };
 
-    map.setFilter('conundrums', ['all', startYearFilter, endYearFilter, typeFilter]);
+    map.setFilter('unclustered-point', ['all', startYearFilter, endYearFilter, typeFilter]);
     // update text in the UI
     document.getElementById('inputend').value = endyear;
   };
@@ -260,9 +260,9 @@ map.on('load', function() {
     typeFilter = ['match', ['get', 'Type'], curTypes, true, false]
     // assign the correct filter depending on whether the time slider should be ignored
     if (ignoreSlider){
-      map.setFilter('conundrums', ['all', typeFilter])
+      map.setFilter('unclustered-point', ['all', typeFilter])
     } else{
-      map.setFilter('conundrums', ['all', startYearFilter, endYearFilter, typeFilter]);
+      map.setFilter('unclustered-point', ['all', startYearFilter, endYearFilter, typeFilter]);
     }
   });
   
@@ -280,14 +280,14 @@ map.on('load', function() {
         document.getElementById(id).disabled = true;
       }
       // reset filter
-      map.setFilter('conundrums', ['all', typeFilter]);
+      map.setFilter('unclustered-point', ['all', typeFilter]);
 
     } else {
       // enable slider
       for (id of ids) {
         document.getElementById(id).disabled = false;
       }
-      map.setFilter('conundrums', [startYearFilter, endYearFilter, typeFilter]);
+      map.setFilter('unclustered-point', [startYearFilter, endYearFilter, typeFilter]);
     }
   });
 
