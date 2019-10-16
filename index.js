@@ -28,7 +28,7 @@ map.on('load', function() {
     id: "clusters",
     type: "circle",
     source: "conundrums",
-    filter: ["has", "point_count"],
+    filter: ['all', ["has", "point_count"], startYearFilter, endYearFilter, typeFilter],
     paint: {
       // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
       // with three steps to implement three types of circles:
@@ -314,12 +314,12 @@ map.on('load', function() {
   });
    
   // Change the cursor to a pointer when the mouse is over the places layer.
-  map.on('mouseenter', 'places', function () {
+  map.on('mouseenter', 'unclustered-point', function () {
     map.getCanvas().style.cursor = 'pointer';
   });
    
   // Change it back to a pointer when it leaves.
-  map.on('mouseleave', 'places', function () {
+  map.on('mouseleave', 'unclustered-point', function () {
     map.getCanvas().style.cursor = '';
   });
 
