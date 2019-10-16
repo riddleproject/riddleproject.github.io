@@ -58,9 +58,9 @@ map.on('load', function() {
       //   * Yellow, 30px circles when point count is between 100 and 750
       //   * Pink, 40px circles when point count is greater than or equal to 750
       "circle-color": ["step",["get", "point_count"],"#51bbd6",100,"#f1f075",750,"#f28cb1"],
-      "circle-radius": ["step",["get", "point_count"],20,100,30,750,40]
+      "circle-radius": ["step",["get", "point_count"],20,100,30,750,40],
     }
-    'filter': ['all', startYearFilter, endYearFilter, typeFilter],
+    'filter': ['all', startYearFilter, endYearFilter, typeFilter]
   });
 
   map.addLayer({
@@ -72,7 +72,7 @@ map.on('load', function() {
       "text-field": "{point_count_abbreviated}",
       "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
       "text-size": 12
-    }
+    },
     'filter': ['all', startYearFilter, endYearFilter, typeFilter],
 
   });
@@ -87,7 +87,7 @@ map.on('load', function() {
       "circle-radius": 4,
       "circle-stroke-width": 1,
       "circle-stroke-color": "#fff"
-    }
+    },
     'filter': ['all', startYearFilter, endYearFilter, typeFilter],
   });
 
