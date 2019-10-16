@@ -49,16 +49,7 @@
 
     <!-- Disable filtering-->
     <h2> Filter by archive
-    <button style='float:right' type="button" onclick="hideFilters()">Hide key</button></h2>
-    <script> 
-      function hideFilters(){
-        var x = document.getElementById("filters");
-        if (x.style.display === "none") {
-          x.style.display = "block";
-        } else {
-          x.style.display = "none";
-        }
-    }</script>
+    <button id = 'keyHider' style='float:right' type="button" onclick="hideFilters()">Hide key</button></h2>
 
     <div class='session'>
       <div class='row' id='filters'>

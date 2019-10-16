@@ -1,5 +1,17 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibmRyZXpuIiwiYSI6ImNqeXg2eDlhZzA0MzczZ28xeDdzNnNqY3kifQ.lxS44L-xGMpt-Wcv0vpHng';
 
+function hideFilters(){
+  var x = document.getElementById("filters");
+  var y = document.getElementById('keyHider')
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    y.innerHTML = 'Hide key';
+  } else {
+    x.style.display = "none";
+    y.innerHTML = 'Show key';
+  }
+}
+  
 // STARTING POINT
 var map = new mapboxgl.Map({
   container: 'map', // container id specified in the HTML
@@ -7,15 +19,6 @@ var map = new mapboxgl.Map({
   center: [-90, 50], // initial map center in [lon, lat]
   zoom: 2.2
 });
-
-function hideFilters(){
-  var x = document.getElementById("filters");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
 
 var nav = new mapboxgl.NavigationControl();
 map.addControl(nav, 'bottom-right');
