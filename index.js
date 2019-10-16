@@ -64,7 +64,7 @@ map.on('load', function() {
     if(characterCode == 13){ //if generated character code is equal to ascii 13 (if enter key)
       document.forms[0].submit(); //submit the form
       return false;
-    }
+    };
     else{
       return true;
     };
