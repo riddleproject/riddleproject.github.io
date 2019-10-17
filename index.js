@@ -24,7 +24,7 @@ function changeClustering(){
 	var z = document.getElementById('toggleClusters');
 
 	if (x.style.display === "none") {
-		if (y.style.display === 'none'){
+		if (y.innerHTML === 'Show console (disables clusters)'){
 			x.style.display = "block";
 			y.style.display = 'block';
 			z.innerHTML = 'Enable clustering';
