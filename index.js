@@ -12,21 +12,23 @@ function hideFilters(){
     y.innerHTML = 'Show commentary';
   }
 }
-
+clustered = false
 function changeClustering(){
   var x = document.getElementById("console");
   var y = document.getElementById('keyHider');
   var z = document.getElementById('toggleClusters');
 
-  if (x.style.display === "none") {
+  if (clustered=true) {
     x.style.display = "block";
     y.style.display = 'block';
     z.innerHTML = 'Enable clustering';
+    clustered=false
     unclusterPoints()
   } else {
     x.style.display = "none";
     y.style.display = 'none';
     z.innerHTML = 'Disable clustering'
+    clustered=true
     clusterPoints()
   }
 }

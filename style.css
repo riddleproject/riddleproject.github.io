@@ -42,6 +42,10 @@ a {
   padding:10px;
 }
 
+#clusterbutton {
+  padding:10px;
+}
+
 #items{
   position: absolute;
   width: 370px;
