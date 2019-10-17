@@ -82,7 +82,7 @@ function clusterPoints(){
 	 
 	function updateMarkers() {
 		var newMarkers = {};
-		var features = map.querySourceFeatures('earthquakes');
+		var features = map.querySourceFeatures('clustered-conundrums');
 	 
 		// for every cluster on the screen, create an HTML marker for it (if we didn't yet),
 		// and add it to the map if it's not there already
@@ -114,7 +114,7 @@ function clusterPoints(){
 	 
 	// after the GeoJSON data is loaded, update markers on the screen and do so on every map move/moveend
 	map.on('data', function (e) {
-		if (e.sourceId !== 'earthquakes' || !e.isSourceLoaded) return;
+		if (e.sourceId !== 'clustered-conundrums' || !e.isSourceLoaded) return;
 	 
 		map.on('move', updateMarkers);
 		map.on('moveend', updateMarkers);
