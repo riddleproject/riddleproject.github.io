@@ -17,6 +17,7 @@ function hideFilters(){
 		y.innerHTML = 'Show commentary';
 	}
 }
+
 function changeClustering(){
 	var x = document.getElementById("console");
 	var y = document.getElementById('keyHider');
@@ -36,6 +37,7 @@ function changeClustering(){
 	y.innerHTML = 'Show commentary (disables clusters)';
 	z.innerHTML = 'Disable clustering'
 	clusterPoints()
+	return true
 }
 
 // STARTING POINT
