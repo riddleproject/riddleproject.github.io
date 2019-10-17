@@ -19,7 +19,7 @@ function changeClustering(){
   var z = document.getElementById('toggleClusters');
 
   if (x.style.display === "none") {
-    if (y.style.display) === 'none'{
+    if (y.style.display === 'none'){
       x.style.display = "block";
       y.style.display = 'block';
       z.innerHTML = 'Enable clustering';
