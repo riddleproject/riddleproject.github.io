@@ -6,6 +6,7 @@ function hideFilters(){
 
 	if (x.style.display === "none") {
 		x.style.display = "block";
+		unclusterPoints()
 		y.innerHTML = 'Hide commentary';
 	} else {
 		x.style.display = "none";
@@ -32,7 +33,7 @@ function changeClustering(){
 		}
 	} else {
 		x.style.display = "none";
-		y.style.display = 'none';
+		y.innerHTML = 'Show console (disables clusters)';
 		z.innerHTML = 'Disable clustering'
 		clusterPoints()
 	}
