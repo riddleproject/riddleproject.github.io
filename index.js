@@ -26,7 +26,7 @@ function changeClustering(){
       unclusterPoints()
     }
     else{
-      y.style.display === 'none';
+      y.style.display = 'none';
       z.innerHTML = 'Disable clustering'
       clusterPoints()
     }
