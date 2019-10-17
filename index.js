@@ -19,10 +19,17 @@ function changeClustering(){
   var z = document.getElementById('toggleClusters');
 
   if (x.style.display === "none") {
-    x.style.display = "block";
-    y.style.display = 'block';
-    z.innerHTML = 'Enable clustering';
-    unclusterPoints()
+    if y.style.display === 'none'{
+      x.style.display = "block";
+      y.style.display = 'block';
+      z.innerHTML = 'Enable clustering';
+      unclusterPoints()
+    }
+    else{
+      y.style.display === 'none';
+      z.innerHTML = 'Disable clustering'
+      clusterPoints()
+    }
   } else {
     x.style.display = "none";
     y.style.display = 'none';
