@@ -21,6 +21,63 @@ var map = new mapboxgl.Map({
   zoom: 2.2
 });
 
+function clusterPoints(){
+  map.addLayer({
+    id: "clusters",
+    type: "circle",
+    source: "clustered-conundrums",
+    filter: ["has", "point_count"],
+    paint: {
+      // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
+      // with three steps to implement three types of circles:
+      //   * Blue, 20px circles when point count is less than 100
+      //   * Yellow, 30px circles when point count is between 100 and 750
+      //   * Pink, 40px circles when point count is greater than or equal to 750
+      "circle-color": ["step",["get", "point_count"],"#51bbd6",20,"#f1f075",100,"#f28cb1"],
+      "circle-radius": ["step",["get", "point_count"],20,100,30,750,40],
+    },
+  });
+
+  map.addLayer({
+    id: "cluster-count",
+    type: "symbol",
+    source: "clustered-conundrums",
+    filter: ["has", "point_count"],
+    layout: {
+      "text-field": "{point_count_abbreviated}",
+      "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
+      "text-size": 12
+    },
+  });
+
+  // inspect a cluster on click
+  map.on('click', 'clusters', function (e) {
+    var features = map.queryRenderedFeatures(e.point, { layers: ['clusters'] });
+    var clusterId = features[0].properties.cluster_id;
+    map.getSource('clustered-conundrums').getClusterExpansionZoom(clusterId, function (err, zoom) {
+      if (err)
+        return;
+     
+      map.easeTo({
+        center: features[0].geometry.coordinates,
+        zoom: zoom
+      });
+    });
+  });
+   
+  map.on('mouseenter', 'clusters', function () {
+    map.getCanvas().style.cursor = 'pointer';
+  });
+  map.on('mouseleave', 'clusters', function () {
+    map.getCanvas().style.cursor = '';
+  });
+}
+
+function unclusterPoints(){
+  map.removeLayer('clusters')
+  map.removeLayer('cluster-count')
+}
+
 var nav = new mapboxgl.NavigationControl();
 map.addControl(nav, 'bottom-right');
 
@@ -43,58 +100,6 @@ map.on('load', function() {
     clusterMaxZoom: 14, // Max zoom to cluster points on
     clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
   });
-
-  function clusterPoints(){
-    map.addLayer({
-      id: "clusters",
-      type: "circle",
-      source: "clustered-conundrums",
-      filter: ["has", "point_count"],
-      paint: {
-        // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
-        // with three steps to implement three types of circles:
-        //   * Blue, 20px circles when point count is less than 100
-        //   * Yellow, 30px circles when point count is between 100 and 750
-        //   * Pink, 40px circles when point count is greater than or equal to 750
-        "circle-color": ["step",["get", "point_count"],"#51bbd6",20,"#f1f075",100,"#f28cb1"],
-        "circle-radius": ["step",["get", "point_count"],20,100,30,750,40],
-      },
-    });
-
-    map.addLayer({
-      id: "cluster-count",
-      type: "symbol",
-      source: "clustered-conundrums",
-      filter: ["has", "point_count"],
-      layout: {
-        "text-field": "{point_count_abbreviated}",
-        "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
-        "text-size": 12
-      },
-    });
-
-    // inspect a cluster on click
-    map.on('click', 'clusters', function (e) {
-      var features = map.queryRenderedFeatures(e.point, { layers: ['clusters'] });
-      var clusterId = features[0].properties.cluster_id;
-      map.getSource('clustered-conundrums').getClusterExpansionZoom(clusterId, function (err, zoom) {
-        if (err)
-          return;
-       
-        map.easeTo({
-          center: features[0].geometry.coordinates,
-          zoom: zoom
-        });
-      });
-    });
-     
-    map.on('mouseenter', 'clusters', function () {
-      map.getCanvas().style.cursor = 'pointer';
-    });
-    map.on('mouseleave', 'clusters', function () {
-      map.getCanvas().style.cursor = '';
-    });
-  }
 
   map.addLayer({
     id: "unclustered-point",
