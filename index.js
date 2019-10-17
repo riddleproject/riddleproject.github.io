@@ -7,7 +7,7 @@ function hideFilters(){
 
 	if (x.style.display === "none") {
 		x.style.display = "block";
-		if (y.innerHTML === 'Show console (disables clusters)'){
+		if (y.innerHTML === 'Show commentary (disables clusters)'){
 			document.getElementById('toggleClusters').innerHTML = 'Enable clustering'
 			unclusterPoints()
 		}
@@ -23,20 +23,20 @@ function changeClustering(){
 	var z = document.getElementById('toggleClusters');
 
 	if (x.style.display === "none") {
-		if (y.innerHTML === 'Show console (disables clusters)'){
+		if (y.innerHTML === 'Show commentary (disables clusters)'){
 			x.style.display = "block";
-			y.innerHTML = 'Hide console';
+			y.innerHTML = 'Hide commentary';
 			z.innerHTML = 'Enable clustering';
 			unclusterPoints()
 		}
 		else{
-			y.innerHTML = 'Show console (disables clusters)';
+			y.innerHTML = 'Show commentary (disables clusters)';
 			z.innerHTML = 'Disable clustering'
 			clusterPoints()
 		}
 	} else {
 		x.style.display = "none";
-		y.innerHTML = 'Show console (disables clusters)';
+		y.innerHTML = 'Show commentary (disables clusters)';
 		z.innerHTML = 'Disable clustering'
 		clusterPoints()
 	}
