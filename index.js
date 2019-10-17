@@ -1,12 +1,16 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibmRyZXpuIiwiYSI6ImNqeXg2eDlhZzA0MzczZ28xeDdzNnNqY3kifQ.lxS44L-xGMpt-Wcv0vpHng';
 
+clustered = false
+
 function hideFilters(){
 	var x = document.getElementById("console");
 	var y = document.getElementById('keyHider');
 
 	if (x.style.display === "none") {
 		x.style.display = "block";
-		unclusterPoints()
+		if (clustered){
+			unclusterPoints()
+		}
 		y.innerHTML = 'Hide commentary';
 	} else {
 		x.style.display = "none";
@@ -14,6 +18,7 @@ function hideFilters(){
 	}
 }
 function changeClustering(){
+	clustered = !clustered
 	var x = document.getElementById("console");
 	var y = document.getElementById('keyHider');
 	var z = document.getElementById('toggleClusters');
