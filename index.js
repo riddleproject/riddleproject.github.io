@@ -21,7 +21,12 @@ var map = new mapboxgl.Map({
   zoom: 2.2
 });
 
-function initialCluster(){
+// Initialize filters
+var startYearFilter = ['>=', ['number', ['get', 'Year']], 1892];
+var endYearFilter = ['<=', ['number', ['get', 'Year']], 1892];
+var typeFilter = ['!=', ['number', ['get', 'Type']], -1];
+
+function clusterPoints(){
   map.removeLayer('unclustered-point')
   
   map.addLayer({
@@ -97,18 +102,32 @@ function initialCluster(){
   });
 }
 
-function secondCluster(){
-  map.addLayer('clusters')
-  map.addLayer('cluster-count')
-  map.addLayer('points')
-  map.removeLayer('unclustered-point')
-}
-
 function unclusterPoints(){
   map.removeLayer('clusters')
   map.removeLayer('cluster-count')
   map.removeLayer('points')
-  map.addLayer('unclustered-point')
+  
+  map.addLayer({
+  id: "unclustered-point",
+  type: "circle",
+  source: "conundrums",
+  filter: ['all', startYearFilter, endYearFilter, typeFilter],
+  paint: {
+    'circle-color': [
+      'interpolate',
+      ['exponential', 1],
+      ['number', ['get', 'Type']],
+      0, document.getElementById('banqcolor').style.color,
+      1, document.getElementById('bchncolor').style.color,
+      2, document.getElementById('bnacolor').style.color,
+      3, document.getElementById('lsccolor').style.color,
+      4, document.getElementById('lcsupcolor').style.color,
+      5, document.getElementById('lcteacolor').style.color,
+      6, document.getElementById('nyscolor').style.color,
+      ],
+      'circle-opacity': 0.8
+    },
+  });
 }
 
 var nav = new mapboxgl.NavigationControl();
@@ -116,11 +135,6 @@ map.addControl(nav, 'bottom-right');
 
 // BUILD MAP
 map.on('load', function() {
-  // Initialize filters
-  var startYearFilter = ['>=', ['number', ['get', 'Year']], 1892];
-  var endYearFilter = ['<=', ['number', ['get', 'Year']], 1892];
-  var typeFilter = ['!=', ['number', ['get', 'Type']], -1];
-
   map.addSource("conundrums", {
     type: "geojson",
     data: "data.geojson",
