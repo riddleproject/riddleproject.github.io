@@ -50,7 +50,11 @@ var map = new mapboxgl.Map({
 var startYearFilter = ['>=', ['number', ['get', 'Year']], 1892];
 var endYearFilter = ['<=', ['number', ['get', 'Year']], 1892];
 var typeFilter = ['!=', ['number', ['get', 'Type']], -1];
-
+var colors = [document.getElementById('banqcolor').style.color, document.getElementById('bchncolor').style.color, 
+			  document.getElementById('bnacolor').style.color, document.getElementById('lsccolor').style.color,
+			  document.getElementById('lcsupcolor').style.color, document.getElementById('lcteacolor').style.color,
+			  document.getElementById('nyscolor').style.color,]
+			  
 function clusterPoints(){
 	map.removeLayer('unclustered-point')
 	
