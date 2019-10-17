@@ -2,13 +2,14 @@ mapboxgl.accessToken = 'pk.eyJ1IjoibmRyZXpuIiwiYSI6ImNqeXg2eDlhZzA0MzczZ28xeDdzN
 
 function hideFilters(){
   var x = document.getElementById("filters");
-  var y = document.getElementById('keyHider')
+  var y = document.getElementById('keyHider');
+
   if (x.style.display === "none") {
     x.style.display = "block";
-    y.innerHTML = 'Hide key';
+    y.innerHTML = 'Hide filters';
   } else {
     x.style.display = "none";
-    y.innerHTML = 'Show key';
+    y.innerHTML = 'Show filters';
   }
 }
 
@@ -209,7 +210,7 @@ map.on('load', function() {
   var toggles = ['banq', 'bchn', 'bna', 'lcsoc', 'lcsup', 'lctea', 'nys'];
   
   // FILTER BUTTONS
-  document.getElementById('filters').addEventListener('change', function(e) {
+  document.getElementById('archive-filters').addEventListener('change', function(e) {
     // type indicates the archive which was just checked
     var type = e.target.value;
 
