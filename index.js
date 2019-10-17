@@ -13,6 +13,24 @@ function hideFilters(){
   }
 }
 
+function changeClustering(){
+  var x = document.getElementById("console");
+  var y = document.getElementById('keyHider');
+  var z = document.getElementById('toggleClusters');
+
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    y.style.display = 'block';
+    z.innerHTML = 'Enable clustering';
+    unclusterPoints()
+  } else {
+    x.style.display = "none";
+    y.style.display = 'none';
+    z.innerHTML = 'Disable clustering'
+    clusterPoints()
+  }
+}
+
 // STARTING POINT
 var map = new mapboxgl.Map({
   container: 'map', // container id specified in the HTML
