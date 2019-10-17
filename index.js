@@ -12,7 +12,7 @@ function hideFilters(){
     y.innerHTML = 'Show commentary';
   }
 }
-clustered = false
+hiddenConsole = false
 function changeClustering(){
   var x = document.getElementById("console");
   var y = document.getElementById('keyHider');
@@ -20,14 +20,16 @@ function changeClustering(){
 
   if (x.style.display === "none") {
     if (y.style.display === 'none'){
-      x.style.display = "block";
+      if (hiddenConsole === false){
+        x.style.display = "block";
+      }
       y.style.display = 'block';
       z.innerHTML = 'Enable clustering';
       unclusterPoints()
     }
     else{
+      hiddenConsole = true
       y.style.display = 'none';
-      y.innerHTML = 'Hide commentary'
       z.innerHTML = 'Disable clustering'
       clusterPoints()
     }
