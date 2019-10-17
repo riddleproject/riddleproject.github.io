@@ -8,6 +8,7 @@ function hideFilters(){
 	if (x.style.display === "none") {
 		x.style.display = "block";
 		if (y.innerHTML === 'Show console (disables clusters)'){
+			document.getElementById('toggleClusters').innerHTML = 'Enable clustering'
 			unclusterPoints()
 		}
 		y.innerHTML = 'Hide commentary';
