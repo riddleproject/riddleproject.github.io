@@ -1,6 +1,5 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibmRyZXpuIiwiYSI6ImNqeXg2eDlhZzA0MzczZ28xeDdzNnNqY3kifQ.lxS44L-xGMpt-Wcv0vpHng';
 
-clustered = false
 
 function hideFilters(){
 	var x = document.getElementById("console");
@@ -8,7 +7,7 @@ function hideFilters(){
 
 	if (x.style.display === "none") {
 		x.style.display = "block";
-		if (clustered){
+		if (y.innerHTML === 'Show console (disables clusters)'){
 			unclusterPoints()
 		}
 		y.innerHTML = 'Hide commentary';
@@ -18,7 +17,6 @@ function hideFilters(){
 	}
 }
 function changeClustering(){
-	clustered = !clustered
 	var x = document.getElementById("console");
 	var y = document.getElementById('keyHider');
 	var z = document.getElementById('toggleClusters');
