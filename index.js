@@ -282,7 +282,7 @@ map.on('load', function() {
 		data: "data.geojson",
 		cluster: true,
 		clusterMaxZoom: 14, // Max zoom to cluster points on
-		clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
+		clusterRadius: 50, // Radius of each cluster when clustering points (defaults to 50)
 		clusterProperties: { // keep separate counts for each archive in the cluster
 			"banq": ["+", ["case", banq, 1, 0]],
 			"bchn": ["+", ["case", bchn, 1, 0]],
@@ -291,7 +291,7 @@ map.on('load', function() {
 			"lcs": ["+", ["case", lcs, 1, 0]],
 			"lct": ["+", ["case", lct, 1, 0]],
 			"nys": ["+", ["case", nys, 1, 0]],
-}
+		}
 	});
 
 	map.addLayer({
@@ -315,7 +315,6 @@ map.on('load', function() {
 			'circle-opacity': 0.8
 		},
 	});
-
 
 
 	var startyear = 1892
@@ -521,5 +520,4 @@ map.on('load', function() {
 	map.on('mouseleave', 'unclustered-point', function () {
 		map.getCanvas().style.cursor = '';
 	});
-
 });
