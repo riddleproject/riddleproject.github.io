@@ -122,12 +122,12 @@ function clusterPoints(){
   });
    
   // Change the cursor to a pointer when the mouse is over the places layer.
-  map.on('mouseenter', 'unclustered-point', function () {
+  map.on('mouseenter', 'points', function () {
     map.getCanvas().style.cursor = 'pointer';
   });
    
   // Change it back to a pointer when it leaves.
-  map.on('mouseleave', 'unclustered-point', function () {
+  map.on('mouseleave', 'points', function () {
     map.getCanvas().style.cursor = '';
   });
 }
