@@ -28,7 +28,7 @@ function initialCluster(){
     id: "points",
     type: "circle",
     source: "clustered-conundrums",
-    filter: ["!", ["has", "point_count"],
+    filter: ["!", ["has", "point_count"]],
     paint: {
       'circle-color': [
         'interpolate',
