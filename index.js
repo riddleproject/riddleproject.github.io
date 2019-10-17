@@ -21,7 +21,31 @@ var map = new mapboxgl.Map({
   zoom: 2.2
 });
 
-function clusterPoints(){
+function initialCluster(){
+  map.removeLayer('unclustered-point')
+  
+  map.addLayer({
+    id: "points",
+    type: "circle",
+    source: "clustered-conundrums",
+    filter: ["!", ["has", "point_count"],
+    paint: {
+      'circle-color': [
+        'interpolate',
+        ['exponential', 1],
+        ['number', ['get', 'Type']],
+        0, document.getElementById('banqcolor').style.color,
+        1, document.getElementById('bchncolor').style.color,
+        2, document.getElementById('bnacolor').style.color,
+        3, document.getElementById('lsccolor').style.color,
+        4, document.getElementById('lcsupcolor').style.color,
+        5, document.getElementById('lcteacolor').style.color,
+        6, document.getElementById('nyscolor').style.color,
+      ],
+      'circle-opacity': 0.8
+    },
+  });
+
   map.addLayer({
     id: "clusters",
     type: "circle",
@@ -50,28 +74,6 @@ function clusterPoints(){
     },
   });
 
-  map.addLayer({
-    id: "all-points",
-    type: "circle",
-    source: "conundrums",
-    filter: ['all', ["!", ["has", "point_count"]]],
-    paint: {
-      'circle-color': [
-        'interpolate',
-        ['exponential', 1],
-        ['number', ['get', 'Type']],
-        0, document.getElementById('banqcolor').style.color,
-        1, document.getElementById('bchncolor').style.color,
-        2, document.getElementById('bnacolor').style.color,
-        3, document.getElementById('lsccolor').style.color,
-        4, document.getElementById('lcsupcolor').style.color,
-        5, document.getElementById('lcteacolor').style.color,
-        6, document.getElementById('nyscolor').style.color,
-      ],
-      'circle-opacity': 0.8
-    },
-  });
-
   // inspect a cluster on click
   map.on('click', 'clusters', function (e) {
     var features = map.queryRenderedFeatures(e.point, { layers: ['clusters'] });
@@ -95,10 +97,18 @@ function clusterPoints(){
   });
 }
 
+function secondCluster(){
+  map.addLayer('clusters')
+  map.addLayer('cluster-count')
+  map.addLayer('points')
+  map.removeLayer('unclustered-point')
+}
+
 function unclusterPoints(){
   map.removeLayer('clusters')
   map.removeLayer('cluster-count')
-  map.removeLayer('unclustered-points')
+  map.removeLayer('points')
+  map.addLayer('unclustered-point')
 }
 
 var nav = new mapboxgl.NavigationControl();
@@ -128,7 +138,7 @@ map.on('load', function() {
     id: "unclustered-point",
     type: "circle",
     source: "conundrums",
-    filter: ['all', ["!", ["has", "point_count"]], startYearFilter, endYearFilter, typeFilter],
+    filter: ['all', startYearFilter, endYearFilter, typeFilter],
     paint: {
       'circle-color': [
         'interpolate',
