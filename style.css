@@ -34,17 +34,17 @@ a {
 }
 
 #console {
-  position: absolute;
-  width: 320px;
-  margin: 10px;
   padding: 10px 20px;
-  background-color: white;
-  margin-bottom:0px; 
+  background-color: white; 
 }
 
 #hiderbutton {
-  position:absolute;
-  top:0;
-  right:0;
-  padding:15px;
+  padding:10px;
+}
+
+#items{
+  position: absolute;
+  width: 370px;
+  margin: 10px;
+  margin-bottom:0px;
 }
