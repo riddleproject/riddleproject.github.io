@@ -1,15 +1,15 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibmRyZXpuIiwiYSI6ImNqeXg2eDlhZzA0MzczZ28xeDdzNnNqY3kifQ.lxS44L-xGMpt-Wcv0vpHng';
 
 function hideFilters(){
-  var x = document.getElementById("filters");
+  var x = document.getElementById("console");
   var y = document.getElementById('keyHider');
 
   if (x.style.display === "none") {
     x.style.display = "block";
-    y.innerHTML = 'Hide filters';
+    y.innerHTML = 'Hide commentary';
   } else {
     x.style.display = "none";
-    y.innerHTML = 'Show filters';
+    y.innerHTML = 'Show commentary';
   }
 }
 

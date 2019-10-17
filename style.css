@@ -40,3 +40,9 @@ a {
   padding: 10px 20px;
   background-color: white;
 }
+
+#hiderbutton {
+  width: auto;
+  position: relative;
+  padding: 12px;
+}

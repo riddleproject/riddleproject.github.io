@@ -27,64 +27,59 @@
 
     <p>To learn more about the Riddle Project, click <a href="https://news.library.mcgill.ca/tag/timeless-riddles/">here</a>.
     <!-- <p>Archives: NYS Historical Newspapers, BanQ, BC Historical Newspapers, Old Fulton New York Postcards, 1878-1900</p> -->
-
-    <h3> Filters <button id = 'keyHider' style='float:right' type="button" onclick="hideFilters()">Hide key</button></h3>
-    <div id='filters'>
-      <h2>Filter by date</h2>
-      <!-- Slider bar -->
-      <div class='session' id='sliderbar' autocomplete="off">
-        <label> Start year: <label id='active-start-year'> <input id='inputstart' type="text" name="textStartYear" value="1892" class='text' autocomplete="off"> </label></label>
-        <input  id='start-slider' class='row' type='range' min='1878' max='1982' step='1' value='1892' autocomplete="off" />
-      </div>
-      <!-- Slider bar -->
-      <div class='session' id='sliderbar2'>
-        <label> End year: <label id='active-end-year'> <input id='inputend' type="text" name="textEndYear" value="1892" class='text' autocomplete="off"> </label></label>
-        <input id='end-slider' class='row' type='range' min='1878' max='1982' step='1' value='1892' autocomplete="off"  />
-      </div>
-      
-      <!-- Show all checkbox -->
-      <div class='session' >
-        <div class='row' id='checkbox'>  
-          <input id = 'disableSlider' type="checkbox" name="showall" value="box" autocomplete="off">
-          <label for='disableSlider'> Ignore time slider</label><br/> 
-        </div>
-      </div>
-
-      <!-- Disable filtering-->
-      <div class='session'>
-        <h2>Filter by archive</h2>
-        <div class='row' id='archive-filters'>
-          <input autocomplete="off" id='all' type='checkbox' name='toggle' value='all' checked disabled='disabled'>
-          <label for='all'> All archives</label><br/> 
-          
-          <input id='banq' type='checkbox' name='toggle' value='banq' autocomplete="off">
-          <label id = 'banqcolor' for='banq' style='color:#7A089C'> Bibliothèque et Archives nationales du Québec</label><br/> 
-          
-          <input id='bchn' type='checkbox' name='toggle' value='bchn' autocomplete="off">
-          <label id = 'bchncolor' for='bchn' style='color:#A69507'> British Columbia Historical Newspapers</label><br/> 
-
-          <input id='bna' type='checkbox' name='toggle' value='bna' autocomplete="off">
-          <label id = 'bnacolor' for='bna' style='color:#0554A6'> British Newspaper Archives</label><br/> 
-
-          <input id='nys' type='checkbox' name='toggle' value='nys' autocomplete="off">
-          <label id = 'nyscolor' for='nys' style='color:#9E3903'> NYS Historical Newspaper or Fulton</label><br/> 
-
-          <input id='lcsoc' type='checkbox' name='toggle' value='lcsoc' autocomplete="off">
-          <label id = 'lsccolor' for='lcsoc' style='color:#008F1F'> Chronicling America Social</label><br/> 
-
-          <input id='lcsup' type='checkbox' name='toggle' value='lcsup' autocomplete="off">
-          <label id = 'lcsupcolor' for='lcsup' style='color:#00DB30'> Chronicling America Supper</label><br/> 
-
-          <input id='lctea' type='checkbox' name='toggle' value='lctea' autocomplete="off">
-          <label id = 'lcteacolor' for='lctea' style='color:#006411'> Chronicling America Tea</label><br/> 
-        </div>
+    <h3>Filter by date</h3>
+    <!-- Slider bar -->
+    <div class='session' id='sliderbar' autocomplete="off">
+      <h2> Start year: <label id='active-start-year'> <input id='inputstart' type="text" name="textStartYear" value="1892" class='text' autocomplete="off"> </label></h2>
+      <input  id='start-slider' class='row' type='range' min='1878' max='1982' step='1' value='1892' autocomplete="off" />
+    </div>
+    <!-- Slider bar -->
+    <div class='session' id='sliderbar2'>
+      <h2> End year: <label id='active-end-year'> <input id='inputend' type="text" name="textEndYear" value="1892" class='text' autocomplete="off"> </label></h2>
+      <input id='end-slider' class='row' type='range' min='1878' max='1982' step='1' value='1892' autocomplete="off"  />
+    </div>
+    
+    <!-- Show all checkbox -->
+    <div class='session' >
+      <div class='row' id='checkbox'>  
+        <input id = 'disableSlider' type="checkbox" name="showall" value="box" autocomplete="off">
+        <label for='disableSlider'> Ignore time slider</label><br/> 
       </div>
     </div>
 
+    <!-- Disable filtering-->
+    <div class='session'>
+      <h3>Filter by archive</h3>
+      <div class='row' id='archive-filters'>
+        <input autocomplete="off" id='all' type='checkbox' name='toggle' value='all' checked disabled='disabled'>
+        <label for='all'> All archives</label><br/> 
+        
+        <input id='banq' type='checkbox' name='toggle' value='banq' autocomplete="off">
+        <label id = 'banqcolor' for='banq' style='color:#7A089C'> Bibliothèque et Archives nationales du Québec</label><br/> 
+        
+        <input id='bchn' type='checkbox' name='toggle' value='bchn' autocomplete="off">
+        <label id = 'bchncolor' for='bchn' style='color:#A69507'> British Columbia Historical Newspapers</label><br/> 
 
+        <input id='bna' type='checkbox' name='toggle' value='bna' autocomplete="off">
+        <label id = 'bnacolor' for='bna' style='color:#0554A6'> British Newspaper Archives</label><br/> 
 
+        <input id='nys' type='checkbox' name='toggle' value='nys' autocomplete="off">
+        <label id = 'nyscolor' for='nys' style='color:#9E3903'> NYS Historical Newspaper or Fulton</label><br/> 
 
+        <input id='lcsoc' type='checkbox' name='toggle' value='lcsoc' autocomplete="off">
+        <label id = 'lsccolor' for='lcsoc' style='color:#008F1F'> Chronicling America Social</label><br/> 
+
+        <input id='lcsup' type='checkbox' name='toggle' value='lcsup' autocomplete="off">
+        <label id = 'lcsupcolor' for='lcsup' style='color:#00DB30'> Chronicling America Supper</label><br/> 
+
+        <input id='lctea' type='checkbox' name='toggle' value='lctea' autocomplete="off">
+        <label id = 'lcteacolor' for='lctea' style='color:#006411'> Chronicling America Tea</label><br/> 
+      </div>
+    </div>
   </div>
+
+  <div id = "hiderbutton"> <button id = 'keyHider' type="button" onclick="hideFilters()">Hide commentary</button></div>
+
   <script src='index.js'></script>
 </body>
 </html>
