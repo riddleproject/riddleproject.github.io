@@ -50,11 +50,7 @@ var map = new mapboxgl.Map({
 var startYearFilter = ['>=', ['number', ['get', 'Year']], 1892];
 var endYearFilter = ['<=', ['number', ['get', 'Year']], 1892];
 var typeFilter = ['!=', ['number', ['get', 'Type']], -1];
-var colors = [document.getElementById('banqcolor').style.color, document.getElementById('bchncolor').style.color, 
-			  document.getElementById('bnacolor').style.color, document.getElementById('lsccolor').style.color,
-			  document.getElementById('lcsupcolor').style.color, document.getElementById('lcteacolor').style.color,
-			  document.getElementById('nyscolor').style.color,]
-			  
+
 function clusterPoints(){
 	map.removeLayer('unclustered-point')
 	
@@ -80,94 +76,21 @@ function clusterPoints(){
 		},
 	});
 
-	// objects for caching and keeping track of HTML marker objects (for performance)
-	var markers = {};
-	var markersOnScreen = {};
-	 
-	function updateMarkers() {
-		var newMarkers = {};
-		var features = map.querySourceFeatures('clustered-conundrums');
-	 
-		// for every cluster on the screen, create an HTML marker for it (if we didn't yet),
-		// and add it to the map if it's not there already
-		for (var i = 0; i < features.length; i++) {
-			var coords = features[i].geometry.coordinates;
-			var props = features[i].properties;
-			if (!props.cluster) continue;
-				var id = props.cluster_id;
-		 
-			var marker = markers[id];
-			if (!marker) {
-				var el = createDonutChart(props);
-				marker = markers[id] = new mapboxgl.Marker({element: el}).setLngLat(coords);
-		}
-
-		newMarkers[id] = marker;
-		 
-		if (!markersOnScreen[id])
-			marker.addTo(map);
-		}
-
-		// for every marker we've added previously, remove those that are no longer visible
-		for (id in markersOnScreen) {
-			if (!newMarkers[id])
-			markersOnScreen[id].remove();
-		}
-		markersOnScreen = newMarkers;
-	}
-	 
-	// after the GeoJSON data is loaded, update markers on the screen and do so on every map move/moveend
-	map.on('data', function (e) {
-		if (e.sourceId !== 'clustered-conundrums' || !e.isSourceLoaded) return;
-	 
-		map.on('move', updateMarkers);
-		map.on('moveend', updateMarkers);
-		updateMarkers();
+	map.addLayer({
+		id: "clusters",
+		type: "circle",
+		source: "clustered-conundrums",
+		filter: ["has", "point_count"],
+		paint: {
+			// Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
+			// with three steps to implement three types of circles:
+			//	 * Blue, 20px circles when point count is less than 100
+			//	 * Yellow, 30px circles when point count is between 100 and 750
+			//	 * Pink, 40px circles when point count is greater than or equal to 750
+			"circle-color": ["step",["get", "point_count"],"#51bbd6",20,"#f1f075",100,"#f28cb1"],
+			"circle-radius": ["step",["get", "point_count"],20,100,30,750,40],
+		},
 	});
-	 
-	// code for creating an SVG donut chart from feature properties
-	function createDonutChart(props) {
-		var offsets = [];
-		var counts = [props.mag1, props.mag2, props.mag3, props.mag4, props.mag5];
-		var total = 0;
-		for (var i = 0; i < counts.length; i++) {
-			offsets.push(total);
-			total += counts[i];
-		}
-		var fontSize = total >= 1000 ? 22 : total >= 100 ? 20 : total >= 10 ? 18 : 16;
-		var r = total >= 1000 ? 50 : total >= 100 ? 32 : total >= 10 ? 24 : 18;
-		var r0 = Math.round(r * 0.6);
-		var w = r * 2;
-	 
-		var html = '<svg width="' + w + '" height="' + w + '" viewbox="0 0 ' + w + ' ' + w +
-		'" text-anchor="middle" style="font: ' + fontSize + 'px sans-serif">';
-	 
-		for (i = 0; i < counts.length; i++) {
-			html += donutSegment(offsets[i] / total, (offsets[i] + counts[i]) / total, r, r0, colors[i]);
-		}
-		html += '<circle cx="' + r + '" cy="' + r + '" r="' + r0 +
-		'" fill="white" /><text dominant-baseline="central" transform="translate(' +
-		r + ', ' + r + ')">' + total.toLocaleString() + '</text></svg>';
-	 
-		var el = document.createElement('div');
-		el.innerHTML = html;
-		return el.firstChild;
-	}
-	 
-	function donutSegment(start, end, r, r0, color) {
-		if (end - start === 1) end -= 0.00001;
-		var a0 = 2 * Math.PI * (start - 0.25);
-		var a1 = 2 * Math.PI * (end - 0.25);
-		var x0 = Math.cos(a0), y0 = Math.sin(a0);
-		var x1 = Math.cos(a1), y1 = Math.sin(a1);
-		var largeArc = end - start > 0.5 ? 1 : 0;
-	 
-		return ['<path d="M', r + r0 * x0, r + r0 * y0, 'L', r + r * x0, r + r * y0,
-		'A', r, r, 0, largeArc, 1, r + r * x1, r + r * y1,
-		'L', r + r0 * x1, r + r0 * y1, 'A',
-		r0, r0, 0, largeArc, 0, r + r0 * x0, r + r0 * y0,
-		'" fill="' + color + '" />'].join(' ');
-	}
 
 	map.addLayer({
 		id: "cluster-count",
@@ -265,15 +188,6 @@ function unclusterPoints(){
 var nav = new mapboxgl.NavigationControl();
 map.addControl(nav, 'bottom-right');
 
-banq = ['match', ['get', 'Type'], [0], true, false]
-bchn = ['match', ['get', 'Type'], [1], true, false]
-bna = ['match', ['get', 'Type'], [2], true, false]
-lsc = ['match', ['get', 'Type'], [3], true, false]
-lcs = ['match', ['get', 'Type'], [4], true, false]
-lct = ['match', ['get', 'Type'], [5], true, false]
-nys = ['match', ['get', 'Type'], [6], true, false]
-
-
 // BUILD MAP
 map.on('load', function() {
 	map.addSource("conundrums", {
@@ -286,16 +200,7 @@ map.on('load', function() {
 		data: "data.geojson",
 		cluster: true,
 		clusterMaxZoom: 14, // Max zoom to cluster points on
-		clusterRadius: 50, // Radius of each cluster when clustering points (defaults to 50)
-		clusterProperties: { // keep separate counts for each archive in the cluster
-			"banq": ["+", ["case", banq, 1, 0]],
-			"bchn": ["+", ["case", bchn, 1, 0]],
-			"bna": ["+", ["case", bna, 1, 0]],
-			"lsc": ["+", ["case", lsc, 1, 0]],
-			"lcs": ["+", ["case", lcs, 1, 0]],
-			"lct": ["+", ["case", lct, 1, 0]],
-			"nys": ["+", ["case", nys, 1, 0]],
-		}
+		clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
 	});
 
 	map.addLayer({
@@ -319,6 +224,7 @@ map.on('load', function() {
 			'circle-opacity': 0.8
 		},
 	});
+
 
 
 	var startyear = 1892
@@ -524,4 +430,5 @@ map.on('load', function() {
 	map.on('mouseleave', 'unclustered-point', function () {
 		map.getCanvas().style.cursor = '';
 	});
+
 });
