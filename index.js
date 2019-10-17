@@ -26,6 +26,7 @@ function changeClustering(){
     }
     else{
       y.style.display = 'none';
+      y.innerHTML = 'Hide commentary';
       z.innerHTML = 'Disable clustering'
       clusterPoints()
     }
