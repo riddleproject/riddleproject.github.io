@@ -28,18 +28,14 @@ function changeClustering(){
 			y.innerHTML = 'Hide commentary';
 			z.innerHTML = 'Enable clustering';
 			unclusterPoints()
-		}
-		else{
-			y.innerHTML = 'Show commentary (disables clusters)';
-			z.innerHTML = 'Disable clustering'
-			clusterPoints()
+			return true
 		}
 	} else {
 		x.style.display = "none";
-		y.innerHTML = 'Show commentary (disables clusters)';
-		z.innerHTML = 'Disable clustering'
-		clusterPoints()
 	}
+	y.innerHTML = 'Show commentary (disables clusters)';
+	z.innerHTML = 'Disable clustering'
+	clusterPoints()
 }
 
 // STARTING POINT
