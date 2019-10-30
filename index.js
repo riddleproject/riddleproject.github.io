@@ -402,6 +402,19 @@ map.on('load', function() {
 		}
 	});
 
+	// Only show riddles with menus
+	document.getElementById('menuShower').addEventListener('change', function(e) {
+		checked = e.target.checked
+		// update the map filter
+		if (checked) {
+			var onlyMenus = ['==', ['boolean', ['get', 'has_menu']], true];
+			map.setFilter('unclustered-point', ['all', startYearFilter, endYearFilter, typeFilter, onlyMenus]);
+
+		} else {
+			map.setFilter('unclustered-point', ['all', startYearFilter, endYearFilter, typeFilter]);
+		}
+	});
+
 
 	// CLICKABLE POINTS
 	// When a click event occurs on a feature in the places layer, open a popup at the
