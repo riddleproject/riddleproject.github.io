@@ -249,7 +249,7 @@ map.on('load', function() {
 
 		};
 
-		map.setFilter('unclustered-point', ['all', startYearFilter, endYearFilter, typeFilter]);
+		map.setFilter('unclustered-point', ['all', startYearFilter, endYearFilter, typeFilter, onlyMenus]);
 		// update text in the UI
 		document.getElementById('inputstart').value = startyear;
 	};
@@ -266,7 +266,7 @@ map.on('load', function() {
 			startyear = endyear-1;
 		};
 
-		map.setFilter('unclustered-point', ['all', startYearFilter, endYearFilter, typeFilter]);
+		map.setFilter('unclustered-point', ['all', startYearFilter, endYearFilter, typeFilter, onlyMenus]);
 		// update text in the UI
 		document.getElementById('inputend').value = endyear;
 	};
@@ -373,9 +373,9 @@ map.on('load', function() {
 		typeFilter = ['match', ['get', 'Type'], curTypes, true, false]
 		// assign the correct filter depending on whether the time slider should be ignored
 		if (ignoreSlider){
-			map.setFilter('unclustered-point', ['all', typeFilter])
+			map.setFilter('unclustered-point', ['all', typeFilter, onlyMenus])
 		} else{
-			map.setFilter('unclustered-point', ['all', startYearFilter, endYearFilter, typeFilter]);
+			map.setFilter('unclustered-point', ['all', startYearFilter, endYearFilter, typeFilter, onlyMenus]);
 		}
 	});
 	
@@ -393,14 +393,14 @@ map.on('load', function() {
 				document.getElementById(id).disabled = true;
 			}
 			// reset filter
-			map.setFilter('unclustered-point', ['all', typeFilter]);
+			map.setFilter('unclustered-point', ['all', typeFilter, onlyMenus]);
 
 		} else {
 			// enable slider
 			for (id of ids) {
 				document.getElementById(id).disabled = false;
 			}
-			map.setFilter('unclustered-point', ['all', startYearFilter, endYearFilter, typeFilter]);
+			map.setFilter('unclustered-point', ['all', startYearFilter, endYearFilter, typeFilter, onlyMenus]);
 		}
 	});
 
@@ -409,11 +409,12 @@ map.on('load', function() {
 		checked = e.target.checked
 		// update the map filter
 		if (checked) {
-			onlyMenus = ['!=', ['number', ['get', 'has_menu']], 1];
+			onlyMenus = ['==', ['number', ['get', 'has_menu']], 1];
 			map.setFilter('unclustered-point', ['all', startYearFilter, endYearFilter, typeFilter, onlyMenus]);
 
 		} else {
-			map.setFilter('unclustered-point', ['all', startYearFilter, endYearFilter, typeFilter]);
+			onlyMenus = ['!=', ['number', ['get', 'has_menu']], -1];
+			map.setFilter('unclustered-point', ['all', startYearFilter, endYearFilter, typeFilter, onlyMenus]);
 		}
 	});
 
