@@ -27,7 +27,7 @@ function changeClustering(){
 		if (y.innerHTML === 'Show commentary (disables clusters)'){
 			x.style.display = "block";
 			y.innerHTML = 'Hide commentary';
-			z.innerHTML = 'Enable clustering';
+			z.innerHTML = 'Enable clustering (disables filters)';
 			unclusterPoints()
 			return true
 		}
