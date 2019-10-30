@@ -52,6 +52,8 @@ var map = new mapboxgl.Map({
 var startYearFilter = ['>=', ['number', ['get', 'Year']], 1892];
 var endYearFilter = ['<=', ['number', ['get', 'Year']], 1892];
 var typeFilter = ['!=', ['number', ['get', 'Type']], -1];
+var onlyMenus = ['!=', ['number', ['get', 'has_menu']], -1];
+
 
 function clusterPoints(){
 	map.removeLayer('unclustered-point')
@@ -407,7 +409,7 @@ map.on('load', function() {
 		checked = e.target.checked
 		// update the map filter
 		if (checked) {
-			var onlyMenus = ['==', ['boolean', ['get', 'has_menu']], true];
+			onlyMenus = ['!=', ['number', ['get', 'has_menu']], 1];
 			map.setFilter('unclustered-point', ['all', startYearFilter, endYearFilter, typeFilter, onlyMenus]);
 
 		} else {
