@@ -410,16 +410,15 @@ map.on('load', function() {
 		// update the map filter
 		if (checked) {
 			onlyMenus = ['==', ['number', ['get', 'has_menu']], 1];
-			if (!ignoreSlider){
-				map.setFilter('unclustered-point', ['all', startYearFilter, endYearFilter, typeFilter, onlyMenus]);
-			}
-			else{
-				map.setFilter('unclustered-point', ['all', typeFilter, onlyMenus]);
-			}
-
 		} else {
 			onlyMenus = ['!=', ['number', ['get', 'has_menu']], -1];
+		}
+
+		if (!ignoreSlider){
 			map.setFilter('unclustered-point', ['all', startYearFilter, endYearFilter, typeFilter, onlyMenus]);
+		}
+		else{
+			map.setFilter('unclustered-point', ['all', typeFilter, onlyMenus]);
 		}
 	});
 
