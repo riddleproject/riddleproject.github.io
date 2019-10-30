@@ -8,7 +8,7 @@ function hideFilters(){
 	if (x.style.display === "none") {
 		x.style.display = "block";
 		if (y.innerHTML === 'Show commentary (disables clusters)'){
-			document.getElementById('toggleClusters').innerHTML = 'Enable clustering'
+			document.getElementById('toggleClusters').innerHTML = 'Enable clustering (disables filters)'
 			unclusterPoints()
 		}
 		y.innerHTML = 'Hide commentary';
