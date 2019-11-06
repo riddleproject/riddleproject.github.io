@@ -75,6 +75,8 @@ function clusterPoints(){
 				4, document.getElementById('lcsupcolor').style.color,
 				5, document.getElementById('lcteacolor').style.color,
 				6, document.getElementById('nyscolor').style.color,
+				7, document.getElementById('ebofcolor').style.color,
+
 			],
 			'circle-opacity': 0.8
 		},
@@ -183,6 +185,8 @@ function unclusterPoints(){
 			4, document.getElementById('lcsupcolor').style.color,
 			5, document.getElementById('lcteacolor').style.color,
 			6, document.getElementById('nyscolor').style.color,
+			7, document.getElementById('ebofcolor').style.color,
+
 			],
 			'circle-opacity': 0.8
 		},
@@ -224,6 +228,8 @@ map.on('load', function() {
 				4, document.getElementById('lcsupcolor').style.color,
 				5, document.getElementById('lcteacolor').style.color,
 				6, document.getElementById('nyscolor').style.color,
+				7, document.getElementById('ebofcolor').style.color,
+
 			],
 			'circle-opacity': 0.8
 		},
@@ -325,9 +331,9 @@ map.on('load', function() {
 
 	// global states for the time slider
 	var ignoreSlider = false;
-	var curTypes = [0,1,2,3,4,5,6];
+	var curTypes = [0,1,2,3,4,5,6,7];
 	var checkedAll = true;
-	var toggles = ['banq', 'bchn', 'bna', 'lcsoc', 'lcsup', 'lctea', 'nys'];
+	var toggles = ['banq', 'bchn', 'bna', 'lcsoc', 'lcsup', 'lctea', 'nys','ebof'];
 	
 	// FILTER BUTTONS
 	document.getElementById('archive-filters').addEventListener('change', function(e) {
@@ -336,7 +342,7 @@ map.on('load', function() {
 
 		// if the all archives button is checked
 		if (type === 'all') {
-			curTypes = [0,1,2,3,4,5,6];
+			curTypes = [0,1,2,3,4,5,6,7];
 			checkedAll = true
 			// uncheck all the other toggles
 			for (toggle of toggles){
@@ -364,7 +370,7 @@ map.on('load', function() {
 		// if the current archive is the only one which is checked and it is unchecked
 		} else {
 			// revert to show all filter
-			curTypes = [0,1,2,3,4,5,6];
+			curTypes = [0,1,2,3,4,5,6,7];
 			checkedAll = true
 		}
 		// assign the proper state to the show all archives checkbox
