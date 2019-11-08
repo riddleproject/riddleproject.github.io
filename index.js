@@ -25,6 +25,13 @@ function hideFilters(){
 }
 
 function changeClustering(){
+	// Inner HTML
+	showCommentaryClusters = 'Show sidebar (disables grouping)';
+	showCluster = 'Group by region (disables filters)';
+	hideSidebar = 'Hide sidebar';
+	showSidebar = 'Show sidebar';
+	disableCluster = 'Disable grouping';
+
 	var x = document.getElementById("console");
 	var y = document.getElementById('keyHider');
 	var z = document.getElementById('toggleClusters');
