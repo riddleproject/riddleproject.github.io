@@ -7,14 +7,14 @@ function hideFilters(){
 
 	if (x.style.display === "none") {
 		x.style.display = "block";
-		if (y.innerHTML === 'Show commentary (disables clusters)'){
-			document.getElementById('toggleClusters').innerHTML = 'Enable clustering (disables filters)'
+		if (y.innerHTML === 'Show sidebar (disables grouping)'){
+			document.getElementById('toggleClusters').innerHTML = 'Group by region (disables filters)'
 			unclusterPoints()
 		}
-		y.innerHTML = 'Hide commentary';
+		y.innerHTML = 'Hide sidebar';
 	} else {
 		x.style.display = "none";
-		y.innerHTML = 'Show commentary';
+		y.innerHTML = 'Show sidebar';
 	}
 }
 
