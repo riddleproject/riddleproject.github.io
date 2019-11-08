@@ -1,12 +1,13 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibmRyZXpuIiwiYSI6ImNqeXg2eDlhZzA0MzczZ28xeDdzNnNqY3kifQ.lxS44L-xGMpt-Wcv0vpHng';
 
-showCommentaryClusters = 'Show sidebar (disables grouping)';
-showCluster = 'Group by region (disables filters)';
-hideSidebar = 'Hide sidebar';
-showSidebar = 'Show sidebar';
-disableCluster = 'Disable grouping';
-
 function hideFilters(){
+	// Inner HTML
+	showCommentaryClusters = 'Show sidebar (disables grouping)';
+	showCluster = 'Group by region (disables filters)';
+	hideSidebar = 'Hide sidebar';
+	showSidebar = 'Show sidebar';
+	disableCluster = 'Disable grouping';
+
 	var x = document.getElementById("console");
 	var y = document.getElementById('keyHider');
 
