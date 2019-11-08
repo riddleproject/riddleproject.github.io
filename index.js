@@ -24,18 +24,18 @@ function changeClustering(){
 	var z = document.getElementById('toggleClusters');
 
 	if (x.style.display === "none") {
-		if (y.innerHTML === 'Show commentary (disables clusters)'){
+		if (y.innerHTML === 'Show sidebar (disables grouping)'){
 			x.style.display = "block";
-			y.innerHTML = 'Hide commentary';
-			z.innerHTML = 'Enable clustering (disables filters)';
+			y.innerHTML = 'Hide sidebar';
+			z.innerHTML = 'Group by region (disables filters)';
 			unclusterPoints()
 			return true
 		}
 	} else {
 		x.style.display = "none";
 	}
-	y.innerHTML = 'Show commentary (disables clusters)';
-	z.innerHTML = 'Disable clustering'
+	y.innerHTML = 'Show sidebar (disables clusters)';
+	z.innerHTML = 'Disable grouping'
 	clusterPoints()
 	return true
 }
