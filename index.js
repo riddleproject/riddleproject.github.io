@@ -7,14 +7,14 @@ function hideFilters(){
 
 	if (x.style.display === "none") {
 		x.style.display = "block";
-		if (y.innerHTML === 'Show sidebar (disables grouping)'){
-			document.getElementById('toggleClusters').innerHTML = 'Group by region (disables filters)'
+		if (y.innerHTML === 'Show commentary (disables clusters)'){
+			document.getElementById('toggleClusters').innerHTML = 'Enable clustering (disables filters)'
 			unclusterPoints()
 		}
-		y.innerHTML = 'Hide sidebar';
+		y.innerHTML = 'Hide commentary';
 	} else {
 		x.style.display = "none";
-		y.innerHTML = 'Show sidebar';
+		y.innerHTML = 'Show commentary';
 	}
 }
 
@@ -24,18 +24,18 @@ function changeClustering(){
 	var z = document.getElementById('toggleClusters');
 
 	if (x.style.display === "none") {
-		if (y.innerHTML === 'Show sidebar (disables grouping)'){
+		if (y.innerHTML === 'Show commentary (disables clusters)'){
 			x.style.display = "block";
-			y.innerHTML = 'Hide sidebar';
-			z.innerHTML = 'Group by region (disables filters)';
+			y.innerHTML = 'Hide commentary';
+			z.innerHTML = 'Enable clustering (disables filters)';
 			unclusterPoints()
 			return true
 		}
 	} else {
 		x.style.display = "none";
 	}
-	y.innerHTML = 'Show sidebar (disables clusters)';
-	z.innerHTML = 'Disable grouping'
+	y.innerHTML = 'Show commentary (disables clusters)';
+	z.innerHTML = 'Disable clustering'
 	clusterPoints()
 	return true
 }
