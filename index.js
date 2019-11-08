@@ -1,5 +1,10 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibmRyZXpuIiwiYSI6ImNqeXg2eDlhZzA0MzczZ28xeDdzNnNqY3kifQ.lxS44L-xGMpt-Wcv0vpHng';
 
+showCommentaryClusters = 'Show sidebar (disables grouping)';
+showCluster = 'Group by region (disables filters)';
+hideSidebar = 'Hide sidebar';
+showSidebar = 'Show sidebar';
+disableCluster = 'Disable grouping';
 
 function hideFilters(){
 	var x = document.getElementById("console");
@@ -7,14 +12,14 @@ function hideFilters(){
 
 	if (x.style.display === "none") {
 		x.style.display = "block";
-		if (y.innerHTML === 'Show commentary (disables clusters)'){
-			document.getElementById('toggleClusters').innerHTML = 'Enable clustering (disables filters)'
-			unclusterPoints()
+		if (y.innerHTML === showCommentaryClusters){
+			document.getElementById('toggleClusters').innerHTML = showCluster;
+			unclusterPoints();
 		}
-		y.innerHTML = 'Hide commentary';
+		y.innerHTML = hideSidebar;
 	} else {
 		x.style.display = "none";
-		y.innerHTML = 'Show commentary';
+		y.innerHTML = showSidebar;
 	}
 }
 
@@ -24,20 +29,20 @@ function changeClustering(){
 	var z = document.getElementById('toggleClusters');
 
 	if (x.style.display === "none") {
-		if (y.innerHTML === 'Show commentary (disables clusters)'){
+		if (y.innerHTML === showCommentaryClusters){
 			x.style.display = "block";
-			y.innerHTML = 'Hide commentary';
-			z.innerHTML = 'Enable clustering (disables filters)';
-			unclusterPoints()
-			return true
+			y.innerHTML = hideSidebar;
+			z.innerHTML = showCluster;
+			unclusterPoints();
+			return true;
 		}
 	} else {
 		x.style.display = "none";
 	}
-	y.innerHTML = 'Show commentary (disables clusters)';
-	z.innerHTML = 'Disable clustering'
-	clusterPoints()
-	return true
+	y.innerHTML = showCommentaryClusters;
+	z.innerHTML = disableCluster;
+	clusterPoints();
+	return true;
 }
 
 // STARTING POINT
