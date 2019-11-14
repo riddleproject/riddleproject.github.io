@@ -1,5 +1,17 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibmRyZXpuIiwiYSI6ImNqeXg2eDlhZzA0MzczZ28xeDdzNnNqY3kifQ.lxS44L-xGMpt-Wcv0vpHng';
 
+function showHideMenu(element, button) {
+  var x = document.getElementById(element);
+  var y = document.getElementById(button);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    y.innerHTML = 'Show menu'
+  } else {
+    x.style.display = "none";
+    y.innerHTML = 'Hide menu'
+  }
+}
+
 function hideFilters(){
 	// Inner HTML
 	showCommentaryClusters = 'Show sidebar (disables grouping)';
