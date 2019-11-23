@@ -367,7 +367,7 @@ map.on('load', function() {
 	var ignoreSlider = false;
 	var curTypes = [0,1,2,3,4,5,6,7,8,9,10];
 	var checkedAll = true;
-	var toggles = ['banq', 'bchn', 'bna', 'lcsoc', 'lcsup', 'lctea', 'nys','ebof', 'ppp', 'ean', 'ink'];
+	var toggles = ['banq', 'bchn', 'bna', 'ean', 'ebof', 'ink', 'lcsoc','lcsup', 'lctea', 'nys', 'ppp'];
 	
 	// FILTER BUTTONS
 	document.getElementById('archive-filters').addEventListener('change', function(e) {
