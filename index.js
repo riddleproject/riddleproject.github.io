@@ -101,6 +101,9 @@ function clusterPoints(){
 				5, document.getElementById('lcteacolor').style.color,
 				6, document.getElementById('nyscolor').style.color,
 				7, document.getElementById('ebofcolor').style.color,
+				8, document.getElementById('pppcolor').style.color,
+				9, document.getElementById('eancolor').style.color,
+				10, document.getElementById('inkcolor').style.color,
 
 			],
 			'circle-opacity': 0.8
@@ -211,6 +214,9 @@ function unclusterPoints(){
 			5, document.getElementById('lcteacolor').style.color,
 			6, document.getElementById('nyscolor').style.color,
 			7, document.getElementById('ebofcolor').style.color,
+			8, document.getElementById('pppcolor').style.color,
+			9, document.getElementById('eancolor').style.color,
+			10, document.getElementById('inkcolor').style.color,
 
 			],
 			'circle-opacity': 0.8
@@ -254,6 +260,9 @@ map.on('load', function() {
 				5, document.getElementById('lcteacolor').style.color,
 				6, document.getElementById('nyscolor').style.color,
 				7, document.getElementById('ebofcolor').style.color,
+				8, document.getElementById('pppcolor').style.color,
+				9, document.getElementById('eancolor').style.color,
+				10, document.getElementById('inkcolor').style.color,
 
 			],
 			'circle-opacity': 0.8
@@ -356,9 +365,9 @@ map.on('load', function() {
 
 	// global states for the time slider
 	var ignoreSlider = false;
-	var curTypes = [0,1,2,3,4,5,6,7];
+	var curTypes = [0,1,2,3,4,5,6,7,8,9,10];
 	var checkedAll = true;
-	var toggles = ['banq', 'bchn', 'bna', 'lcsoc', 'lcsup', 'lctea', 'nys','ebof'];
+	var toggles = ['banq', 'bchn', 'bna', 'lcsoc', 'lcsup', 'lctea', 'nys','ebof', 'ppp', 'ean', 'ink'];
 	
 	// FILTER BUTTONS
 	document.getElementById('archive-filters').addEventListener('change', function(e) {
@@ -367,7 +376,7 @@ map.on('load', function() {
 
 		// if the all archives button is checked
 		if (type === 'all') {
-			curTypes = [0,1,2,3,4,5,6,7];
+			curTypes = [0,1,2,3,4,5,6,7,8,9,10];
 			checkedAll = true
 			// uncheck all the other toggles
 			for (toggle of toggles){
@@ -395,7 +404,7 @@ map.on('load', function() {
 		// if the current archive is the only one which is checked and it is unchecked
 		} else {
 			// revert to show all filter
-			curTypes = [0,1,2,3,4,5,6,7];
+			curTypes = [0,1,2,3,4,5,6,7,8,9,10];
 			checkedAll = true
 		}
 		// assign the proper state to the show all archives checkbox
