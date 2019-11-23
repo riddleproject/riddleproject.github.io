@@ -79,7 +79,6 @@ var endYearFilter = ['<=', ['number', ['get', 'Year']], 1892];
 var typeFilter = ['!=', ['number', ['get', 'Type']], -1];
 var onlyMenus = ['!=', ['number', ['get', 'has_menu']], -1];
 
-
 function clusterPoints(){
 	map.removeLayer('unclustered-point')
 	
@@ -96,14 +95,14 @@ function clusterPoints(){
 				0, document.getElementById('banqcolor').style.color,
 				1, document.getElementById('bchncolor').style.color,
 				2, document.getElementById('bnacolor').style.color,
-				3, document.getElementById('lsccolor').style.color,
-				4, document.getElementById('lcsupcolor').style.color,
-				5, document.getElementById('lcteacolor').style.color,
-				6, document.getElementById('nyscolor').style.color,
-				7, document.getElementById('ebofcolor').style.color,
-				8, document.getElementById('pppcolor').style.color,
-				9, document.getElementById('eancolor').style.color,
-				10, document.getElementById('inkcolor').style.color,
+				3, document.getElementById('eancolor').style.color,
+				4, document.getElementById('ebofcolor').style.color,
+				5, document.getElementById('inkcolor').style.color,
+				6, document.getElementById('lsccolor').style.color,
+				7, document.getElementById('lcsupcolor').style.color,
+				8, document.getElementById('lcteacolor').style.color,
+				9, document.getElementById('nyscolor').style.color,
+				10, document.getElementById('pppcolor').style.color,
 
 			],
 			'circle-opacity': 0.8
@@ -209,14 +208,14 @@ function unclusterPoints(){
 			0, document.getElementById('banqcolor').style.color,
 			1, document.getElementById('bchncolor').style.color,
 			2, document.getElementById('bnacolor').style.color,
-			3, document.getElementById('lsccolor').style.color,
-			4, document.getElementById('lcsupcolor').style.color,
-			5, document.getElementById('lcteacolor').style.color,
-			6, document.getElementById('nyscolor').style.color,
-			7, document.getElementById('ebofcolor').style.color,
-			8, document.getElementById('pppcolor').style.color,
-			9, document.getElementById('eancolor').style.color,
-			10, document.getElementById('inkcolor').style.color,
+			3, document.getElementById('eancolor').style.color,
+			4, document.getElementById('ebofcolor').style.color,
+			5, document.getElementById('inkcolor').style.color,
+			6, document.getElementById('lsccolor').style.color,
+			7, document.getElementById('lcsupcolor').style.color,
+			8, document.getElementById('lcteacolor').style.color,
+			9, document.getElementById('nyscolor').style.color,
+			10, document.getElementById('pppcolor').style.color,
 
 			],
 			'circle-opacity': 0.8
@@ -252,17 +251,17 @@ map.on('load', function() {
 				'interpolate',
 				['exponential', 1],
 				['number', ['get', 'Type']],
-				0, document.getElementById('banqcolor').style.color,
-				1, document.getElementById('bchncolor').style.color,
-				2, document.getElementById('bnacolor').style.color,
-				3, document.getElementById('lsccolor').style.color,
-				4, document.getElementById('lcsupcolor').style.color,
-				5, document.getElementById('lcteacolor').style.color,
-				6, document.getElementById('nyscolor').style.color,
-				7, document.getElementById('ebofcolor').style.color,
-				8, document.getElementById('pppcolor').style.color,
-				9, document.getElementById('eancolor').style.color,
-				10, document.getElementById('inkcolor').style.color,
+			0, document.getElementById('banqcolor').style.color,
+			1, document.getElementById('bchncolor').style.color,
+			2, document.getElementById('bnacolor').style.color,
+			3, document.getElementById('eancolor').style.color,
+			4, document.getElementById('ebofcolor').style.color,
+			5, document.getElementById('inkcolor').style.color,
+			6, document.getElementById('lsccolor').style.color,
+			7, document.getElementById('lcsupcolor').style.color,
+			8, document.getElementById('lcteacolor').style.color,
+			9, document.getElementById('nyscolor').style.color,
+			10, document.getElementById('pppcolor').style.color,
 
 			],
 			'circle-opacity': 0.8
