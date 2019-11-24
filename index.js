@@ -1,5 +1,11 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibmRyZXpuIiwiYSI6ImNqeXg2eDlhZzA0MzczZ28xeDdzNnNqY3kifQ.lxS44L-xGMpt-Wcv0vpHng';
 
+// Initialize filters
+var startYearFilter = ['>=', ['number', ['get', 'Year']], 1892];
+var endYearFilter = ['<=', ['number', ['get', 'Year']], 1892];
+var typeFilter = ['!=', ['number', ['get', 'Type']], -1];
+var onlyMenus = ['!=', ['number', ['get', 'has_menu']], -1];
+
 function showHideMenu(element, button) {
   var x = document.getElementById(element);
   var y = document.getElementById(button);
@@ -73,11 +79,7 @@ var map = new mapboxgl.Map({
 	zoom: 2.2
 });
 
-// Initialize filters
-var startYearFilter = ['>=', ['number', ['get', 'Year']], 1892];
-var endYearFilter = ['<=', ['number', ['get', 'Year']], 1892];
-var typeFilter = ['!=', ['number', ['get', 'Type']], -1];
-var onlyMenus = ['!=', ['number', ['get', 'has_menu']], -1];
+
 
 function clusterPoints(){
 	map.removeLayer('unclustered-point')
