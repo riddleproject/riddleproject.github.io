@@ -321,8 +321,8 @@ map.on('load', function() {
 				startyear = startyear
 			} else if (n < 1878) {
 				startyear = 1878
-			} else if (n > 1982) {
-				startyear = 1982
+			} else if (n > 1971) {
+				startyear = 1971
 			} else{
 				startyear = n
 			}
@@ -341,8 +341,8 @@ map.on('load', function() {
 				endyear = endyear
 			} else if (n < 1878) {
 				endyear = 1878
-			} else if (n > 1982) {
-				endyear = 1982
+			} else if (n > 1971) {
+				endyear = 1971
 			} else{
 				endyear = n
 			}
