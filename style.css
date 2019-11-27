@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  padding: 0;
+  /*font-family: 'Helvetica Neue', Helvetica, Arial, Sans-serif;*/
+  font-family: Garamond, serif;
+}
+
+input.text {
+  font-family: Garamond, serif;
+  font-size: 14px;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+h1 {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+h2 {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #2DC4B2;
+}
+
+#console {
+  padding: 10px 20px;
+  background-color: white; 
+}
+
+#hiderbutton {
+  padding:10px;
+}
+
+#clusterbutton {
+  padding:10px;
+  position:absolute;
+  top:0;
+  right:0;
+}
+
+#items{
+  position: absolute;
+  width: 370px;
+  margin: 10px;
+  margin-bottom:0px;
+}
