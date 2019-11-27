@@ -1,5 +1,6 @@
 theme: minima
-title: The Riddle Project
+title: The Riddles Project
+site.title: The Riddles Project
 header_pages:
   - filters.html
   - story.html
