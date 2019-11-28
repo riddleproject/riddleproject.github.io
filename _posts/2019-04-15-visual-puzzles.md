@@ -8,37 +8,54 @@ author: "Leehu Sigler"
 > “Too many riddles weigh men down on earth. We must solve as we can, and try to keep a dry skin in the water.”[1]
  ― The Brothers Karamazov, Fyodor Dostoyevsky
 
-**Timeless Riddles** is back with some more puzzling problems! Were you able to solve the riddles from last time? The answer to the Enigma is ‘Heart’. The answer to the Charade is ‘Fortune’ (because ‘for’ is a preposition, ‘tune’ is a composition and ‘fortune’ is an acquisition!).
+Timeless Riddles is back with some more puzzling problems! Were you able to solve the riddles from last time? The answer to the Enigma is ‘Heart’. The answer to the Charade is ‘Fortune’ (because ‘for’ is a preposition, ‘tune’ is a composition and ‘fortune’ is an acquisition!).
 
 On today’s menu is a different kind of riddle: The spectacular Rebus! The Rebus is a visual puzzle. In order to solve it, you need to decode both words and images.
 
 Here’s a classic Rebus from one of Lewis Carroll’s letters:
 
-*The Chestnuts
-My dear Ina,
-Though I don’t give
-birthday presents, still I
-may write a birthday letter.
-I came to your door to
-wish you many happy returns
-of the day, but the cat met
-me, and took me for a mouse,
-and hunted me up and down
-till I could hardly stand.
-However somehow I got
-into the house, and there
-a mouse met me, and took me
-for a cat, and pelted me…[2]
-See how the letter is comprised of both words and pictures?*
+*The Chestnuts*
+
+*My dear Ina,*
+
+*Though I don’t give*
+
+*birthday presents, still I*
+
+*may write a birthday letter.*
+
+*I came to your door to*
+
+*wish you many happy returns*
+
+*of the day, but the cat met*
+
+*me, and took me for a mouse,*
+
+*and hunted me up and down*
+
+*till I could hardly stand.*
+
+*However somehow I got*
+
+*into the house, and there*
+
+*a mouse met me, and took me*
+
+*for a cat, and pelted me…*[2]
+
+See how the letter is comprised of both words and pictures?
 
 ------
 
 
 Some Rebuses emphasize the visual arrangement of their words to hint at their answer:
 
- I have to paid
-because
-work I am[3]
+*I have to paid*
+
+*because*
+
+*work I am*[3]
 
 Looks funny, right? That’s because the way the sentence is presented contributes to its meaning!
 
@@ -55,10 +72,13 @@ Even the celebrated William Shakespeare is not above such pun-tastic riddles! Hi
 
 Rebuses can come in many different shapes and forms. How about you try this one for yourselves?
 
-*Three-fourths of a cross and a circle complete,
-Two semicircles and a perpendicular meet,
-A triangle standing on two feet;
-Two semicircles and a circle complete.*
+*Three-fourths of a cross and a circle complete,*
+
+*Two semicircles and a perpendicular meet,*
+
+*A triangle standing on two feet;*
+
+*Two semicircles and a circle complete.*
 
 Don’t forget that the visual aspect is key! Tune in text time for the solution and more tongue-tying Timeless Riddles!
 
