@@ -2,8 +2,8 @@
 layout: default
 title: Interactive Maps
 ---
-
-<iframe src="https://riddleproject.github.io/visualizations/filters.html"
+# Interactive maps
+<iframe src="filters.html"
         width="100%" height="400px">
 </iframe>
 <p><a href="visualizations/filters" target="_blank">View full screen</a></p>
