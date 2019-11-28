@@ -8,6 +8,8 @@ header_pages:
   - story.html
   - posts.html
 
+show_excerpts: true
+
 minima:
   date_format: "%b %-d, %Y"
   social_links:
