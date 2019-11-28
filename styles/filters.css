@@ -37,9 +37,8 @@ a {
   padding: 10px 20px;
   background-color: white;
   height: 70vh;
-  width: 20vh;
-}
-} 
+  width: 40vh;
+  overflow-y: auto;
 }
 
 #hiderbutton {
