@@ -9,3 +9,4 @@ header_pages:
 
 minima:
   date_format: "%b %-d, %Y"
+  github:  riddlesproject
