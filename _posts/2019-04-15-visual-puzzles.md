@@ -8,7 +8,7 @@ author: "Leehu Sigler"
 > “Too many riddles weigh men down on earth. We must solve as we can, and try to keep a dry skin in the water.”[1]
  ― The Brothers Karamazov, Fyodor Dostoyevsky
 
-*Timeless Riddles* is back with some more puzzling problems! Were you able to solve the riddles from last time? The answer to the Enigma is ‘Heart’. The answer to the Charade is ‘Fortune’ (because ‘for’ is a preposition, ‘tune’ is a composition and ‘fortune’ is an acquisition!).
+**Timeless Riddles** is back with some more puzzling problems! Were you able to solve the riddles from last time? The answer to the Enigma is ‘Heart’. The answer to the Charade is ‘Fortune’ (because ‘for’ is a preposition, ‘tune’ is a composition and ‘fortune’ is an acquisition!).
 
 On today’s menu is a different kind of riddle: The spectacular Rebus! The Rebus is a visual puzzle. In order to solve it, you need to decode both words and images.
 
@@ -61,8 +61,6 @@ A triangle standing on two feet;
 Two semicircles and a circle complete.*
 
 Don’t forget that the visual aspect is key! Tune in text time for the solution and more tongue-tying Timeless Riddles!
-
-Like us on Facebook @timelessriddles, follow us on Twitter @Time1essRiddles, or shoot us an email at timelessriddles@gmail.com to solve riddles, ask questions, or just to stay involved!
 
 Don’t forget to follow @McGillLib, @McGill_ROAAr, and @CookeNathalie on Twitter as well, without which this project would not be possible.
 
