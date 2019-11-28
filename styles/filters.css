@@ -36,9 +36,10 @@ a {
 #console {
   padding: 10px 20px;
   background-color: white;
-  height: calc(90vh-20px);
-  width: 20vw;
+  height: 80vh;
+  width: 30vw;
   overflow-y: auto;
+  overflow-x: auto;
 }
 
 #hiderbutton {
