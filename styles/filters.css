@@ -36,8 +36,8 @@ a {
 #console {
   padding: 10px 20px;
   background-color: white;
-  height: 70vh;
-  width: 40vh;
+  height: 90vh;
+  width: 20%;
   overflow-y: auto;
 }
 
