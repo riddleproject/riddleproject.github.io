@@ -1,5 +1,3 @@
-title: "The Riddles Project"
-
 > A Baronet? A Beau? The First Temptation and a Slight Gust?
 
 
