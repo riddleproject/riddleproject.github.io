@@ -5,8 +5,8 @@ email: timelessriddles@gmail.com
 description: The Riddles Project is an ROAAr project dedicated to transcribing, solving, and researching riddles in early manuscripts.
 
 header_pages:
-  - blog.md
   - interactive-maps.md
+  - blog.md
 
 show_excerpts: true
 
