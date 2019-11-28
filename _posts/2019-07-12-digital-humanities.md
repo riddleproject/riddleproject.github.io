@@ -5,6 +5,8 @@ categories: Features
 author: "Nathan Drezner"
 ---
 
+This post is a writeup on a computational analysis of a corpus of riddles obtained from the Gale Group. This corpus is about 3,000 riddles, each tagged with information including publication date, publisher, location, and author. Nearly all of the riddles in this set were published in London, England. There were several main parts to the analysis: First, an analysis of riddle syntax and difficulty by measuring changes in type-token ratio and reading ease score over time. Second, a study of the differentiability of riddles by classifying and measuring the quality of the classification. Finally, a set of analyses to test the capabilities of the built-in analytics tools in the Gale Digital Scholar Lab.
+
 ## Riddle syntax and difficulty
 Questions: Is there gender bias in riddling? Is there a semantic change in riddling from more child-like to more adult-like over time?
 All analysis was conducted using the Gale dataset.
