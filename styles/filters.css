@@ -35,7 +35,11 @@ a {
 
 #console {
   padding: 10px 20px;
-  background-color: white; 
+  background-color: white;
+  height: 70vh;
+  width: 20vh;
+}
+} 
 }
 
 #hiderbutton {
