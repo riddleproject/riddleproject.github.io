@@ -1,9 +1,8 @@
 theme: minima
 title: The Riddles Project
-home.title: The Riddles Project
 author: McGill University Library
 email: timelessriddles@gmail.com
-description: The Riddles Project is a ROAAr project dedicated to transcribing, solving, and researching riddles in early manuscripts.
+description: The Riddles Project is an ROAAr project dedicated to transcribing, solving, and researching riddles in early manuscripts.
 
 header_pages:
   - blog.md
@@ -11,6 +10,5 @@ header_pages:
 show_excerpts: true
 
 minima:
-  date_format: "%b %-d, %Y"
   social_links:
-    github:  riddlesproject
+    github: riddlesproject
