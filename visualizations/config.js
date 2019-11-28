@@ -1,6 +1,6 @@
 var config = {
-    style: 'mapbox://styles/mapbox/light-v10',
-    accessToken: 'pk.eyJ1IjoibmRyZXpuIiwiYSI6ImNqeXg2eDlhZzA0MzczZ28xeDdzNnNqY3kifQ.lxS44L-xGMpt-Wcv0vpHng';,
+    style: 'mapbox://styles/branigan/cjzsvonse027m1co4nkxp13b3',
+    accessToken: 'pk.eyJ1IjoibWJ4c29sdXRpb25zIiwiYSI6ImNrMm01aG9hdTBlZGwzbXQ1ZXVrNHNmejAifQ.QHQA0N6XPWddCXtvoODHZg',
     showMarkers: false,
     theme: 'light',
     alignment: 'right',
