@@ -6,6 +6,7 @@ description: The Riddles Project is an ROAAr project dedicated to transcribing, 
 
 header_pages:
   - blog.md
+  - interactive-maps.md
 
 show_excerpts: true
 
