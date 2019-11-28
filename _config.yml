@@ -6,6 +6,7 @@ description: The Riddles Project is a ROAAr project dedicated to transcribing, s
 header_pages:
   - filters.html
   - story.html
+  - posts.html
 
 minima:
   date_format: "%b %-d, %Y"
