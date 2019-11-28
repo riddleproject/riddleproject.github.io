@@ -6,21 +6,20 @@ author: "Nathan Drezner"
 ---
 
 # Riddle syntax and difficulty
-### Questions: Is there gender bias in riddling? Is there a semantic change in riddling from more child-like to more adult-like over time?}
+Questions: Is there gender bias in riddling? Is there a semantic change in riddling from more child-like to more adult-like over time?}
 All analysis was conducted using the Gale dataset.
 ## Type-token ratio
 The riddles have an average TTR of 0.546 with a standard deviation of 0.125. The baseline TTR in standard written English is about 0.5, so the riddles do not fall notably higher or lower.
 
 ## Riddle complexity
-includegraphics[width=\textwidth]{figure.png}
-![alt text](https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/figure.png "Flesch reading ease scores")
+![Flesch reading ease score for riddles released each year](https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/figure.png "Flesch reading ease scores")
 Of the \~3,000 riddle corpus from Gale, the average Flesch reading score for an individual riddle is 90.90, with a standard deviation of 7.10, a maximum score of 114.62 and a minimum score of 23.11. Given the small standard deviation, the riddles are of relatively similar difficulty. 
 
 The graph above visualizes changes in riddle complexity over time. However, because only 158 of the 2,166 riddles tagged by date occur before 1850, early data not as strong an indicator of general complexity as late data. 50\% of riddles in this data set occur after 1878. The graph shows a consistency in riddle complexity over time, rather than a progression towards more simplistic language. In other words, more child-like riddling in later periods does not occur by this metric. 
 
-\includegraphics[width=\textwidth]{tokens.png}
-\includegraphics[width=\textwidth]{tokens_no_weekly.png}
-\includegraphics[width=\textwidth]{weekly_budget_tokens.png}
+![Average tokens per riddle per year](https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/tokens.png "Average tokens")
+![Average tokens without outlier](https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/tokens_no_weekly.png "Average tokens without outlier")
+![Average tokens of outlierr](https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/weekly_budget_tokens.png "Average tokens of outlier")
 
 Riddles do, however, tend to increase in length over time. Late-period riddles are longer than early period riddles. Riddles from "Our Young Folk's Weekly Budget" increased significantly in length over that period, shown above. Riddles from "Our Young Folk's Weekly Budget" were published between 1877 and 1889; it published the largest number of riddles (562 of 2,166 riddles) of any publisher in the dataset.
 
@@ -29,21 +28,21 @@ I tracked the total number of either male (he, him, etc.), female (she, her, etc
 
 There is an average of 10.95 male-related words per riddle (std. 17.71), 4.26 female-related words per riddle (std. 8.89), and 13.63 neutral related words per riddle (std. 17.58). The high standard deviations suggest that the majority of riddles have a low number of personal pronouns, with significant outliers having a large number of pronouns.
 
-\includegraphics[width=\textwidth]{pron_percent.png}
+![Average pronouns](https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/pron_percent.png "Average pronouns")
 The average number of personal pronouns as a percentage of tokens per riddle increased slightly in late period riddles as compared to early riddles, suggesting an increase in the personal aspect of riddling. Riddling using personal pronouns may indicate a shift in the style of riddling over time to becoming more people-focused. Close-reading late period riddles compared to early period riddles may help illuminate this trend. Again, it is worth noting that 50\% of riddles in this set were written after 1878.
 
 ## Possible close-reading
 I identified several significant riddles for close reading based on this data. These texts help illuminate differences between male-centered and female-centered riddles. Both riddles were published in "The Friendly Companion and Illustrated Instructor"; the male-centered riddle on August 1st, 1893 and the female-centered riddle on July 1st, 1893. 
 
 * The text with the largest proportion of male pronouns (10.92\% of tokens are male-related):
-> BIBLE ENIGMA.
-> WITH luxury and wealth he did abound; No lack was in his sumptuous dwelling found; But, midst the various things which he possess'd, One thing was his which far outweigh'd therest, 'Twas his, nor knew he how with it to part, Although no pleasure did this thing impart 'Twas ever with him, ever in his sight, And swallow'd up his other treasures quite, Till, travelling to a distant pleasant land, He took this thing and an obedient band Of servants with him; for, an urgent case Had cansed his journey to this noted place. He stayed awhile, and then he turn'd to go. He reach'd his native land again; but, lo! This thing, so long his own, he left behind, Without the slightest wish again to find. But one there was who covetous had grown, Not satisfied with things which were his own; Grasping forbidden treasure, to his cost He found the very thing the other lost. He found it and he parted with it never; God in his judgment, made it his for ever,- In mercy took it from the man of wealth And made it his who would be rich by stealth. "Friendly Companions," it may be that you Will guess at once the thing I have in view; While you to whom it still remains a mystery, May find it in the page of Sacred History. Oxford. R
+    > BIBLE ENIGMA.
+    > WITH luxury and wealth he did abound; No lack was in his sumptuous dwelling found; But, midst the various things which he possess'd, One thing was his which far outweigh'd therest, 'Twas his, nor knew he how with it to part, Although no pleasure did this thing impart 'Twas ever with him, ever in his sight, And swallow'd up his other treasures quite, Till, travelling to a distant pleasant land, He took this thing and an obedient band Of servants with him; for, an urgent case Had cansed his journey to this noted place. He stayed awhile, and then he turn'd to go. He reach'd his native land again; but, lo! This thing, so long his own, he left behind, Without the slightest wish again to find. But one there was who covetous had grown, Not satisfied with things which were his own; Grasping forbidden treasure, to his cost He found the very thing the other lost. He found it and he parted with it never; God in his judgment, made it his for ever,- In mercy took it from the man of wealth And made it his who would be rich by stealth. "Friendly Companions," it may be that you Will guess at once the thing I have in view; While you to whom it still remains a mystery, May find it in the page of Sacred History. Oxford. R
 * The text with the largest proportion of female pronouns (7.02\% of tokens are female-related):
-> BIBLE ENIGMA.
-> MANY centuries ago, a company of travellers a>a been seen going from Mesopotamia toward that Canaan near to where Joshua gave Reuben his inheb Among this company was one intent on evil. I with him servants and one who usually accompani0 on his journeys, but she knew not of his intents. way, she saw something in front of them, which frighted her that she turned aside into the fielde pass it; this so annoyed the man that he struck compelled her to go on with them; further on, shes same again and refused to go further, whereupon her with his staff; she remonstrated with him forhis asking him some pointed questions; this, and her to go forward, so enraged him, that he threatenedif a weapon he would have killed her. He afterwardsl she had saved his life. Who was this man P r was sheP She has been dead many years; but neither in heaven nor yet in hell. Who is she, nid can she beP Also, was there anything particulara h language which we should do well to regard? Allington. GEosur I
+    > BIBLE ENIGMA.
+    > MANY centuries ago, a company of travellers a>a been seen going from Mesopotamia toward that Canaan near to where Joshua gave Reuben his inheb Among this company was one intent on evil. I with him servants and one who usually accompani0 on his journeys, but she knew not of his intents. way, she saw something in front of them, which frighted her that she turned aside into the fielde pass it; this so annoyed the man that he struck compelled her to go on with them; further on, shes same again and refused to go further, whereupon her with his staff; she remonstrated with him forhis asking him some pointed questions; this, and her to go forward, so enraged him, that he threatenedif a weapon he would have killed her. He afterwardsl she had saved his life. Who was this man P r was sheP She has been dead many years; but neither in heaven nor yet in hell. Who is she, nid can she beP Also, was there anything particulara h language which we should do well to regard? Allington. GEosur I
 
 # Classification
-### Question: Are riddles distinguishable from each other based on (a) date of publication and (b) publication source? If so, what are distinguishing features of those riddles?
+Question: Are riddles distinguishable from each other based on (a) date of publication and (b) publication source? If so, what are distinguishing features of those riddles?
 All classification was conducted using the Gale dataset.
 
 ## Findings
@@ -73,18 +72,15 @@ I have not yet compiled a distinctive feature set for each of the four most popu
 There are also possible confounders in the results. When classifying based on time, it is possible that certain words never appear in early riddles and only appear in late riddles. This demonstrates a shift in lexicon, but does not show that a word is more distinctive in its tangible usage in one text as compared to another. This trend could be studied by analyzing the appearances of distinctive words over time and visualizing those appearances in order to gauge language that is more or less distinctive in its relative usage.
 
 # Mapping
-### Question: How does the location of riddling change over time?
+Question: How does the location of riddling change over time?
 This is an ongoing project. The plan is to build a JS time-slider using Mapbox that visualizes riddle publication locations over time. 
 Update: The time slider portion of this project is complete and accessible on this website!
 
-# Gale Digital Scholar Lab}
+# Gale Digital Scholar Lab
 ## Sentiment analysis and clustering
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.4\textwidth]{chart.png}
-    \includegraphics[width=0.4\textwidth]{chart(1).png}
-    \caption{\textit{Left, Text sentiment analysis from the Gale digital scholar lab. Right, unsupervised clustering from the Gale digital scholar lab.}}
-\end{figure}
+![Sentiment analysys from Galer](https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/chart.png "Sentiment analysis from Gale")
+![Clustering from Gale](https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/chart(1).png "Clustering from Gale")
+
 I also used the Gale digital scholar lab to perform basic DH analysis on the texts. While incredibly convenient, the Gale analyses lack data transparency that would be useful to extrapolate a better understanding of the texts being used.
 
 Sentiment analysis offers an interesting look at how sentiment varies over time using the accepted AFINN model for sentiment analysis. It would be useful to offer other models for different studies in sentiment. For instance, NRC Emotion Lexicon could help analyse the text in more terms than simply positive-negative, and Bing Liu's sentiment dictionary could offer a second model for positive-negative to compare to the AFINN model.
@@ -92,13 +88,8 @@ Sentiment analysis offers an interesting look at how sentiment varies over time 
 The unsupervised clustering offered here would be interesting to compare to the supervised classification work offered above. It would be  useful if purity scores based on metadata were offered for the classes. Even though there are two transparent clusters generated in the Lab, it is unclear exactly what those clusters represent. It is possible to merge the dataframe representing the clustering with the existing metadata using document IDs, but given the non-standard naming scheme for documents, this is not trivial. Offering built-in purity scores for each metadata for the documents would be incredibly useful. It could answer questions about the natural tendency for documents to group together based on publication, time period, or textual content, based on distinguishing features of the different clusters. In addition, inclusion of supervised classification based on metadata, such as in the earlier section, would also be another interesting way to view the data.
 
 ## N-grams and part-of-speech comparisons
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=.7\textwidth]{chart3.png}
-    \includegraphics[width=.7\textwidth]{chart4.png}
-    \caption{\textit{Top, n-gram analysis from the Gale digital scholar lab. Bottom, part-of-speech comparisons from the Gale digital scholar lab.}}
-\end{figure}
-\textit{Figures at bottom of document.}
+![n-gram analysis from the Gale digital scholar lab](https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/chart3.png "n-gram analysis from the Gale digital scholar lab")
+![part-of-speech comparisons from the Gale digital scholar lab](https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/chart4.png "part-of-speech comparisons from the Gale digital scholar lab")
 
 Other tests are also interesting, but lack transparency or strong metadata inclusion. It is difficult to understand patterns in data without comparisons. The part-of-speech tagger is a very interesting tool, but only tracks based on author. It would be very useful to have a native analyzer where the metadata to be tracked can be chosen. How does adverb usage compare between publications? 
 
