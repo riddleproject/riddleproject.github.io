@@ -37,6 +37,7 @@ a {
   padding: 10px 20px;
   background-color: white;
   height: calc(90vh-20px);
+  width: 20vw;
   overflow-y: auto;
 }
 
