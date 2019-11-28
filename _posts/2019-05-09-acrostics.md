@@ -67,7 +67,7 @@ Don’t forget to follow @McGillLib, @McGill_ROAAr, and @CookeNathalie on Twitte
 
 Keep calm and riddle on!
 
-[1] Pg. 12, Julie Sloan Brannon, Who Reads Ulysses?: The Rhetoric of the Joyce Wars and the Common Reader (Psychology Press, 2003) https://bit.ly/2V0Uw9f.
+[1] Pg. 12, Julie Sloan Brannon, Who Reads Ulysses?: The Rhetoric of the Joyce Wars and the Common Reader (Psychology Press, 2003) [https://bit.ly/2V0Uw9f](https://bit.ly/2V0Uw9f).
 
 [2] Taken from Pg. 160, “The Lady’s Magazine Or Entertaining Companion for the Fair Sex: Appropriated Solely to Their Use and Amusement.” Baldwin, Cradock & Joy, vol. 20, 1789.
 
