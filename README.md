@@ -1,6 +1,6 @@
 ---
 layout: home
-title: "Loving in truth and fain in Riddle my love to show: Mother’s Day Acrostics with The Riddle Project"
+title: "The Riddles Project"
 ---
 
 > A Baronet? A Beau? The First Temptation and a Slight Gust?
