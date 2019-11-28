@@ -8,7 +8,6 @@ description: The Riddles Project is a ROAAr project dedicated to transcribing, s
 header_pages:
   - filters.html
   - story.html
-  - posts.html
 
 show_excerpts: true
 
