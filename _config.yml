@@ -1,6 +1,11 @@
 theme: minima
 title: The Riddles Project
-site.title: The Riddles Project
+author: The Riddles Project
+description: The Riddles Project is a ROAAr project dedicated to transcribing, solving, and researching riddles in early manuscripts.
+
 header_pages:
   - filters.html
   - story.html
+
+minima:
+  date_format: "%b %-d, %Y"
