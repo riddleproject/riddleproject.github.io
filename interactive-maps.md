@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: interactive
 title: Interactive Maps
 ---
 
