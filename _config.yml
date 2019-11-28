@@ -7,7 +7,7 @@ description: The Riddle Project is an ROAAr project dedicated to transcribing, s
 header_pages:
   - interactive-maps.md
   - blog.md
-  - team.md
+  - about.md
 
 show_excerpts: true
 

@@ -7,8 +7,13 @@ The Riddles Project is led by Nathalie Cooke, Associate Dean of ROAAr, and inclu
 
 ## The Team
 Prof. Nathalie Cooke, Associate Dean of ROAAr
+
 Nora Shaalan
+
 Leehu Sigler
+
 Nathan Drezner
+
 Andrea Wahba
+
 Deniz Cevik
