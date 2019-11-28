@@ -2,8 +2,8 @@
 layout: default
 title: Interactive Maps
 ---
-# Interactive maps
-<iframe src="filters.html"
+# Interactive Maps
+<iframe src="visualizations/filters.html"
         width="100%" height="400px">
 </iframe>
 <p><a href="visualizations/filters" target="_blank">View full screen</a></p>
