@@ -1,7 +1,12 @@
 ---
-layout: interactive
+layout: default
 title: Interactive Maps
 ---
+
+<iframe src="https://riddleproject.github.io/visualizations/filters.html"
+        width="100%" height="400px">
+</iframe>
+<p><a href="visualizations/filters" target="_blank">View full screen</a></p>
 
 The <a href="visualizations/filters" target="_blank">first web app</a> is an interactive map where filters can be set to manipulate which riddling events are visible. Points representing riddling events can be filtered by date, archive, or whether the dataset includes the actual riddle for the event. While this project is ongoing, the riddles on the app represent a large portion of the dataset collected by the Riddles Project.
 
