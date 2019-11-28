@@ -33,6 +33,7 @@ See how the letter is comprised of both words and pictures?*
 
 ------
 
+
 Some Rebuses emphasize the visual arrangement of their words to hint at their answer:
 
  I have to paid
@@ -46,6 +47,7 @@ The answer is: “I have to overwork because I am underpaid”.
 “I have to” is literally over the word “work”, and “I am” is literally under the word “paid”.
 
 ------
+
 
 While the idea of the Rebus originated over five thousand years ago, it gained popularity in England throughout the seventeenth century, especially as heraldic seals[4].
 
@@ -67,8 +69,12 @@ Don’t forget to follow @McGillLib, @McGill_ROAAr, and @CookeNathalie on Twitte
 Keep calm and riddle on!
 
 [1] Pg. 114, Fyodor Dostoyevsky, The Brothers Karamazov (Project Gutenberg 2009) http://www.gutenberg.org/files/28054/28054-h/28054-h.html
+
 [2] “Part of a letter from Carroll at ‘The Chestnuts.’” Pg. 57, John Fisher, The Magic of Lewis Carroll (Simon and Schuster, 1973)
+
 [3] Pg. 85, Tony Augarde, The Oxford Guide to Word Games (Oxford: Oxford UP, 1984)
+
 [4] Pg. 85-6, Tony Augarde, The Oxford Guide to Word Games (Oxford: Oxford UP, 1984)
+
 [5] Tomasz Steifer, Gdansk, 2008 https://commons.wikimedia.org/wiki/File:Shakespeare1COA.png
 
