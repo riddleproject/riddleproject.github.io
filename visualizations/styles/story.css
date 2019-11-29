@@ -31,5 +31,5 @@ section.active {
 }
 section:last-child {
   border-bottom: none;
-  margin-bottom: calc(100vh-200px);
+  height: 100vh;
 }
