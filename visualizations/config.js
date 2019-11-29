@@ -1,6 +1,6 @@
 var config = {
     style: 'mapbox://styles/mapbox/light-v10',
-    accessToken: 'YOUR_ACCESS_TOKEN',
+    accessToken: 'pk.eyJ1IjoibmRyZXpuIiwiYSI6ImNqeXg2eDlhZzA0MzczZ28xeDdzNnNqY3kifQ.lxS44L-xGMpt-Wcv0vpHng',
     showMarkers: true,
     theme: 'light',
     alignment: 'left',
@@ -11,9 +11,9 @@ var config = {
     chapters: [
         {
             id: 'intro',
-            title: 'There are a lot of riddles!',
+            title: 'Worldwide spread',
             image: '',
-            description: 'Look at all of these riddles.',
+            description: 'Riddles were published all over the world',
             location: {
                 center: [-59.42113, 44.67741],
                 zoom: 1.36,
@@ -51,7 +51,7 @@ var config = {
         },
         {
             id: 'bc-riddles',
-            title: 'British Columbiariddles',
+            title: 'British Columbia riddles',
             image: '',
             description: 'These are all the riddles in BC',
             location: {
