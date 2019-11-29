@@ -54,20 +54,20 @@ map.on('load', function() {
 });
 
 var chapters = {
-  baker: {
+  "introduction": {
     bearing: 27,
     center: [-0.15591514, 51.51830379],
     zoom: 15.5,
     pitch: 20
   },
-  aldgate: {
+  "british-riddles": {
     duration: 6000,
     center: [-0.07571203, 51.51424049],
     bearing: 150,
     zoom: 15,
     pitch: 0
   },
-  "london-bridge": {
+  "bc-riddles": {
     bearing: 90,
     center: [-0.08533793, 51.50438536],
     zoom: 13,
