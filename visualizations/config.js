@@ -1,5 +1,5 @@
 var config = {
-    style: 'styles/ndrezn/ck3jkuzqe05uu1cmidl0er2h7/',
+    style: 'mapbox://styles/mapbox/light-v10',
     accessToken: 'YOUR_ACCESS_TOKEN',
     showMarkers: true,
     theme: 'light',
