@@ -1,6 +1,13 @@
 mapboxgl.accessToken =
   "pk.eyJ1IjoibmRyZXpuIiwiYSI6ImNqeXg2eDlhZzA0MzczZ28xeDdzNnNqY3kifQ.lxS44L-xGMpt-Wcv0vpHng";
 
+
+// Initialize filters
+var startYearFilter = ['>=', ['number', ['get', 'Year']], 1892];
+var endYearFilter = ['<=', ['number', ['get', 'Year']], 1892];
+var typeFilter = ['!=', ['number', ['get', 'Type']], -1];
+var onlyMenus = ['!=', ['number', ['get', 'has_menu']], -1];
+
 var map = new mapboxgl.Map({
   container: "map",
   style: "mapbox://styles/mapbox/light-v10",
@@ -15,14 +22,6 @@ map.on('load', function() {
   map.addSource("conundrums", {
     type: "geojson",
     data: "./data.geojson",
-  });
-
-  map.addSource("clustered-conundrums", {
-    type: "geojson",
-    data: "data.geojson",
-    cluster: true,
-    clusterMaxZoom: 14, // Max zoom to cluster points on
-    clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
   });
 
   map.addLayer({
