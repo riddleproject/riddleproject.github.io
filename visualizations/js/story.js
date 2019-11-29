@@ -91,7 +91,7 @@ window.onscroll = function() {
     var chapterName = chapterNames[i];
     if (isElementOnScreen(chapterName)) {
       setActiveChapter(chapterName);
-      map.setFilter('unclustered-point', ['all', chapterName['filter']])
+      map.setFilter('unclustered-point', ['all', [chapterName['filter']]])
       break;
     }
   }
