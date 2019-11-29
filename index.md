@@ -1,5 +1,5 @@
 ---
-title: Home
+title: The Riddle Project
 layout: default
 ---
 

@@ -232,7 +232,7 @@ map.addControl(nav, 'bottom-right');
 map.on('load', function() {
 	map.addSource("conundrums", {
 		type: "geojson",
-		data: "data.geojson",
+		data: "./data.geojson",
 	});
 
 	map.addSource("clustered-conundrums", {
