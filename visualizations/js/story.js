@@ -14,7 +14,7 @@ var map = new mapboxgl.Map({
   container: "map",
   style: "mapbox://styles/mapbox/light-v10",
   center: [-60.88620, 48.62161],
-  zoom: 1.47,
+  zoom: 1,
   bearing: 0,
   pitch: 0
 });
@@ -58,7 +58,7 @@ var chapters = {
   "introduction": {
     bearing: 0,
     center: [-60.88620, 48.62161],
-    zoom: 1.47,
+    zoom: 1,
     pitch: 0,
     filter: [startYearFilter, endYearFilter, typeFilter, onlyMenus],
   },
