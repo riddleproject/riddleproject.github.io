@@ -4,7 +4,7 @@ mapboxgl.accessToken =
 
 // Initialize filters
 var curTypes = [0,1,2,3,4,5,6,7,8,9,10]
-var toggles = ['banq', 'bchn', 'bna', 'ean', 'ebof', 'ink', 'lcsoc','lcsup', 'lctea', 'nys', 'ppp']
+var toggles = ['banq', 'bchn', 'bna', 'ean', 'ebof', 'ink', 'lcsoc','lcsup', 'lctea', 'nys', 'ppp'];
 var startYearFilter = ['>=', ['number', ['get', 'Year']], 0];
 var endYearFilter = ['<=', ['number', ['get', 'Year']], 3000];
 var typeFilter = ['match', ['get', 'Type'], curTypes, true, false]
@@ -59,29 +59,29 @@ var chapters = {
     bearing: 0,
     center: [-60.88620, 48.62161],
     zoom: 1.47,
-    pitch: 0
-    filter: [startYearFilter, endYearFilter, typeFilter, onlyMenus];
+    pitch: 0,
+    filter: [startYearFilter, endYearFilter, typeFilter, onlyMenus],
   },
   "british-riddles": {
     center: [-3.22679, 53.61753],
     bearing: -42.13,
     zoom: 4.77,
-    pitch: 54.50
-    filter: [startYearFilter, endYearFilter, typeFilter, onlyMenus];
+    pitch: 54.50,
+    filter: [startYearFilter, endYearFilter, typeFilter, onlyMenus],
   },
   "ebofs": {
     center: [-3.22679, 53.61753],
     bearing: -42.13,
     zoom: 4.77,
-    pitch: 54.50
-    filter: [startYearFilter, endYearFilter, ['match', ['get', 'Type'], [4], true, false], onlyMenus];
+    pitch: 54.50,
+    filter: [startYearFilter, endYearFilter, ['match', ['get', 'Type'], [4], true, false], onlyMenus],
   },
   "bc-riddles": {
     bearing: 36.27,
     center: [-123.06917, 53.29594],
     zoom: 3.98,
-    pitch: 54.50
-    filter: [startYearFilter, endYearFilter, typeFilter, onlyMenus];
+    pitch: 54.50,
+    filter: [startYearFilter, endYearFilter, typeFilter, onlyMenus],
   },
 };
 
