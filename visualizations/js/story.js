@@ -52,28 +52,28 @@ var chapters = {
     center: [-60.88620, 48.62161],
     zoom: 1,
     pitch: 0,
-    filter: [false],
+    filter: null,
   },
   "british-riddles": {
     center: [-3.22679, 53.61753],
     bearing: -42.13,
     zoom: 4.77,
     pitch: 54.50,
-    filter: [false],
+    filter: null,
   },
   "ebofs": {
     center: [-3.22679, 53.61753],
     bearing: -42.13,
     zoom: 4.77,
     pitch: 54.50,
-    filter: [true, ['match', ['get', 'Type'], [4], true, false]],
+    filter: ['match', ['get', 'Type'], [4], true, false],
   },
   "bc-riddles": {
     bearing: 36.27,
     center: [-123.06917, 53.29594],
     zoom: 3.98,
     pitch: 54.50,
-    filter: [false],
+    filter: null,
   },
 };
 
@@ -84,9 +84,7 @@ window.onscroll = function() {
     var chapterName = chapterNames[i];
     if (isElementOnScreen(chapterName)) {
       setActiveChapter(chapterName);
-      if chapters[chapterName]['filter'][0]{
-        map.setFilter('unclustered-point', chapters[chapterName]['filter']);
-      }
+      map.setFilter('unclustered-point', chapters[chapterName]['filter']);
       break;
     }
   }
