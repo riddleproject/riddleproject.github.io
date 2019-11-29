@@ -6,7 +6,7 @@ title: Story Map
 ## Under construction!
 
 <iframe src="visualizations/story.html"
-        width="100%" height="600px">
+        width="100%" height="500px">
 </iframe>
 <p><a href="visualizations/story" target="_blank">View full screen</a></p>
 

@@ -4,7 +4,7 @@ title: Interactive Map
 ---
 # Interactive Map
 <iframe src="visualizations/interactive.html"
-        width="100%" height="600px">
+        width="100%" height="500px">
 </iframe>
 <p><a href="visualizations/interactive" target="_blank">View full screen</a></p>
 
