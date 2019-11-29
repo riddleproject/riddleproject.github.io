@@ -52,14 +52,14 @@ var chapters = {
     center: [-60.88620, 48.62161],
     zoom: 1,
     pitch: 0,
-    filter: ['!=', ['number', ['get', 'has_menu']], -1],
+    filter: [],
   },
   "british-riddles": {
     center: [-3.22679, 53.61753],
     bearing: -42.13,
     zoom: 4.77,
     pitch: 54.50,
-    filter: ['!=', ['number', ['get', 'has_menu']], -1],
+    filter: [],
   },
   "ebofs": {
     center: [-3.22679, 53.61753],
@@ -73,7 +73,7 @@ var chapters = {
     center: [-123.06917, 53.29594],
     zoom: 3.98,
     pitch: 54.50,
-    filter: ['!=', ['number', ['get', 'has_menu']], -1],
+    filter: [],
   },
 };
 
