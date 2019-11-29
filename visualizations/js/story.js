@@ -23,7 +23,6 @@ map.on('load', function() {
     id: "unclustered-point",
     type: "circle",
     source: "conundrums",
-    filter: ['all', startYearFilter, endYearFilter, typeFilter],
     paint: {
       'circle-color': [
         'interpolate',
