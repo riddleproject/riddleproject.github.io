@@ -1,13 +1,7 @@
 mapboxgl.accessToken =
   "pk.eyJ1IjoibmRyZXpuIiwiYSI6ImNqeXg2eDlhZzA0MzczZ28xeDdzNnNqY3kifQ.lxS44L-xGMpt-Wcv0vpHng";
 
-
-// Initialize filters
-var toggles = ['banq', 'bchn', 'bna', 'ean', 'ebof', 'ink', 'lcsoc','lcsup', 'lctea', 'nys', 'ppp'];
-var startYearFilter = ['>=', ['number', ['get', 'Year']], 0];
-var endYearFilter = ['<=', ['number', ['get', 'Year']], 3000];
-var typeFilter = ['match', ['get', 'Type'], [0,1,2,3,4,5,6,7,8,9,10], true, false]
-var onlyMenus = ['!=', ['number', ['get', 'has_menu']], -1];
+//order of archives: ['banq', 'bchn', 'bna', 'ean', 'ebof', 'ink', 'lcsoc','lcsup', 'lctea', 'nys', 'ppp'];
 
 var map = new mapboxgl.Map({
   container: "map",
@@ -59,14 +53,14 @@ var chapters = {
     center: [-60.88620, 48.62161],
     zoom: 1,
     pitch: 0,
-    filter: [],
+    filter: ['!=', ['number', ['get', 'has_menu']], -1],
   },
   "british-riddles": {
     center: [-3.22679, 53.61753],
     bearing: -42.13,
     zoom: 4.77,
     pitch: 54.50,
-    filter: [],
+    filter: ['!=', ['number', ['get', 'has_menu']], -1],
   },
   "ebofs": {
     center: [-3.22679, 53.61753],
@@ -80,7 +74,7 @@ var chapters = {
     center: [-123.06917, 53.29594],
     zoom: 3.98,
     pitch: 54.50,
-    filter: [],
+    filter: ['!=', ['number', ['get', 'has_menu']], -1],
   },
 };
 
@@ -91,7 +85,7 @@ window.onscroll = function() {
     var chapterName = chapterNames[i];
     if (isElementOnScreen(chapterName)) {
       setActiveChapter(chapterName);
-      map.setFilter('unclustered-point', ['all', [chapterName['filter']]])
+      map.setFilter('unclustered-point', chapterName['filter'])
       break;
     }
   }
