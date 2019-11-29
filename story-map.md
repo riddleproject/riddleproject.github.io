@@ -9,4 +9,4 @@ title: Story Map
 </iframe>
 <p><a href="visualizations/story" target="_blank">View full screen</a></p>
 
-This map, which is an ongoing project, will build the interactive fitering map into a scrolling story, helping clarify the salient patterns represented by the dataset of riddles for people being introduced to the dataset.
+Scroll through the story map to see the ways different riddles connect. The story map helps clarify questions about riddle patterns and movement identified over the course of the project.
