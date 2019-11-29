@@ -5,7 +5,7 @@ categories: Announcements
 author: " Jacquelyn Sundberg "
 ---
 
-The Social Sciences and Humanities Research Council has granted support to the project over the next two years to investigate this new genre from an interdisciplinary angle. The team, led by Nathalie Cooke, Associate Dean of ROAAr, includes an energetic team of research assistants as well as collaborators from across the departments of the McGill Library. Librarians, digitization specialists, cataloguers and researchers will work together to shed new light on the newly Identified sub-genre of Enigmatical Bills of fare (Ebfs).
+The [Social Sciences and Humanities Research Council](https://www.sshrc-crsh.gc.ca/home-accueil-eng.aspx) has granted support to the project over the next two years to investigate this new genre from an interdisciplinary angle. The team, led by Nathalie Cooke, Associate Dean of ROAAr, includes an energetic team of research assistants as well as collaborators from across the departments of the McGill Library. Librarians, digitization specialists, cataloguers and researchers will work together to shed new light on the newly Identified sub-genre of Enigmatical Bills of fare (Ebfs).
 
 Here is a taste of the work to come from Project lead, Nathalie Cooke:
 
