@@ -13,10 +13,10 @@ var onlyMenus = ['!=', ['number', ['get', 'has_menu']], -1];
 var map = new mapboxgl.Map({
   container: "map",
   style: "mapbox://styles/mapbox/light-v10",
-  center: [-0.15591514, 51.51830379],
-  zoom: 15.5,
-  bearing: 27,
-  pitch: 45
+  center: [-60.88620, 48.62161],
+  zoom: 1.47,
+  bearing: 0,
+  pitch: 0
 });
 
 // BUILD MAP
