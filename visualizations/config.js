@@ -4,9 +4,9 @@ var config = {
     showMarkers: true,
     theme: 'light',
     alignment: 'left',
-    title: 'Patterns in Riddle Events',
+    title: '',
     subtitle: '',
-    byline: 'The Riddle Project',
+    byline: '',
     footer: '',
     chapters: [
         {
