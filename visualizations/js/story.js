@@ -54,24 +54,22 @@ map.on('load', function() {
 
 var chapters = {
   "introduction": {
-    bearing: 27,
-    center: [-0.15591514, 51.51830379],
-    zoom: 15.5,
-    pitch: 20
-  },
-  "british-riddles": {
-    duration: 6000,
-    center: [-0.07571203, 51.51424049],
-    bearing: 150,
-    zoom: 15,
+    bearing: 0,
+    center: [-60.88620, 48.62161],
+    zoom: 1.47,
     pitch: 0
   },
+  "british-riddles": {
+    center: [-3.22679, 53.61753],
+    bearing: -42.13,
+    zoom: 4.77,
+    pitch: 54.50
+  },
   "bc-riddles": {
-    bearing: 90,
-    center: [-0.08533793, 51.50438536],
-    zoom: 13,
-    speed: 0.6,
-    pitch: 40
+    bearing: 36.27,
+    center: [-123.06917, 53.29594],
+    zoom: 3.98,
+    pitch: 54.50
   },
 };
 
