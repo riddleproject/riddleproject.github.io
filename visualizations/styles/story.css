@@ -31,5 +31,5 @@ section.active {
 }
 section:last-child {
   border-bottom: none;
-  margin-bottom: 400px;
+  margin-bottom: 300px;
 }
