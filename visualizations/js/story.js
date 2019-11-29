@@ -87,7 +87,7 @@ window.onscroll = function() {
   }
 };
 
-var activeChapterName = "baker";
+var activeChapterName = "introduction";
 function setActiveChapter(chapterName) {
   if (chapterName === activeChapterName) return;
 
