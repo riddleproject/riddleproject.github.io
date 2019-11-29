@@ -1,270 +1,64 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8' />
-    <title>Story map</title>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
-    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
-    <script src="https://unpkg.com/scrollama"></script>
-    <style>
-        body {
-            margin:0; 
-            padding:0; 
-            font-family: sans-serif;
-        }
-        a, a:hover, a:visited {
-            color: #0071bc;
-        }
-        #map {
-            top:0; 
-            height: 100vh;
-            width:100vw;
-            position: fixed;
-            z-index: -5;
-        }
-        #header {
-            margin: 3vh auto;
-            width: 90vw;
-            padding: 2vh;
-            text-align: center;
-        }
-        #footer {
-            width: 100%;
-            min-height: 5vh;
-            padding-top: 2vh;
-            padding-bottom: 2vh;
-            text-align: center;
-            line-height: 25px;
-            font-size: 13px;
-        }
-        #features {
-            padding-top: 10vh;
-            padding-bottom: 10vh;
-            z-index: 100;
-        }
-        .centered {
-            width: 50vw;
-            margin: 0 auto;
-        }
-        .lefty {
-            width: 33vw;
-            margin-left: 5vw;
-        }
-        .righty {
-            width: 33vw;
-            margin-left: 62vw;
-        }
-        .light {
-            color: #444;
-            background-color: #fafafa;
-        }
-        .dark {
-            color: #fafafa;
-            background-color: #444;
-        }
-        .step {
-            padding-bottom: 50vh;
-            /* margin-bottom: 10vh; */
-            opacity: 0.25;
-        }
-        .step.active {
-            opacity: 0.9;
-        }
+<div class='row' id='archive-filters'>  
+  <label id = 'banqcolor' for='banq' style='color:#1f77b4'> Bibliothèque et Archives nationales du Québec</label> 
+  
+  <label id = 'bchncolor' for='bchn' style='color:#ff7f0e'> British Columbia Historical Newspapers</label>
 
-        .step div {
-            padding:  25px 50px;
-            line-height: 25px;
-            font-size: 13px;
-        }
+  <label id = 'bnacolor' for='bna' style='color:#2ca02c'> British Newspaper Archives</label> 
 
-        .step img {
-            width: 100%;
-        }
+  <label id = 'nyscolor' for='nys' style='color:#d62728'> NYS Historical Newspaper or Fulton</label> 
 
-        @media (max-width: 750px) {
-            #features {
-                width: 90vw;
-                margin: 0 auto;
-            }
-        }
-        </style>
-</head>
-<body>
+  <label id = 'ebofcolor' for='ebof' style='color:#9467bd'> Enigmatic Bills of Fare</label>
 
-<div id="map"></div>
-<div id="story"></div>
-<script src="./config.js"></script>
-<script>
-var layerTypes = {
-    'fill': ['fill-opacity'],
-    'line': ['line-opacity'],
-    'circle': ['circle-opacity', 'circle-stroke-opacity'],
-    'symbol': ['icon-opacity', 'text-opacity'],
-    'raster': ['raster-opacity'],
-    'fill-extrusion': ['fill-extrusion-opacity']
-}
+  <label id = 'lsccolor' for='lcsoc' style='color:#8c564b'> Chronicling America Social</label>
 
-var alignments = {
-    'left': 'lefty',
-    'center': 'centered',
-    'right': 'righty'
-}
+  <label id = 'lcsupcolor' for='lcsup' style='color:#e377c2'> Chronicling America Supper</label>
 
-function getLayerPaintType(layer) {
-    var layerType = map.getLayer(layer).type;
-    return layerTypes[layerType];
-}
+  <label id = 'lcteacolor' for='lctea' style='color:#7f7f7f'> Chronicling America Tea</label>
 
-function setLayerOpacity(layer) {
-    var paintProps = getLayerPaintType(layer.layer);
-    paintProps.forEach(function(prop) {
-        map.setPaintProperty(layer.layer, prop, layer.opacity);
-    });
-}
+  <label id = 'pppcolor' for='ppp' style='color:#bcbd22'> Peel's Prairies Provinces</label>
 
-var story = document.getElementById('story');
-var features = document.createElement('div');
-features.classList.add(alignments[config.alignment]);
-features.setAttribute('id', 'features');
+  <label id = 'eancolor' for='ean' style='color:#17becf'> Early Alberta Newspapers</label>
 
-var header = document.createElement('div');
+  <label id = 'inkcolor' for='ink' style='color:#006411'> INK Our Digital World Newspaper Archive</label>
 
-if (config.title) {
-    var titleText = document.createElement('h1');
-    titleText.innerText = config.title;
-    header.appendChild(titleText);
-}
 
-if (config.subtitle) {
-    var subtitleText = document.createElement('h2');
-    subtitleText.innerText = config.subtitle;
-    header.appendChild(subtitleText);
-}
+</div>
+<div id='map'></div>
+<div id='features'>
+    <section id='baker' class='active'>
+        <h3>221b Baker St.</h3>
+        <p>November 1895. London is shrouded in fog and Sherlock Holmes and Watson pass time restlessly awaiting a new case. "The London criminal is certainly a dull fellow," Sherlock bemoans. "There have been numerous petty thefts," Watson offers in response. Just then a telegram arrives from Sherlock's brother Mycroft with a mysterious case.</p>
+    </section>
+    <section id='aldgate'>
+        <h3>Aldgate Station</h3>
+        <p>Arthur Cadogan West was found dead, head crushed in on train tracks at Aldgate Station at 6AM Tuesday morning. West worked at Woolwich Arsenal on the Bruce-Partington submarine, a secret military project. Plans for the submarine had been stolen and seven of the ten missing papers were found in West's possession. Mycroft implores Sherlock to take the case and recover the three missing papers.</p>
+    </section>
+    <section id='london-bridge'>
+        <h3>London Bridge</h3>
+        <p>Holmes and Watson's investigations take them across London. Sherlock deduces that West was murdered elsewhere, then moved to Aldgate Station to create the illusion that he was crushed on the tracks by a train. On their way to Woolwich Sherlock dispatches a telegram to Mycroft at London Bridge: "Send list of all foreign spies known to be in England, with full address."</p>
+    </section>
+    <section id='woolwich'>
+        <h3>Woolwich Arsenal</h3>
+        <p>While investigating at Woolwich Arsenal Sherlock learns that West did not have the three keys&mdash;door, office, and safe&mdash;necessary to steal the papers. The train station clerk mentions seeing an agitated West boarding the 8:15 train to London Bridge. Sherlock suspects West of following someone who had access to the Woolwich chief's keyring with all three keys.</p>
+    </section>
+    <section id='gloucester'>
+        <h3>Gloucester Road</h3>
+        <p>Mycroft responds to Sherlock's telegram and mentions several spies. Hugo Oberstein of 13 Caulfield Gardens catches Sherlock's eye. He heads to the nearby Gloucester Road station to investigate and learns that the windows of Caulfield Gardens open over rail tracks where trains stop frequently.</p>
+    </section>
+    <section id='caulfield-gardens'>
+        <h3>13 Caulfield Gardens</h3>
+        <p>Holmes deduces that the murderer placed West atop a stopped train at Caulfield Gardens. The train traveled to Aldgate Station before West's body finally toppled off. Backtracking to the criminal's apartment, Holmes finds a series of classified ads from <em>The Daily Telegraph</em> stashed away. All are under the name Pierrot: "Monday night after nine. Two taps. Only ourselves. Do not be so suspicious. Payment in hard cash when goods delivered."</p>
+    </section>
+    <section id='telegraph'>
+        <h3>The Daily Telegraph</h3>
+        <p>Holmes and Watson head to The Daily Telegraph and place an ad to draw out the criminal. It reads: "To-night. Same hour. Same place. Two taps. Most vitally important. Your own safety at stake. Pierrot." The trap works and Holmes catches the criminal: Colonel Valentine Walter, the brother of Woolwich Arsenal's chief. He confesses to working for Hugo Oberstein to obtain the submarine plans in order to pay off his debts.</p>
+    </section>
+    <section id='charing-cross'>
+        <h3>Charing Cross Hotel</h3>
+        <p>Walter writes to Oberstein and convinces him to meet in the smoking room of the Charing Cross Hotel where he promises additional plans for the submarine in exchange for money. The plan works and Holmes and Watson catch both criminals.</p>
+        <small id="citation">
+            Adapted from <a href='http://www.gutenberg.org/files/2346/2346-h/2346-h.htm'>Project Gutenberg</a>
+        </small>
+    </section>
+</div>
 
-if (config.byline) {
-    var bylineText = document.createElement('p');
-    bylineText.innerText = config.byline;
-    header.appendChild(bylineText);
-}
-
-if (header.innerText.length > 0) {
-    header.classList.add(config.theme);
-    header.setAttribute('id', 'header');
-    story.appendChild(header);
-}
-
-config.chapters.forEach((record, idx) => {
-    var container = document.createElement('div');
-    var chapter = document.createElement('div');
-    
-    if (record.title) {
-        var title = document.createElement('h3');
-        title.innerText = record.title;
-        chapter.appendChild(title);
-    }
-    
-    if (record.image) {
-        var image = new Image();  
-        image.src = record.image;  
-        chapter.appendChild(image);
-    }
-    
-    if (record.description) {
-        var story = document.createElement('p');
-        story.innerHTML = record.description;
-        chapter.appendChild(story);
-    }
-
-    container.setAttribute('id', record.id);
-    container.classList.add('step');
-    if (idx === 0) {
-        container.classList.add('active');
-    }
-
-    chapter.classList.add(config.theme);
-    container.appendChild(chapter);
-    features.appendChild(container);
-});
-
-story.appendChild(features);
-
-var footer = document.createElement('div');
-
-if (config.footer) {
-    var footerText = document.createElement('p');
-    footerText.innerHTML = config.footer;
-    footer.appendChild(footerText);
-}
-
-if (footer.innerText.length > 0) {
-    footer.classList.add(config.theme);
-    footer.setAttribute('id', 'footer');
-    story.appendChild(footer);
-}
-
-mapboxgl.accessToken = config.accessToken;
-
-const transformRequest = (url) => {
-    const hasQuery = url.indexOf("?") !== -1;	  
-    const suffix = hasQuery ? "&pluginName=journalismScrollytelling" : "?pluginName=journalismScrollytelling";	  
-    return {
-      url: url + suffix
-    }	  
-}
-
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: config.style,
-    center: config.chapters[0].location.center,
-    zoom: config.chapters[0].location.zoom,
-    bearing: config.chapters[0].location.bearing,
-    pitch: config.chapters[0].location.pitch,
-    scrollZoom: false,
-    transformRequest: transformRequest
-});
-
-var marker = new mapboxgl.Marker();
-if (config.showMarkers) {
-    marker.setLngLat(config.chapters[0].location.center).addTo(map);
-}
-
-// instantiate the scrollama
-var scroller = scrollama();
-
-map.on("load", function() {
-    // setup the instance, pass callback functions
-    scroller
-    .setup({
-        step: '.step',
-        offset: 0.5,
-        progress: true
-    })
-    .onStepEnter(response => {
-        var chapter = config.chapters.find(chap => chap.id === response.element.id);
-        response.element.classList.add('active');
-        map.flyTo(chapter.location);
-        if (config.showMarkers) {
-            marker.setLngLat(chapter.location.center);
-        }
-        if (chapter.onChapterEnter.length > 0) {
-            chapter.onChapterEnter.forEach(setLayerOpacity);
-        }
-    })
-    .onStepExit(response => {
-        var chapter = config.chapters.find(chap => chap.id === response.element.id);
-        response.element.classList.remove('active');
-        if (chapter.onChapterExit.length > 0) {
-            chapter.onChapterExit.forEach(setLayerOpacity);
-        }
-    });
-});
-
-// setup resize event
-window.addEventListener('resize', scroller.resize);
-
-</script>
-
-</body>
-</html>
