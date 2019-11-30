@@ -1,3 +1,6 @@
+document.getElementById("loading").classList.add("animated");
+document.getElementById("loading").classList.add("fadeOut");
+
 mapboxgl.accessToken = 'pk.eyJ1IjoibmRyZXpuIiwiYSI6ImNqeXg2eDlhZzA0MzczZ28xeDdzNnNqY3kifQ.lxS44L-xGMpt-Wcv0vpHng';
 
 // Initialize filters
@@ -496,3 +499,7 @@ map.on('load', function() {
 	});
 
 });
+
+document.getElementById("loading").classList.remove("animated");
+document.getElementById("loading").classList.remove("fadeOut");
+document.getElementById("loading").style.display = "none";
