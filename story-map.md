@@ -4,7 +4,7 @@ title: Story Map
 ---
 # Story Map
 
-<iframe src="visualizations/story.html"
+<iframe src="https://riddleproject.github.io/visualizations/story"
         width="100%" height="500px">
 </iframe>
 <p><a href="visualizations/story" target="_blank">View full screen</a></p>

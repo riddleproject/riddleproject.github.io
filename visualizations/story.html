@@ -28,6 +28,10 @@
     </head>
 
     <body>
+        <div id="loading">
+            <div id="spinner"></div>
+        </div>
+
         <div id='map'></div>
         <div id='features'>
             <section id='introduction' class='active'>
@@ -68,7 +72,20 @@
                 </small>
             </section>
         </div>
+
+        <script type="text/javascript">
+          setTimeout(function() {
+            document.getElementById("loading").classList.add("animated");
+            document.getElementById("loading").classList.add("fadeOut");
+            setTimeout(function() {
+              document.getElementById("loading").classList.remove("animated");
+              document.getElementById("loading").classList.remove("fadeOut");
+              document.getElementById("loading").style.display = "none";
+            }, 400);
+          }, 1000);
+        </script>
     </body>
+
     <script src='./js/story.js'></script>
 
 </html>
