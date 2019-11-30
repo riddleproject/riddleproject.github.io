@@ -83,7 +83,7 @@ var chapters = {
     filter: ['match', ['get', 'Type'], [1], true, false],
   },
   "middle-canada": {
-    center: [-115.32966, 53.34845],
+    center: [-111.32966, 53.34845],
     zoom: 4.43,
     pitch: 59.00,
     bearing: -11.66,
