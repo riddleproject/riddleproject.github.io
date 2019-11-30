@@ -63,7 +63,7 @@ var chapters = {
   },
   "ebofs": {
     center: [-3.22679, 53.61753],
-    bearing: 20,
+    bearing: -20,
     zoom: 4.77,
     pitch: 54.50,
     filter: ['match', ['get', 'Type'], [4], true, false],
@@ -91,7 +91,7 @@ var chapters = {
   },
   "quebec": {
     center: [-73.83364, 47.05284],
-    zoom: 5.70,
+    zoom: 4.70,
     pitch: 36.00,
     bearing:-12.46,
     filter: ['match', ['get', 'Type'], [0], true, false],
