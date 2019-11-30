@@ -11,6 +11,7 @@ function showHideMenu(element, button) {
   var y = document.getElementById(button);
   if (x.style.display === "none") {
     x.style.display = "block";
+    x.style.overflow = 'scroll';
     y.innerHTML = 'Hide menu'
   } else {
     x.style.display = "none";
