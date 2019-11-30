@@ -319,8 +319,8 @@ map.on('load', function() {
 			var n = parseInt(document.getElementById('inputstart').value)
 			if (isNaN(n)){
 				startyear = startyear
-			} else if (n < 1878) {
-				startyear = 1878
+			} else if (n < 1733) {
+				startyear = 1733
 			} else if (n > 1971) {
 				startyear = 1971
 			} else{

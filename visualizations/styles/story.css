@@ -53,7 +53,7 @@ body {
   margin-left: 70%;
   font-family: sans-serif;
   overflow-y: scroll;
-  background-color: #fafafa;
+  background-color: var(--bg-color);
 }
 section {
   padding: 25px 50px;
@@ -71,6 +71,6 @@ section:last-child {
 }
 
 :root {
-  --bg-color: #fff;
+  --bg-color: #fafafa;
   --text-color: rgb(10, 10, 10);
 }
