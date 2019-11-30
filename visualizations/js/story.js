@@ -73,7 +73,7 @@ var chapters = {
     center: [-75.66073, 42.50450],
     zoom: 5.60,
     pitch: 46.50,
-    filter: null,
+    filter: ['match', ['get', 'Type'], [9], true, false],
   },
   "bc-riddles": {
     bearing: 36.27,
@@ -83,7 +83,7 @@ var chapters = {
     filter: ['match', ['get', 'Type'], [1], true, false],
   },
   "middle-canada": {
-    center: [-106.32966, 53.34845],
+    center: [-115.32966, 53.34845],
     zoom: 4.43,
     pitch: 59.00,
     bearing: -11.66,
