@@ -63,7 +63,7 @@ var chapters = {
   },
   "ebofs": {
     center: [-3.22679, 53.61753],
-    bearing: 42.13,
+    bearing: 20,
     zoom: 4.77,
     pitch: 54.50,
     filter: ['match', ['get', 'Type'], [4], true, false],
@@ -71,7 +71,7 @@ var chapters = {
   "nys": {
     bearing: -19.56,
     center: [-75.66073, 42.50450],
-    zoom: 6.60,
+    zoom: 5.60,
     pitch: 46.50,
     filter: null,
   },
@@ -80,6 +80,27 @@ var chapters = {
     center: [-123.06917, 53.29594],
     zoom: 3.98,
     pitch: 54.50,
+    filter: ['match', ['get', 'Type'], [1], true, false],
+  },
+  "middle-canada": {
+    center: [-106.32966, 53.34845],
+    zoom: 4.43,
+    pitch: 59.00,
+    bearing: -11.66,
+    filter: ['match', ['get', 'Type'], [3,10], true, false],
+  },
+  "quebec": {
+    center: [-73.83364, 47.05284],
+    zoom: 5.70,
+    pitch: 36.00,
+    bearing:-12.46,
+    filter: ['match', ['get', 'Type'], [0], true, false],
+  },
+  "overview": {
+    bearing: 0,
+    center: [-60.88620, 48.62161],
+    zoom: 1,
+    pitch: 0,
     filter: null,
   },
 };
