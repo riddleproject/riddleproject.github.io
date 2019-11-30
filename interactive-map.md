@@ -4,9 +4,9 @@ title: Interactive Map
 ---
 # Interactive Map
 <iframe src="visualizations/interactive.html"
-        width="100%" height="500px">
+        width="100%" height="500px" frameBorder="0">
 </iframe>
-<p><a href="visualizations/interactive" target="_blank" frameBorder="0">View full screen</a></p>
+<p><a href="visualizations/interactive" target="_blank">View full screen</a></p>
 
 This map is an interactive visual where riddles can be selected based on their metadata. Points representing riddling events can be filtered by date, archive, or whether the dataset includes the actual riddle for the event. Every riddle is clickable, revealing more information about the event that took place. 
 
