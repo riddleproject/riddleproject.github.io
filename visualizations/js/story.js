@@ -75,6 +75,13 @@ var chapters = {
     pitch: 46.50,
     filter: ['match', ['get', 'Type'], [9], true, false],
   },
+  "nys2": {
+    bearing: -19.56,
+    center: [-75.66073, 42.50450],
+    zoom: 4,
+    pitch: 46.50,
+    filter: ['match', ['get', 'Type'], [9], true, false],
+  },
   "bc-riddles": {
     bearing: 36.27,
     center: [-123.06917, 53.29594],
