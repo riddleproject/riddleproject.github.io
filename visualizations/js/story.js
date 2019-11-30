@@ -63,10 +63,17 @@ var chapters = {
   },
   "ebofs": {
     center: [-3.22679, 53.61753],
-    bearing: -42.13,
+    bearing: 42.13,
     zoom: 4.77,
     pitch: 54.50,
     filter: ['match', ['get', 'Type'], [4], true, false],
+  },
+  "nys": {
+    bearing: -19.56,
+    center: [-75.66073, 42.50450],
+    zoom: 6.60,
+    pitch: 46.50,
+    filter: null,
   },
   "bc-riddles": {
     bearing: 36.27,
