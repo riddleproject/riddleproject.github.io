@@ -50,7 +50,7 @@ var chapters = {
   "introduction": {
     bearing: 0,
     center: [-60.88620, 48.62161],
-    zoom: 1,
+    zoom: .8,
     pitch: 0,
     filter: null,
   },
@@ -106,7 +106,7 @@ var chapters = {
   "overview": {
     bearing: 0,
     center: [-60.88620, 48.62161],
-    zoom: 1,
+    zoom: .8,
     pitch: 0,
     filter: null,
   },
