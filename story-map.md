@@ -7,6 +7,6 @@ title: Story Map
 <iframe src="https://riddleproject.github.io/visualizations/story"
         width="100%" height="500px">
 </iframe>
-<p><a href="visualizations/story" target="_blank">View full screen</a></p>
+<p><a href="visualizations/story" target="_blank" frameBorder="0">View full screen</a></p>
 
 Scroll through the story map to see the ways different riddles connect. The story map helps clarify questions about riddle patterns and movement identified over the course of the project.

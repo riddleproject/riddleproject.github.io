@@ -30,10 +30,6 @@
   </head>
 
   <body >
-    <div id="loading">
-      <div id="spinner"></div>
-    </div>
-
     <div id='map'></div>
     <nav id='filter-group' class='filter-group'></nav>
     <div id = 'items'>
@@ -44,13 +40,13 @@
         <h2>Filter by date</h2>
         <!-- Slider bar -->
         <div class='session' id='sliderbar' autocomplete="off">
-           Start year: <label id='active-start-year'> <input id='inputstart' type="text" name="textStartYear" value="1892" class='text' autocomplete="off"> </label><br>
-          <input  id='start-slider' class='row' type='range' min='1733' max='1971' step='1' value='1892' autocomplete="off" />
+           Start year: <label id='active-start-year'> <input id='inputstart' type="text" name="textStartYear" value="1892" class='text' autocomplete="off", style='float: right;'> </label><br>
+          <input  id='start-slider' class='slider' type='range' min='1733' max='1971' step='1' value='1892' autocomplete="off" />
         </div>
         <!-- Slider bar -->
         <div class='session' id='sliderbar2'>
-          End year: <label id='active-end-year'> <input id='inputend' type="text" name="textEndYear" value="1892" class='text' autocomplete="off"> </label><br>
-          <input id='end-slider' class='row' type='range' min='1733' max='1971' step='1' value='1892' autocomplete="off"  />
+          End year: <label id='active-end-year'> <input id='inputend' type="text" name="textEndYear" value="1892" class='text' autocomplete="off" style='float: right;'> </label><br>
+          <input id='end-slider' class='slider' type='range' min='1733' max='1971' step='1' value='1892' autocomplete="off"  />
         </div>
         
         <!-- Show all checkbox -->
@@ -122,18 +118,6 @@
     <div id = "clusterbutton">
           <button id = 'toggleClusters' type="button" onclick="changeClustering()">Group by region (disables filters)</button>
     </div>
-    
-    <script type="text/javascript">
-      setTimeout(function() {
-        document.getElementById("loading").classList.add("animated");
-        document.getElementById("loading").classList.add("fadeOut");
-        setTimeout(function() {
-          document.getElementById("loading").classList.remove("animated");
-          document.getElementById("loading").classList.remove("fadeOut");
-          document.getElementById("loading").style.display = "none";
-        }, 800);
-      }, 1200);
-    </script>
   </body>
   
   <script src='js/interactive.js'></script>
