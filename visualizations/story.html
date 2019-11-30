@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en"> 
-    <head>
-        <meta charset="utf-8"/>
-        <title>Story Map | The Riddle Project</title>
-        <link rel = "stylesheet"
-            type = "text/css"
-            href = "styles/story.css" />
+    {%- include head.html -%}
+    <meta charset="utf-8"/>
+    <title>Story Map | The Riddle Project</title>
+    <link rel = "stylesheet"
+        type = "text/css"
+        href = "styles/story.css" />
 
-        <meta name='robots' content='noindex, nofollow'>
-        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js'></script>
-        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css' rel='stylesheet' />
-    </head>
-
+    <meta name='robots' content='noindex, nofollow'>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css' rel='stylesheet' />
+    <script src='./js/story.js'></script>
 
     <body>
         <div id='map'></div>
@@ -56,7 +55,5 @@
             </section>
         </div>
     </body>
-
-    <script src='./js/story.js'></script>
 </html>
 
