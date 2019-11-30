@@ -90,7 +90,7 @@ var chapters = {
     filter: ['match', ['get', 'Type'], [3,10], true, false],
   },
   "quebec": {
-    center: [-73.83364, 47.05284],
+    center: [-73.83364, 50.05284],
     zoom: 4.70,
     pitch: 36.00,
     bearing:-12.46,
