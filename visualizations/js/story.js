@@ -78,7 +78,7 @@ var chapters = {
   "nys2": {
     bearing: -19.56,
     center: [-75.66073, 42.50450],
-    zoom: 4,
+    zoom: 3,
     pitch: 46.50,
     filter: ['match', ['get', 'Type'], [9], true, false],
   },
