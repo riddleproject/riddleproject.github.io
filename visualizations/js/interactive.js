@@ -340,8 +340,8 @@ map.on('load', function() {
 			
 			if (isNaN(n)){
 				endyear = endyear
-			} else if (n < 1878) {
-				endyear = 1878
+			} else if (n < 1733) {
+				endyear = 1733
 			} else if (n > 1971) {
 				endyear = 1971
 			} else{
