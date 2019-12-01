@@ -48,6 +48,21 @@ a {
   overflow-y: auto;
 }
 
+input:disabled,
+input[disabled]{
+  border: 0px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  opacity: 1;
+}
+input[disabled]::-webkit-slider-thumb{
+  cursor: not-allowed;
+}
+
+input[disabled]::-moz-range-thumb{
+  cursor: not-allowed;
+}
+
 #hiderbutton {
   padding:10px;
 }
