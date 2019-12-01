@@ -99,6 +99,7 @@ a {
   background: #515151;
   cursor: pointer;
 }
+
 input.text[disabled]{
   border: 1px solid #999999;
 }
@@ -110,11 +111,11 @@ input[disabled]{
   opacity: 1;
 }
 input[disabled]::-webkit-slider-thumb{
-  cursor: not-allowed;
+  cursor:auto;
 }
 
 input[disabled]::-moz-range-thumb{
-  cursor: not-allowed;
+  cursor:auto;
 }
 
 :root {
