@@ -14,7 +14,7 @@ Nathan Drezner, developer and undergraduate student in English and Computer Scie
 
 Andrea Wahba, MISt graduate 2018 and current masters student in English
 
-Chelsea Woodhouse MSc. and first year MISt student 
+Chelsea Woodhouse, MSc. and first year MISt student 
 
 Deniz Cevik
 
