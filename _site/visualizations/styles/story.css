@@ -19,7 +19,12 @@ body {
   overflow-y: scroll;
   background-color: var(--bg-color);
 }
+
+#frame {
+  width: 100%;
+}
 section {
+
   padding: 25px 50px;
   line-height: 25px;
   border-bottom: 1px solid #ddd;
