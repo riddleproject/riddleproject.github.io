@@ -91,6 +91,7 @@ window.onscroll = function() {
   }
 };
 
+
 var activeChapterName = "introduction";
 function setActiveChapter(chapterName) {
   if (chapterName === activeChapterName) return;
@@ -104,6 +105,7 @@ function setActiveChapter(chapterName) {
 
   activeChapterName = chapterName;
 }
+
 
 function isElementOnScreen(id) {
   var element = document.getElementById(id);
