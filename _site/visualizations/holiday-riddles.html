@@ -50,6 +50,10 @@
     <h3>Twelfth Night</h3>
         <p>What about the Twelfth Night celebrations? Now, we have a wider range around the Christmas holidays. Do any of these riddle events have Christmas-y themes?</p>
 </section>
+<section id='halloween'>
+    <h3>Halloween</h3>
+        <p>how does Halloween play into it? All of the riddles shown were produced on Halloween.</p>
+</section>
 
 </div>
 <script>
@@ -83,6 +87,13 @@ var chapters = {
     zoom: .8,
     pitch: 0,
     filter: ['all', ['>=', ['number', ['get', 'Day']], 355], ['<=', ['number', ['get', 'Day']],365]],
+  },
+  "halloween": {
+    bearing: 0,
+    center: [-62.88620, 48.62161],
+    zoom: .8,
+    pitch: 0,
+    filter: ['all', ['>=', ['number', ['get', 'Day']], 304], ['<=', ['number', ['get', 'Day']],304]],
   },
 };
 
