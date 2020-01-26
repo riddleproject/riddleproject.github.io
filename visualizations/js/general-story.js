@@ -3,19 +3,6 @@ mapboxgl.accessToken =
 
 //order of archives: ['banq', 'bchn', 'bna', 'ean', 'ebof', 'ink', 'lcsoc','lcsup', 'lctea', 'nys', 'ppp'];
 
-function showHideMenu(element, button) {
-  var x = document.getElementById(element);
-  var y = document.getElementById(button);
-  if (x.style.display === "none") {
-    x.style.display = "block";
-    x.style.overflow = 'scroll';
-    y.innerHTML = 'Hide menu'
-  } else {
-    x.style.display = "none";
-    y.innerHTML = 'Show menu'
-  }
-}
-
 var map = new mapboxgl.Map({
   container: "map",
   style: "mapbox://styles/mapbox/light-v10",
@@ -29,7 +16,7 @@ var map = new mapboxgl.Map({
 map.on('load', function() {
   map.addSource("conundrums", {
     type: "geojson",
-    data: "./data.geojson",
+    data: "/visualizations/data.geojson",
   });
 
   map.addLayer({
@@ -61,6 +48,7 @@ map.on('load', function() {
   // CLICKABLE POINTS
   // When a click event occurs on a feature in the places layer, open a popup at the
   // location of the feature, with description HTML from its properties.
+  has_popup = false
   map.on('click', 'unclustered-point', function (e) {
     var coordinates = e.features[0].geometry.coordinates.slice();
     var description = e.features[0].properties.description;
@@ -71,11 +59,12 @@ map.on('load', function() {
     while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
       coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
     }
-     
-    new mapboxgl.Popup()
+    
+    popup = new mapboxgl.Popup()
     .setLngLat(coordinates)
     .setHTML(description)
     .addTo(map);
+    has_popup = true
   });
    
   // Change the cursor to a pointer when the mouse is over the places layer.
@@ -88,72 +77,6 @@ map.on('load', function() {
     map.getCanvas().style.cursor = '';
   });
 });
-
-var chapters = {
-  "introduction": {
-    bearing: 0,
-    center: [-62.88620, 48.62161],
-    zoom: .8,
-    pitch: 0,
-    filter: null,
-  },
-  "british-riddles": {
-    center: [-3.22679, 53.61753],
-    bearing: -42.13,
-    zoom: 4.77,
-    pitch: 54.50,
-    filter: null,
-  },
-  "ebofs": {
-    center: [-3.22679, 53.61753],
-    bearing: -20,
-    zoom: 4.77,
-    pitch: 54.50,
-    filter: ['match', ['get', 'Type'], [4], true, false],
-  },
-  "nys": {
-    bearing: -19.56,
-    center: [-75.66073, 42.50450],
-    zoom: 5.60,
-    pitch: 46.50,
-    filter: ['match', ['get', 'Type'], [9], true, false],
-  },
-  "nys2": {
-    bearing: -19.56,
-    center: [-75.66073, 42.50450],
-    zoom: 3,
-    pitch: 46.50,
-    filter: ['match', ['get', 'Type'], [9], true, false],
-  },
-  "bc-riddles": {
-    bearing: 36.27,
-    center: [-123.06917, 53.29594],
-    zoom: 3.98,
-    pitch: 54.50,
-    filter: ['match', ['get', 'Type'], [1], true, false],
-  },
-  "middle-canada": {
-    center: [-111.32966, 53.34845],
-    zoom: 4.43,
-    pitch: 59.00,
-    bearing: -11.66,
-    filter: ['match', ['get', 'Type'], [3,10], true, false],
-  },
-  "quebec": {
-    center: [-73.83364, 48.05284],
-    zoom: 4.70,
-    pitch: 36.00,
-    bearing:-12.46,
-    filter: ['match', ['get', 'Type'], [0], true, false],
-  },
-  "overview": {
-    bearing: 0,
-    center: [-62.88620, 48.62161],
-    zoom: .8,
-    pitch: 0,
-    filter: null,
-  },
-};
 
 // On every scroll event, check which element is on screen
 window.onscroll = function() {
@@ -171,8 +94,10 @@ window.onscroll = function() {
 var activeChapterName = "introduction";
 function setActiveChapter(chapterName) {
   if (chapterName === activeChapterName) return;
-
   map.flyTo(chapters[chapterName]);
+  if (has_popup){
+    popup.remove();
+  }
 
   document.getElementById(chapterName).setAttribute("class", "active");
   document.getElementById(activeChapterName).setAttribute("class", "");

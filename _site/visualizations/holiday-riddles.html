@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <meta charset="utf-8"/>
+        <title>Story Map | The Riddle Project</title>
+        <link rel = "stylesheet"
+            type = "text/css"
+            href = "styles/story.css" />
+
+        <meta name='robots' content='noindex, nofollow'>
+        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js'></script>
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css' rel='stylesheet' />
+        <link rel="apple-touch-icon" sizes="180x180" href="favis/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favis/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favis/favicon-16x16.png">
+        <link rel="manifest" href="favis/site.webmanifest">
+        <link rel="shortcut icon" href="favis/favicon.ico">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-config" content="favis/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+
+        <meta property="og:image" content="favis/social-preview.png">
+        <meta property="og:type" content="website">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="511">
+        <meta property="og:image:height" content="251">
+    </head>
+
+    <body>
+        <div id='map'></div>
+
+        <div id='features'>
+<section id='introduction' class='active'>
+    <h3>How do holidays play into riddling practices?</h3>
+        <p>Dinners are where riddling events tended to occur. Intuition suggests that most dinners occur on the holidays, when everyone is together. So how do holiday themes play into the riddles?</p>
+        <div style="text-align:center; margin: 0 auto;"><small>Scroll down to begin</small></div>
+        <p style=" margin: 0 auto; width:15%"><img src="/visualizations/images/scroll-down.png" style="width:100%">
+</section>
+<section id='distro'>
+    <h3>Distribution of Riddles by Day</h3>
+         <p style="text-align:center;"><img src="/visualizations/images/riddle-day-distribution.png" alt="Distribution of riddles by day of the year" style="width:100%">
+        <p>Once again, it's useful to visualize the distribution of riddles by their day of release. Here, it's clear that riddles center around January and diminish in the summer. This is likely related to the twelve nights festivities that occur around Christmastime.</p>
+</section>
+<section id='christmas'>
+    <h3>Christmas</h3>
+        <p>Here's a look at only the riddle events which occurred on Christmas day. Or rather, the lack therof: Even though there is a peak in this period, no riddle events from this dataset were published on Christmas day. There's a simple answer for this: Newspapers likely weren't publishing on the holiday.</p>
+</section>
+<section id='christmas2'>
+    <h3>Twelfth Night</h3>
+        <p>What about the Twelfth Night celebrations? Now, we have a wider range around the Christmas holidays. Do any of these riddle events have Christmas-y themes?</p>
+</section>
+
+</div>
+<script>
+    
+var chapters = {
+  "introduction": {
+    bearing: 0,
+    center: [-62.88620, 48.62161],
+    zoom: .8,
+    pitch: 0,
+    filter: null,
+  },
+  "distro": {
+    bearing: 0,
+    center: [-62.88620, 48.62161],
+    zoom: 1.2,
+    pitch: 0,
+    filter: null,
+  },
+  "christmas": {
+    bearing: 0,
+    center: [-62.88620, 48.62161],
+    zoom: .8,
+    pitch: 0,
+    filter: ['==', ['number', ['get', 'Day']], 359],
+  },
+
+  "christmas2": {
+    bearing: 0,
+    center: [-62.88620, 48.62161],
+    zoom: .8,
+    pitch: 0,
+    filter: ['all', ['>=', ['number', ['get', 'Day']], 355], ['<=', ['number', ['get', 'Day']],365]],
+  },
+};
+
+</script>
+
+
+        <script src='./js/general-story.js'></script>
+    </body>
+</html>

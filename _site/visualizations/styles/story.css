@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+#map {
+  position: fixed;
+  width: 70%;
+}
+#features {
+  width: 30%;
+  margin-left: 70%;
+  font-family: sans-serif;
+  overflow-y: scroll;
+  background-color: var(--bg-color);
+}
+section {
+  padding: 25px 50px;
+  line-height: 25px;
+  border-bottom: 1px solid #ddd;
+  opacity: 0.25;
+  font-size: 13px;
+}
+section.active {
+  opacity: 1;
+}
+section:last-child {
+  border-bottom: none;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: #2DC4B2;
+}
+
+:root {
+  --bg-color: #fafafa;
+  --text-color: rgb(10, 10, 10);
+}

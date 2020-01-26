@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-26T11:57:18-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">The Riddle Project</title><subtitle>The Riddle Project is an ROAAr project dedicated to transcribing, solving, and researching riddles in early manuscripts.</subtitle><author><name>McGill University Library</name></author><entry><title type="html">How do riddles move from EBoF to EBoF?</title><link href="http://localhost:4000/features/2019/11/24/graphs.html" rel="alternate" type="text/html" title="How do riddles move from EBoF to EBoF?" /><published>2019-11-24T00:00:00-05:00</published><updated>2019-11-24T00:00:00-05:00</updated><id>http://localhost:4000/features/2019/11/24/graphs</id><content type="html" xml:base="http://localhost:4000/features/2019/11/24/graphs.html">&lt;p&gt;Enigmatic Bills of Fare (EBoFs) frequently share the same lines, suggesting that there is a transfer of riddles from supper to supper. This raises the immediate question of how and why this is happening. Are riddles being shared based on their physical location? Are riddles being shared in a timely fashion, such that recurring riddles tend to come up in bursts and then fade away? Or is it random: Do riddles just pop up randomly as a somteime fad?&lt;/p&gt;
+
+&lt;p&gt;To represent the transfer of riddles from EBoF to EBoF, we constructed a network representing our data set of EBoFs and the lines (individual riddles) shared between them. This data set includes 34 EBoFs (composed of a set of lines) and 246 lines that appear in at least two EBoFs.&lt;/p&gt;
+
+&lt;p&gt;For example: &lt;em&gt;The Divine Part of Man&lt;/em&gt; appears in 23 EBoFs, including BOF_13. To see how this line fits in, here is an excerpt from BOF_13:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;242.-AN ENIGMATICAL DINNER. MEAT, GAME, FOWL AND FISH.&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;The ornamental part of the head.&lt;/li&gt;
+  &lt;li&gt;The divine part of man.&lt;/li&gt;
+  &lt;li&gt;A tailor’s implement.&lt;/li&gt;
+  &lt;li&gt;A blockhead.&lt;/li&gt;
+  &lt;li&gt;The Grand Seigniors Dominions.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;[…]&lt;/p&gt;
+
+&lt;p&gt;First, of course, can you figure out answer to &lt;em&gt;The Divine Part of Man&lt;/em&gt;? In other words, the meal that is represented by the riddle?&lt;/p&gt;
+
+&lt;p&gt;It’s &lt;em&gt;heart&lt;/em&gt;, or &lt;em&gt;sole&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;At any rate, the EBoF goes on; there are 39 unique lines contained in this riddle alone. Each line has its own answer, representing a dish to be served at that enigmatical dinner. Now, on to the graph representation of these connections:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/riddleproject/riddles-dh/master/visuals/graphing-blog-post/PastedGraphic-3.png&quot; alt=&quot;Social network representing shared lines of ebofs&quot; title=&quot;Social network representing shared lines of ebofs&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Each node in this network represents an EBoF, labelled with its unique ID. (You can see BOF_13 in the top center of the graphic.) The edges between nodes represent a shared line between two EBoFs, and the weight of the edge signifies the number of lines shared between two EBoFs.&lt;/p&gt;
+
+&lt;p&gt;Once the network was constructed, we used the Louvain community detection algorithm to determine clusters and the modularity score of the network. Each node is colored by the cluster it is a part of (there are four unique clusters). The green cluster contains 13 nodes, the purple cluster contains 16 nodes, the orange cluster contains 5 nodes, and the blue cluster only contains BOF_3, which had no shared lines with any other BOF.&lt;/p&gt;
+
+&lt;p&gt;Clusters are divided very cleanly by period: 75% of BOFs in the purple cluster are post-1824 (the median year of publication), 92% of BOFS in the green cluster are pre-1824, and 80% of EBoFs in the orange cluster are post-1824. This is a strong indicator that proximity by time is an influence on how lines from BOFs are distributed. In other words, it is likely that riddles from EBoFs were extremely temporal, and maybe even “trendy.” The best riddles likely moved from dinner to dinner in a short span of time before fading into obscurity.&lt;/p&gt;
+
+&lt;p&gt;Tested purity by publishing location was less revealing because most EBoFs from this set were published in England. Every cluster had roughly 60% purity by region, with all being majority EBoFs from London.&lt;/p&gt;</content><author><name>Nathan Drezner</name></author><summary type="html">Enigmatic Bills of Fare (EBoFs) frequently share the same lines, suggesting that there is a transfer of riddles from supper to supper. This raises the immediate question of how and why this is happening. Are riddles being shared based on their physical location? Are riddles being shared in a timely fashion, such that recurring riddles tend to come up in bursts and then fade away? Or is it random: Do riddles just pop up randomly as a somteime fad?</summary></entry><entry><title type="html">New SSHRC Funding for The Riddle Project</title><link href="http://localhost:4000/announcements/2019/07/25/SSHRC-funding.html" rel="alternate" type="text/html" title="New SSHRC Funding for The Riddle Project" /><published>2019-07-25T00:00:00-05:00</published><updated>2019-07-25T00:00:00-05:00</updated><id>http://localhost:4000/announcements/2019/07/25/SSHRC-funding</id><content type="html" xml:base="http://localhost:4000/announcements/2019/07/25/SSHRC-funding.html">&lt;p&gt;The &lt;a href=&quot;https://www.sshrc-crsh.gc.ca/home-accueil-eng.aspx&quot;&gt;Social Sciences and Humanities Research Council&lt;/a&gt; has granted support to the project over the next two years to investigate this new genre from an interdisciplinary angle. The team, led by Nathalie Cooke, Associate Dean of ROAAr, includes an energetic team of research assistants as well as collaborators from across the departments of the McGill Library. Librarians, digitization specialists, cataloguers and researchers will work together to shed new light on the newly Identified sub-genre of Enigmatical Bills of fare (Ebfs).&lt;/p&gt;
+
+&lt;p&gt;Here is a taste of the work to come from Project lead, Nathalie Cooke:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A Baronet? A Beau? The First Temptation and a Slight Gust?
+Imagine trying to decipher your dinner menu through a game of words. This research program was prompted by such a curiosity: an 1805 handwritten diagram of a table setting in which each dish was described only by riddles. (By the way, answers to those included above are Sir Loin, Macaroni, and Apple Puff, in case you are wondering what’s for dinner.) Since that initial discovery, I have identified more riddling menus, often titled “enigmatical bills of fare” (Ebfs). Some are formally printed, others scribbled by hand. Without exception they are without the riddles’ solutions. Why would one curate and serve a menu of riddles? What was the function of food that was good only for thought? How do these Table Setting riddles figure within the larger evolution of the riddle tradition?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Congratulations to the Team!&lt;/p&gt;</content><author><name> Jacquelyn Sundberg </name></author><summary type="html">The Social Sciences and Humanities Research Council has granted support to the project over the next two years to investigate this new genre from an interdisciplinary angle. The team, led by Nathalie Cooke, Associate Dean of ROAAr, includes an energetic team of research assistants as well as collaborators from across the departments of the McGill Library. Librarians, digitization specialists, cataloguers and researchers will work together to shed new light on the newly Identified sub-genre of Enigmatical Bills of fare (Ebfs).</summary></entry><entry><title type="html">Digital Humanities and the Gale dataset</title><link href="http://localhost:4000/features/2019/07/12/digital-humanities.html" rel="alternate" type="text/html" title="Digital Humanities and the Gale dataset" /><published>2019-07-12T00:00:00-05:00</published><updated>2019-07-12T00:00:00-05:00</updated><id>http://localhost:4000/features/2019/07/12/digital-humanities</id><content type="html" xml:base="http://localhost:4000/features/2019/07/12/digital-humanities.html">&lt;p&gt;This post is a writeup on a computational analysis of a corpus of riddles obtained from the Gale Group. This corpus is about 3,000 riddles, each tagged with information including publication date, publisher, location, and author. Nearly all of the riddles in this set were published in London, England. There were several main parts to the analysis: First, an analysis of riddle syntax and difficulty by measuring changes in type-token ratio and reading ease score over time. Second, a study of the differentiability of riddles by classifying and measuring the quality of the classification. Finally, a set of analyses to test the capabilities of the built-in analytics tools in the Gale Digital Scholar Lab.&lt;/p&gt;
+
+&lt;h2 id=&quot;riddle-syntax-and-difficulty&quot;&gt;Riddle syntax and difficulty&lt;/h2&gt;
+&lt;p&gt;Questions: Is there gender bias in riddling? Is there a semantic change in riddling from more child-like to more adult-like over time?
+All analysis was conducted using the Gale dataset.&lt;/p&gt;
+&lt;h1 id=&quot;type-token-ratio&quot;&gt;Type-token ratio&lt;/h1&gt;
+&lt;p&gt;The riddles have an average TTR of 0.546 with a standard deviation of 0.125. The baseline TTR in standard written English is about 0.5, so the riddles do not fall notably higher or lower.&lt;/p&gt;
+
+&lt;h1 id=&quot;riddle-complexity&quot;&gt;Riddle complexity&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/figure.png&quot; alt=&quot;Flesch reading ease score for riddles released each year&quot; title=&quot;Flesch reading ease scores&quot; /&gt;
+Of the ~3,000 riddle corpus from Gale, the average Flesch reading score for an individual riddle is 90.90, with a standard deviation of 7.10, a maximum score of 114.62 and a minimum score of 23.11. Given the small standard deviation, the riddles are of relatively similar difficulty.&lt;/p&gt;
+
+&lt;p&gt;The graph above visualizes changes in riddle complexity over time. However, because only 158 of the 2,166 riddles tagged by date occur before 1850, early data not as strong an indicator of general complexity as late data. 50\% of riddles in this data set occur after 1878. The graph shows a consistency in riddle complexity over time, rather than a progression towards more simplistic language. In other words, more child-like riddling in later periods does not occur by this metric.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/tokens.png&quot; alt=&quot;Average tokens per riddle per year&quot; title=&quot;Average tokens&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/tokens_no_weekly.png&quot; alt=&quot;Average tokens without outlier&quot; title=&quot;Average tokens without outlier&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/weekly_budget_tokens.png&quot; alt=&quot;Average tokens of outlierr&quot; title=&quot;Average tokens of outlier&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Riddles do, however, tend to increase in length over time. Late-period riddles are longer than early period riddles. Riddles from “Our Young Folk’s Weekly Budget” increased significantly in length over that period, shown above. Riddles from “Our Young Folk’s Weekly Budget” were published between 1877 and 1889; it published the largest number of riddles (562 of 2,166 riddles) of any publisher in the dataset.&lt;/p&gt;
+
+&lt;h1 id=&quot;gender-bias-and-pronoun-usage-in-riddling&quot;&gt;Gender bias and pronoun usage in riddling&lt;/h1&gt;
+&lt;p&gt;I tracked the total number of either male (he, him, etc.), female (she, her, etc.), or neutral (they, them, etc.) words as a percentage of total word count of the texts. Using these metrics, I found that 1.09\% of all tokens are male-related, 0.42\% of all tokens are female related, and 1.37\% of all tokens are neutral. This is a roughly 2:1 ratio of male pronouns to female pronouns across all riddles, which is similar to the ratio of men to women in most written works.&lt;/p&gt;
+
+&lt;p&gt;There is an average of 10.95 male-related words per riddle (std. 17.71), 4.26 female-related words per riddle (std. 8.89), and 13.63 neutral related words per riddle (std. 17.58). The high standard deviations suggest that the majority of riddles have a low number of personal pronouns, with significant outliers having a large number of pronouns.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/pron_percent.png&quot; alt=&quot;Average pronouns&quot; title=&quot;Average pronouns&quot; /&gt;
+The average number of personal pronouns as a percentage of tokens per riddle increased slightly in late period riddles as compared to early riddles, suggesting an increase in the personal aspect of riddling. Riddling using personal pronouns may indicate a shift in the style of riddling over time to becoming more people-focused. Close-reading late period riddles compared to early period riddles may help illuminate this trend. Again, it is worth noting that 50\% of riddles in this set were written after 1878.&lt;/p&gt;
+
+&lt;h1 id=&quot;possible-close-reading&quot;&gt;Possible close-reading&lt;/h1&gt;
+&lt;p&gt;I identified several significant riddles for close reading based on this data. These texts help illuminate differences between male-centered and female-centered riddles. Both riddles were published in “The Friendly Companion and Illustrated Instructor”; the male-centered riddle on August 1st, 1893 and the female-centered riddle on July 1st, 1893.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The text with the largest proportion of male pronouns (10.92\% of tokens are male-related):
+    &lt;blockquote&gt;
+      &lt;p&gt;BIBLE ENIGMA.
+WITH luxury and wealth he did abound; No lack was in his sumptuous dwelling found; But, midst the various things which he possess’d, One thing was his which far outweigh’d therest, ‘Twas his, nor knew he how with it to part, Although no pleasure did this thing impart ‘Twas ever with him, ever in his sight, And swallow’d up his other treasures quite, Till, travelling to a distant pleasant land, He took this thing and an obedient band Of servants with him; for, an urgent case Had cansed his journey to this noted place. He stayed awhile, and then he turn’d to go. He reach’d his native land again; but, lo! This thing, so long his own, he left behind, Without the slightest wish again to find. But one there was who covetous had grown, Not satisfied with things which were his own; Grasping forbidden treasure, to his cost He found the very thing the other lost. He found it and he parted with it never; God in his judgment, made it his for ever,- In mercy took it from the man of wealth And made it his who would be rich by stealth. “Friendly Companions,” it may be that you Will guess at once the thing I have in view; While you to whom it still remains a mystery, May find it in the page of Sacred History. Oxford. R&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;The text with the largest proportion of female pronouns (7.02\% of tokens are female-related):
+    &lt;blockquote&gt;
+      &lt;p&gt;BIBLE ENIGMA.
+MANY centuries ago, a company of travellers a&amp;gt;a been seen going from Mesopotamia toward that Canaan near to where Joshua gave Reuben his inheb Among this company was one intent on evil. I with him servants and one who usually accompani0 on his journeys, but she knew not of his intents. way, she saw something in front of them, which frighted her that she turned aside into the fielde pass it; this so annoyed the man that he struck compelled her to go on with them; further on, shes same again and refused to go further, whereupon her with his staff; she remonstrated with him forhis asking him some pointed questions; this, and her to go forward, so enraged him, that he threatenedif a weapon he would have killed her. He afterwardsl she had saved his life. Who was this man P r was sheP She has been dead many years; but neither in heaven nor yet in hell. Who is she, nid can she beP Also, was there anything particulara h language which we should do well to regard? Allington. GEosur I&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;classification&quot;&gt;Classification&lt;/h2&gt;
+&lt;p&gt;Question: Are riddles distinguishable from each other based on (a) date of publication and (b) publication source? If so, what are distinguishing features of those riddles?
+All classification was conducted using the Gale dataset.&lt;/p&gt;
+
+&lt;h1 id=&quot;findings&quot;&gt;Findings&lt;/h1&gt;
+&lt;p&gt;Using logistic regression, I classified riddles based on their period. Riddles were split into two sets: pre-1878 and post-1878. Of the 2,166 riddles tagged by year, half occur before 1878 and half occur afterwards. The earliest riddle is from 1800, and the latest riddle is from 1899. Every riddle tagged with a date was published in London.&lt;/p&gt;
+
+&lt;p&gt;Below is a list of the top 10 features associated with each set using five-fold cross-validation, which was 73% accurate with 15% standard deviation.
+The most distinctive features of late riddles (in order from most to least predictive) are “bi”, “tourna”, “shark”, “agan”, “wastes”, “picnics”, “sixpence”, “teviot”, “riddle”, and “privelege”. The most distinctive features of early riddles (in the same order): “puzzled”, “charad”, “pilford”, “num”, “christened”, lettre”, “dots”, and “behavior”.
+A 30-fold classifier was 79% accurate with a 16\% standard deviation. The most distinctive features are were similar to the first list.&lt;/p&gt;
+
+&lt;p&gt;I then classified the set of riddles using the subset of riddles published by the four publications who published the highest number of riddles. There are riddles from 43 different journals in this dataset. Riddles published only in the four most journals with the highest number of riddles published comprise 38\% of the total riddles. All of the four journals were published in London. The first pass was to classify only the riddles from those journals by period, using the same specifications as above. The accuracy was 88\% with a standard deviation of 16\%. The most distinctive features of late riddles only published in the most popular journals are “ridd”, “friendless”, “friday”, “nigger”, “wordl”, “doth”, “saxon”, “sixpence”, “wora”, and “ogle”. The most distinctive features of early riddles only published in the most popular journals are “character”, “eni”, “iho”, “engish”, “lettere”, “instance”, “peop”, “curses”, and “fourt”.
+Then, I classified by publication using only riddles from the four most popular journals where each of the jounals is considered a class. Using 30-fold classification, the accuracy of the classifier was 97.4% with 3.7% standard deviation. Using the 5-fold classifier, the model was 96.6% accurate with 2.1% standard deviation.&lt;/p&gt;
+
+&lt;p&gt;Finally, I defined a binary comparison between riddles from the four most popular journals and riddles published in any of the other 39 journals. Using a 30-fold classifier, the model was 90.8\% accurate with a 7.5\% standard deviation. The most distinctive features of journals with fewer riddles are “puzzledomians”, “pasted”, “enigia”, “dotted”, “answered”, “thns”, “agatha”, “pictobial”, “appealed”, and “puzzled”. The most distinctive features of journals with more riddles: “accept”, “tours”, “tourna”, “iute”, “enigm”, “crabbe”, “downs”, “engish”, “friendless”, and “charad”&lt;/p&gt;
+
+&lt;h1 id=&quot;implications&quot;&gt;Implications&lt;/h1&gt;
+&lt;p&gt;Riddles are far more distinguishable based on source of publication than based on time of publication. The much lower accuracy rate of the classifier when determining the binary early/late period of the riddle as opposed to sorting the riddle into one of four distinct classes (the most popular publications) shows a strong bias towards publisher when considering what differentiates sets of riddles.&lt;/p&gt;
+
+&lt;p&gt;The different distinguishing features, particularly classifying the language of the most popular journals over time, suggests ways in which the lexicon of riddling shifted over time. Meta-words (“enigma”, “tourna”, “charad”, etc.) naming the riddles show how a definition of riddling changed. and the n-word as a distinguishing feature of late-period popular riddles suggests racial influences on riddling.&lt;/p&gt;
+
+&lt;p&gt;Differences in the distinctive features of riddling publications with more riddles and riddling publications with fewer riddles are largely in the type of riddle being published. For instance, whether a riddle is a “puzzledomain” or a “charade” distinguishes the publications from one another.&lt;/p&gt;
+
+&lt;h1 id=&quot;possible-problems-and-future-work&quot;&gt;Possible problems and future work&lt;/h1&gt;
+&lt;p&gt;The riddles contained in this data set are messy. Their content is transcribed digitally, so there are many strange characters and nonsense words in the data. This could lead to problems with the feature collection of the classifier: different spellings can lead to errors or missed patterns. Several of the most distinctive words are nonsense words.&lt;/p&gt;
+
+&lt;p&gt;I have not yet compiled a distinctive feature set for each of the four most popular publications. Because it is a non-binary comparison, identifying distinctive features requires a pair-wise comparison between each of the journals. This could be completed in future work. Riddles could also be classified between publications intended for male audiences and publications intended for female audiences to study the gendered differences in publishing.&lt;/p&gt;
+
+&lt;p&gt;There are also possible confounders in the results. When classifying based on time, it is possible that certain words never appear in early riddles and only appear in late riddles. This demonstrates a shift in lexicon, but does not show that a word is more distinctive in its tangible usage in one text as compared to another. This trend could be studied by analyzing the appearances of distinctive words over time and visualizing those appearances in order to gauge language that is more or less distinctive in its relative usage.&lt;/p&gt;
+
+&lt;h2 id=&quot;mapping&quot;&gt;Mapping&lt;/h2&gt;
+&lt;p&gt;Question: How does the location of riddling change over time?
+This is an ongoing project. The plan is to build a JS time-slider using Mapbox that visualizes riddle publication locations over time. 
+Update: The time slider portion of this project is complete and accessible on this website!&lt;/p&gt;
+
+&lt;h2 id=&quot;gale-digital-scholar-lab&quot;&gt;Gale Digital Scholar Lab&lt;/h2&gt;
+&lt;h1 id=&quot;sentiment-analysis-and-clustering&quot;&gt;Sentiment analysis and clustering&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/chart.png&quot; alt=&quot;Sentiment analysys from Galer&quot; title=&quot;Sentiment analysis from Gale&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/chart(1).png&quot; alt=&quot;Clustering from Gale&quot; title=&quot;Clustering from Gale&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I also used the Gale digital scholar lab to perform basic DH analysis on the texts. While incredibly convenient, the Gale analyses lack data transparency that would be useful to extrapolate a better understanding of the texts being used.&lt;/p&gt;
+
+&lt;p&gt;Sentiment analysis offers an interesting look at how sentiment varies over time using the accepted AFINN model for sentiment analysis. It would be useful to offer other models for different studies in sentiment. For instance, NRC Emotion Lexicon could help analyse the text in more terms than simply positive-negative, and Bing Liu’s sentiment dictionary could offer a second model for positive-negative to compare to the AFINN model.&lt;/p&gt;
+
+&lt;p&gt;The unsupervised clustering offered here would be interesting to compare to the supervised classification work offered above. It would be  useful if purity scores based on metadata were offered for the classes. Even though there are two transparent clusters generated in the Lab, it is unclear exactly what those clusters represent. It is possible to merge the dataframe representing the clustering with the existing metadata using document IDs, but given the non-standard naming scheme for documents, this is not trivial. Offering built-in purity scores for each metadata for the documents would be incredibly useful. It could answer questions about the natural tendency for documents to group together based on publication, time period, or textual content, based on distinguishing features of the different clusters. In addition, inclusion of supervised classification based on metadata, such as in the earlier section, would also be another interesting way to view the data.&lt;/p&gt;
+
+&lt;h1 id=&quot;n-grams-and-part-of-speech-comparisons&quot;&gt;N-grams and part-of-speech comparisons&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/chart3.png&quot; alt=&quot;n-gram analysis from the Gale digital scholar lab&quot; title=&quot;n-gram analysis from the Gale digital scholar lab&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/chart4.png&quot; alt=&quot;part-of-speech comparisons from the Gale digital scholar lab&quot; title=&quot;part-of-speech comparisons from the Gale digital scholar lab&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Other tests are also interesting, but lack transparency or strong metadata inclusion. It is difficult to understand patterns in data without comparisons. The part-of-speech tagger is a very interesting tool, but only tracks based on author. It would be very useful to have a native analyzer where the metadata to be tracked can be chosen. How does adverb usage compare between publications?&lt;/p&gt;
+
+&lt;p&gt;It would also be useful if non-dictionary words could be removed from the dataset in the cleaning configuration. Removal of non-alphabet characters is a very useful feature, but further parsing the data would also help clarify the results.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h2&gt;
+&lt;p&gt;Generally speaking, the Gale Digital Scholar lab offers incredibly powerful tools that are very intuitive to use. However, it is difficult to dig deeper below the surface of the data without being able to customize the results. Automatic identification of documents that are outliers to the data, feature identification, and additional metadata tagging would be make the tools in the lab incredibly useful alongside their convenience and ease of use.&lt;/p&gt;
+
+&lt;p&gt;More information in the help section of each tool would also be useful. Further clarification on the specific algorithm for each test and its strengths and weaknesses would help inform users about the tools at their disposal and guide users to choose the right tools for their dataset.&lt;/p&gt;</content><author><name>Nathan Drezner</name></author><summary type="html">This post is a writeup on a computational analysis of a corpus of riddles obtained from the Gale Group. This corpus is about 3,000 riddles, each tagged with information including publication date, publisher, location, and author. Nearly all of the riddles in this set were published in London, England. There were several main parts to the analysis: First, an analysis of riddle syntax and difficulty by measuring changes in type-token ratio and reading ease score over time. Second, a study of the differentiability of riddles by classifying and measuring the quality of the classification. Finally, a set of analyses to test the capabilities of the built-in analytics tools in the Gale Digital Scholar Lab.</summary></entry><entry><title type="html">Loving in truth and fain in Riddle my love to show: Mother’s Day Acrostics with The Riddle Project</title><link href="http://localhost:4000/features/2019/05/09/acrostics.html" rel="alternate" type="text/html" title="Loving in truth and fain in Riddle my love to show: Mother’s Day Acrostics with The Riddle Project" /><published>2019-05-09T00:00:00-05:00</published><updated>2019-05-09T00:00:00-05:00</updated><id>http://localhost:4000/features/2019/05/09/acrostics</id><content type="html" xml:base="http://localhost:4000/features/2019/05/09/acrostics.html">&lt;blockquote&gt;
+  &lt;p&gt;“I’ve put in so many enigmas and puzzles that it will keep the professors busy for centuries arguing over what I meant, and that’s the only way of insuring one’s immortality”[1]– James Joyce&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Timeless Riddles&lt;/strong&gt; is back with some more perplexing puzzles to unpack. Was anyone able to solve the rebus from last time? The solution is ‘TOBACCO’. The riddle basically breaks down the word into visual descriptions. ‘T’ is three-fourths of a cross, ‘O’ is a circle complete, ‘B’ is comprised of two semi-circles and a perpendicular, ‘A’ is a triangle on two legs, both ‘C’s are semi-circles, and ‘O’ is another complete circle! Brilliant, isn’t it?&lt;/p&gt;
+
+&lt;p&gt;Today we have a Mother’s Day special for all of you power riddlers! The Acrostic. The acrostic is another kind of visual riddle. This riddle also uses the visual arrangement of letters to reveal its answer, but in a slightly different way from rebuses. Its solution is made up of the first letter of each sentence.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;If you follow each in descending order, you’ll find out the answer to this acrostic:&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Mira have Pity and forgive my Crime&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Inspir’d by thee, I Dare attempt to Rhime,&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Superior Charms are in your Person seen;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Such as ye Poets feign the Gyptian Queen.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;More Lively colours than ye Rose can Boast,&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Adam your Cheeks in Admiration Lost,&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Regarding BEAUX the Pow’r of Beauty feel&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;You Wounds, you Conquer but forget to Seal.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Know Lovely Maid you Excellent so Great&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Is past ye Arts of Language to Relate&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;No Longer Free thy Pow’r. I fully Prove&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Gains on ye Heart and Ripens into Love.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;See how the first letter of each sentence makes up a name? The solution to this acrostic is ‘Miss Mary King’. As Mother’s Day is right around the corner, think of it as an adorable way to say thank you to a parent! How about you try one yourselves? This one is an acrostic enigma! Each sentence must be solved individually. Then, use the answers to arrive at the solution for the whole riddle.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;That goddess who sprung from Jupiter’s brain;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;What Bacchus is crown’d with as poets feign;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;A bird that rises when morning just breaks;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;An instrument whose sound courage awakes;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Eho charm’d with his music the rocks and the trees;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;A fabulous god that guards the green seas.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;The initials above when rightly you’ve found,&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Will name you a poet whose works are renown’d&lt;/em&gt;[2]&lt;/p&gt;
+
+&lt;p&gt;Chime in – we would love to know if you have any guesses for this acrostic enigma. Please feel free to comment in the form below. We had a similar riddle competition last year, and you can see the answers as well. Don’t forget to tune in next time for the answer.&lt;/p&gt;
+
+&lt;p&gt;Don’t forget to follow @McGillLib, @McGill_ROAAr, and @CookeNathalie on Twitter as well, without which this project would not be possible.&lt;/p&gt;
+
+&lt;p&gt;Keep calm and riddle on!&lt;/p&gt;
+
+&lt;p&gt;[1] Pg. 12, Julie Sloan Brannon, Who Reads Ulysses?: The Rhetoric of the Joyce Wars and the Common Reader (Psychology Press, 2003) &lt;a href=&quot;https://bit.ly/2V0Uw9f&quot;&gt;https://bit.ly/2V0Uw9f&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;[2] Taken from Pg. 160, “The Lady’s Magazine Or Entertaining Companion for the Fair Sex: Appropriated Solely to Their Use and Amusement.” Baldwin, Cradock &amp;amp; Joy, vol. 20, 1789.&lt;/p&gt;</content><author><name>Leehu Sigler</name></author><summary type="html">“I’ve put in so many enigmas and puzzles that it will keep the professors busy for centuries arguing over what I meant, and that’s the only way of insuring one’s immortality”[1]– James Joyce</summary></entry><entry><title type="html">Can You Spot It?: Solving Visual Puzzles with The Riddle Project</title><link href="http://localhost:4000/features/2019/04/15/visual-puzzles.html" rel="alternate" type="text/html" title="Can You Spot It?: Solving Visual Puzzles with The Riddle Project" /><published>2019-04-15T00:00:00-05:00</published><updated>2019-04-15T00:00:00-05:00</updated><id>http://localhost:4000/features/2019/04/15/visual-puzzles</id><content type="html" xml:base="http://localhost:4000/features/2019/04/15/visual-puzzles.html">&lt;blockquote&gt;
+  &lt;p&gt;“Too many riddles weigh men down on earth. We must solve as we can, and try to keep a dry skin in the water.”[1]
+ ― The Brothers Karamazov, Fyodor Dostoyevsky&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Timeless Riddles is back with some more puzzling problems! Were you able to solve the riddles from last time? The answer to the Enigma is ‘Heart’. The answer to the Charade is ‘Fortune’ (because ‘for’ is a preposition, ‘tune’ is a composition and ‘fortune’ is an acquisition!).&lt;/p&gt;
+
+&lt;p&gt;On today’s menu is a different kind of riddle: The spectacular Rebus! The Rebus is a visual puzzle. In order to solve it, you need to decode both words and images.&lt;/p&gt;
+
+&lt;p&gt;Here’s a classic Rebus from one of Lewis Carroll’s letters:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;The Chestnuts&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;My dear Ina,&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Though I don’t give&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;birthday presents, still I&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;may write a birthday letter.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;I came to your door to&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;wish you many happy returns&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;of the day, but the cat met&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;me, and took me for a mouse,&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;and hunted me up and down&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;till I could hardly stand.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;However somehow I got&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;into the house, and there&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;a mouse met me, and took me&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;for a cat, and pelted me…&lt;/em&gt;[2]&lt;/p&gt;
+
+&lt;p&gt;See how the letter is comprised of both words and pictures?&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Some Rebuses emphasize the visual arrangement of their words to hint at their answer:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;I have to paid&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;because&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;work I am&lt;/em&gt;[3]&lt;/p&gt;
+
+&lt;p&gt;Looks funny, right? That’s because the way the sentence is presented contributes to its meaning!&lt;/p&gt;
+
+&lt;p&gt;The answer is: “I have to overwork because I am underpaid”.&lt;/p&gt;
+
+&lt;p&gt;“I have to” is literally over the word “work”, and “I am” is literally under the word “paid”.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;While the idea of the Rebus originated over five thousand years ago, it gained popularity in England throughout the seventeenth century, especially as heraldic seals[4].&lt;/p&gt;
+
+&lt;p&gt;Even the celebrated William Shakespeare is not above such pun-tastic riddles! His very own coat of arms is a Rebus of his name – ‘Shake-Speare’[5]:&lt;/p&gt;
+
+&lt;p&gt;Rebuses can come in many different shapes and forms. How about you try this one for yourselves?&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Three-fourths of a cross and a circle complete,&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Two semicircles and a perpendicular meet,&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;A triangle standing on two feet;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Two semicircles and a circle complete.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Don’t forget that the visual aspect is key! Tune in text time for the solution and more tongue-tying Timeless Riddles!&lt;/p&gt;
+
+&lt;p&gt;Don’t forget to follow @McGillLib, @McGill_ROAAr, and @CookeNathalie on Twitter as well, without which this project would not be possible.&lt;/p&gt;
+
+&lt;p&gt;Keep calm and riddle on!&lt;/p&gt;
+
+&lt;p&gt;[1] Pg. 114, Fyodor Dostoyevsky, The Brothers Karamazov (Project Gutenberg 2009) http://www.gutenberg.org/files/28054/28054-h/28054-h.html&lt;/p&gt;
+
+&lt;p&gt;[2] “Part of a letter from Carroll at ‘The Chestnuts.’” Pg. 57, John Fisher, The Magic of Lewis Carroll (Simon and Schuster, 1973)&lt;/p&gt;
+
+&lt;p&gt;[3] Pg. 85, Tony Augarde, The Oxford Guide to Word Games (Oxford: Oxford UP, 1984)&lt;/p&gt;
+
+&lt;p&gt;[4] Pg. 85-6, Tony Augarde, The Oxford Guide to Word Games (Oxford: Oxford UP, 1984)&lt;/p&gt;
+
+&lt;p&gt;[5] Tomasz Steifer, Gdansk, 2008 https://commons.wikimedia.org/wiki/File:Shakespeare1COA.png&lt;/p&gt;</content><author><name>Leehu Sigler</name></author><summary type="html">“Too many riddles weigh men down on earth. We must solve as we can, and try to keep a dry skin in the water.”[1] ― The Brothers Karamazov, Fyodor Dostoyevsky</summary></entry><entry><title type="html">Some Rhyme, Some Chime: Practicing Enigmas and Charades with The Riddle Project</title><link href="http://localhost:4000/features/2019/04/01/enigmas.html" rel="alternate" type="text/html" title="Some Rhyme, Some Chime: Practicing Enigmas and Charades with The Riddle Project" /><published>2019-04-01T00:00:00-05:00</published><updated>2019-04-01T00:00:00-05:00</updated><id>http://localhost:4000/features/2019/04/01/enigmas</id><content type="html" xml:base="http://localhost:4000/features/2019/04/01/enigmas.html">&lt;blockquote&gt;
+  &lt;p&gt;“It is one thing…to have very good sense in a common way, like every body else, and if there is any thing to say, to sit down and write a letter, and say just what you must, in a short way; and another, to write verses and charades like this.”[1] – Emma, Jane Austen&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;On today’s menu are the baffling Enigma and the scrumptious Charade – both kinds of Riddle.&lt;/p&gt;
+
+&lt;p&gt;An Enigma, as its name implies, is a slightly more complicated Riddle.&lt;/p&gt;
+
+&lt;p&gt;Enigmas are riddles – but in poetry form! Check this one out:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Learning has bred me – Yet I know not a letter&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;I have liv’d among books – Yet am never the better&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;I have eaten up the muses – Yet know not a Verse&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;What student is this – I pray you rehearse.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;See how it rhymes? That’s what makes it an Enigma! The answer to this one is ‘worm’.*&lt;/p&gt;
+
+&lt;p&gt;Another type of riddle we have at Timeless Riddles is the Charade. Charades are similar to the game of charades we play today. In fact, the modern game evolved from the written version[2].&lt;/p&gt;
+
+&lt;p&gt;This type of riddle first breaks the solution into parts, the last clue hints at the whole word, which includes the first answers combined. Here’s an example:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;My first is equality (match)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;My second inferiority (less)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;My whole superiority (matchless)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Two more Charades for practice:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;I cut my first with my&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;second and put my&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;whole in my pocket.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The answer to the first Charade is ‘penknife’. You cut your ‘pen’ (first syllable) with your ‘knife’ (second syllable), and can put the ‘penknife’ (whole word) in your pocket!&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;My first quite uncivil is often&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;times reckon’d,&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;a name for each creature&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;on earth is my second,&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;my whole when united so&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;odd will appear&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;the coward will fight me,&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;the hero will fear.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The answer to the second is ‘nothing’. ‘No’ (first syllable) is considered uncivil, a name for each creature is ‘thing’ (second syllable), and the coward will fight ‘nothing’, just as the hero will fear ‘nothing’ (whole word)!&lt;/p&gt;
+
+&lt;p&gt;Did you get them both? Now that you have all gotten the hang of it, try these on your own:&lt;/p&gt;
+
+&lt;p&gt;One Enigma:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;A Riddle of riddles, it dances &amp;amp; skips&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;It is seen thro’ the eyes tho’ it cheats by the Lips.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;It never is seen, but often is read&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;It is sometimes a feather, &amp;amp; sometimes ‘tis Lead.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;If it meets with its Fellow – its happily caught&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;But if money can buy it-its not worth a groat.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;And one Charade:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;My first is a Preposition,&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;My second is a Composition&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;My Whole – is an acquisition.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Can you solve them? Tune in next time for the answers and more Timeless Riddles!&lt;/p&gt;
+
+&lt;p&gt;Don’t forget to follow @McGillLib, @McGill_ROAAr, and @CookeNathalie on Twitter as well, without which this project would not be possible.&lt;/p&gt;
+
+&lt;p&gt;Keep calm and riddle on!&lt;/p&gt;
+
+&lt;p&gt;[1] Jane Austen, Emma (Project Gutenberg, 2010) http://www.gutenberg.org/files/158/158-h/158-h.htm&lt;/p&gt;
+
+&lt;p&gt;[2] Pg. 24 Tony Augarde, The Oxford Guide to Word Games. (Oxford: Oxford UP, 1984)&lt;/p&gt;</content><author><name>Leehu Sigler</name></author><summary type="html">“It is one thing…to have very good sense in a common way, like every body else, and if there is any thing to say, to sit down and write a letter, and say just what you must, in a short way; and another, to write verses and charades like this.”[1] – Emma, Jane Austen</summary></entry><entry><title type="html">How Many Can You Solve? : The Riddle Project</title><link href="http://localhost:4000/features/2019/02/15/riddles.html" rel="alternate" type="text/html" title="How Many Can You Solve? : The Riddle Project" /><published>2019-02-15T00:00:00-05:00</published><updated>2019-02-15T00:00:00-05:00</updated><id>http://localhost:4000/features/2019/02/15/riddles</id><content type="html" xml:base="http://localhost:4000/features/2019/02/15/riddles.html">&lt;blockquote&gt;
+  &lt;p&gt;What can promote innocent mirth, and I may say virtue, more than a good riddle?[1] 
+– Middlemarch, George Eliot&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Waiting for the bus? Can’t fall asleep? Bored? Forget sudoku, how about a riddle? At Timeless Riddles we have lots of rare riddles from early diaries, cookbooks, letters and more. And we need your help finding answers! Why don’t you try a few?&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;The beginning of Eternity,&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;The end of time and place.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;The beginning of every end&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;And the end of every age.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Did you get it? The answer is ‘E’. ‘E’ is the first letter of both ‘eternity’ and ‘end’, but the last letter of ‘time’, ‘place’ and ‘age’.&lt;/p&gt;
+
+&lt;p&gt;Cool, right?&lt;/p&gt;
+
+&lt;p&gt;Here’s another one:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;What english word is that composed of seven letters?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;take off five, &amp;amp; it is a male, four &amp;amp; it is a female,&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;three it is a great Man, &amp;amp;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;all together it is a great Woman.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The answer to this one is ‘Heiress’. ‘Heiress’ is a great woman in seven letters, ‘Heir’ is a great man in four, a female is ‘her’ and a male is ‘he’.&lt;/p&gt;
+
+&lt;p&gt;Too easy? Luckily, we have more! At Timeless Riddles we are busy searching for more puzzling questions to share. And you are all invited to try to solve them!&lt;/p&gt;
+
+&lt;p&gt;We already have lots online, and we’ll be posting more regularly. As answers start piling up, we will make sure to upload the solutions as well! Can you solve them all? It’s going to be exciting!&lt;/p&gt;
+
+&lt;p&gt;Don’t forget to follow @McGill_ROAAr  and @CookeNathalie on Twitter as well, without which this project would not be possible.&lt;/p&gt;
+
+&lt;p&gt;Keep calm and riddle on!&lt;/p&gt;
+
+&lt;p&gt;[1] George Eliot, Middlemarch (Project Gutenberg, 2008) http://www.gutenberg.org/files/145/145-h/145-h.htm&lt;/p&gt;</content><author><name>Leehu Sigler</name></author><summary type="html">What can promote innocent mirth, and I may say virtue, more than a good riddle?[1] – Middlemarch, George Eliot</summary></entry></feed>

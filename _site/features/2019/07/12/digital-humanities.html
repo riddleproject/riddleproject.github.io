@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Digital Humanities and the Gale dataset | The Riddle Project</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Digital Humanities and the Gale dataset" />
+<meta name="author" content="Nathan Drezner" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This post is a writeup on a computational analysis of a corpus of riddles obtained from the Gale Group. This corpus is about 3,000 riddles, each tagged with information including publication date, publisher, location, and author. Nearly all of the riddles in this set were published in London, England. There were several main parts to the analysis: First, an analysis of riddle syntax and difficulty by measuring changes in type-token ratio and reading ease score over time. Second, a study of the differentiability of riddles by classifying and measuring the quality of the classification. Finally, a set of analyses to test the capabilities of the built-in analytics tools in the Gale Digital Scholar Lab." />
+<meta property="og:description" content="This post is a writeup on a computational analysis of a corpus of riddles obtained from the Gale Group. This corpus is about 3,000 riddles, each tagged with information including publication date, publisher, location, and author. Nearly all of the riddles in this set were published in London, England. There were several main parts to the analysis: First, an analysis of riddle syntax and difficulty by measuring changes in type-token ratio and reading ease score over time. Second, a study of the differentiability of riddles by classifying and measuring the quality of the classification. Finally, a set of analyses to test the capabilities of the built-in analytics tools in the Gale Digital Scholar Lab." />
+<link rel="canonical" href="http://localhost:4000/features/2019/07/12/digital-humanities.html" />
+<meta property="og:url" content="http://localhost:4000/features/2019/07/12/digital-humanities.html" />
+<meta property="og:site_name" content="The Riddle Project" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-07-12T00:00:00-05:00" />
+<script type="application/ld+json">
+{"dateModified":"2019-07-12T00:00:00-05:00","datePublished":"2019-07-12T00:00:00-05:00","url":"http://localhost:4000/features/2019/07/12/digital-humanities.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/features/2019/07/12/digital-humanities.html"},"author":{"@type":"Person","name":"Nathan Drezner"},"description":"This post is a writeup on a computational analysis of a corpus of riddles obtained from the Gale Group. This corpus is about 3,000 riddles, each tagged with information including publication date, publisher, location, and author. Nearly all of the riddles in this set were published in London, England. There were several main parts to the analysis: First, an analysis of riddle syntax and difficulty by measuring changes in type-token ratio and reading ease score over time. Second, a study of the differentiability of riddles by classifying and measuring the quality of the classification. Finally, a set of analyses to test the capabilities of the built-in analytics tools in the Gale Digital Scholar Lab.","@type":"BlogPosting","headline":"Digital Humanities and the Gale dataset","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Riddle Project" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">The Riddle Project</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/interactive-map.html">Interactive Map</a><a class="page-link" href="/story-map.html">Story Maps</a><a class="page-link" href="/blog.html">Blog</a><a class="page-link" href="/about.html">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Digital Humanities and the Gale dataset</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-07-12T00:00:00-05:00" itemprop="datePublished">Jul 12, 2019
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Nathan Drezner</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>This post is a writeup on a computational analysis of a corpus of riddles obtained from the Gale Group. This corpus is about 3,000 riddles, each tagged with information including publication date, publisher, location, and author. Nearly all of the riddles in this set were published in London, England. There were several main parts to the analysis: First, an analysis of riddle syntax and difficulty by measuring changes in type-token ratio and reading ease score over time. Second, a study of the differentiability of riddles by classifying and measuring the quality of the classification. Finally, a set of analyses to test the capabilities of the built-in analytics tools in the Gale Digital Scholar Lab.</p>
+
+<h2 id="riddle-syntax-and-difficulty">Riddle syntax and difficulty</h2>
+<p>Questions: Is there gender bias in riddling? Is there a semantic change in riddling from more child-like to more adult-like over time?
+All analysis was conducted using the Gale dataset.</p>
+<h1 id="type-token-ratio">Type-token ratio</h1>
+<p>The riddles have an average TTR of 0.546 with a standard deviation of 0.125. The baseline TTR in standard written English is about 0.5, so the riddles do not fall notably higher or lower.</p>
+
+<h1 id="riddle-complexity">Riddle complexity</h1>
+<p><img src="https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/figure.png" alt="Flesch reading ease score for riddles released each year" title="Flesch reading ease scores" />
+Of the ~3,000 riddle corpus from Gale, the average Flesch reading score for an individual riddle is 90.90, with a standard deviation of 7.10, a maximum score of 114.62 and a minimum score of 23.11. Given the small standard deviation, the riddles are of relatively similar difficulty.</p>
+
+<p>The graph above visualizes changes in riddle complexity over time. However, because only 158 of the 2,166 riddles tagged by date occur before 1850, early data not as strong an indicator of general complexity as late data. 50\% of riddles in this data set occur after 1878. The graph shows a consistency in riddle complexity over time, rather than a progression towards more simplistic language. In other words, more child-like riddling in later periods does not occur by this metric.</p>
+
+<p><img src="https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/tokens.png" alt="Average tokens per riddle per year" title="Average tokens" />
+<img src="https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/tokens_no_weekly.png" alt="Average tokens without outlier" title="Average tokens without outlier" />
+<img src="https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/weekly_budget_tokens.png" alt="Average tokens of outlierr" title="Average tokens of outlier" /></p>
+
+<p>Riddles do, however, tend to increase in length over time. Late-period riddles are longer than early period riddles. Riddles from “Our Young Folk’s Weekly Budget” increased significantly in length over that period, shown above. Riddles from “Our Young Folk’s Weekly Budget” were published between 1877 and 1889; it published the largest number of riddles (562 of 2,166 riddles) of any publisher in the dataset.</p>
+
+<h1 id="gender-bias-and-pronoun-usage-in-riddling">Gender bias and pronoun usage in riddling</h1>
+<p>I tracked the total number of either male (he, him, etc.), female (she, her, etc.), or neutral (they, them, etc.) words as a percentage of total word count of the texts. Using these metrics, I found that 1.09\% of all tokens are male-related, 0.42\% of all tokens are female related, and 1.37\% of all tokens are neutral. This is a roughly 2:1 ratio of male pronouns to female pronouns across all riddles, which is similar to the ratio of men to women in most written works.</p>
+
+<p>There is an average of 10.95 male-related words per riddle (std. 17.71), 4.26 female-related words per riddle (std. 8.89), and 13.63 neutral related words per riddle (std. 17.58). The high standard deviations suggest that the majority of riddles have a low number of personal pronouns, with significant outliers having a large number of pronouns.</p>
+
+<p><img src="https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/pron_percent.png" alt="Average pronouns" title="Average pronouns" />
+The average number of personal pronouns as a percentage of tokens per riddle increased slightly in late period riddles as compared to early riddles, suggesting an increase in the personal aspect of riddling. Riddling using personal pronouns may indicate a shift in the style of riddling over time to becoming more people-focused. Close-reading late period riddles compared to early period riddles may help illuminate this trend. Again, it is worth noting that 50\% of riddles in this set were written after 1878.</p>
+
+<h1 id="possible-close-reading">Possible close-reading</h1>
+<p>I identified several significant riddles for close reading based on this data. These texts help illuminate differences between male-centered and female-centered riddles. Both riddles were published in “The Friendly Companion and Illustrated Instructor”; the male-centered riddle on August 1st, 1893 and the female-centered riddle on July 1st, 1893.</p>
+
+<ul>
+  <li>The text with the largest proportion of male pronouns (10.92\% of tokens are male-related):
+    <blockquote>
+      <p>BIBLE ENIGMA.
+WITH luxury and wealth he did abound; No lack was in his sumptuous dwelling found; But, midst the various things which he possess’d, One thing was his which far outweigh’d therest, ‘Twas his, nor knew he how with it to part, Although no pleasure did this thing impart ‘Twas ever with him, ever in his sight, And swallow’d up his other treasures quite, Till, travelling to a distant pleasant land, He took this thing and an obedient band Of servants with him; for, an urgent case Had cansed his journey to this noted place. He stayed awhile, and then he turn’d to go. He reach’d his native land again; but, lo! This thing, so long his own, he left behind, Without the slightest wish again to find. But one there was who covetous had grown, Not satisfied with things which were his own; Grasping forbidden treasure, to his cost He found the very thing the other lost. He found it and he parted with it never; God in his judgment, made it his for ever,- In mercy took it from the man of wealth And made it his who would be rich by stealth. “Friendly Companions,” it may be that you Will guess at once the thing I have in view; While you to whom it still remains a mystery, May find it in the page of Sacred History. Oxford. R</p>
+    </blockquote>
+  </li>
+  <li>The text with the largest proportion of female pronouns (7.02\% of tokens are female-related):
+    <blockquote>
+      <p>BIBLE ENIGMA.
+MANY centuries ago, a company of travellers a&gt;a been seen going from Mesopotamia toward that Canaan near to where Joshua gave Reuben his inheb Among this company was one intent on evil. I with him servants and one who usually accompani0 on his journeys, but she knew not of his intents. way, she saw something in front of them, which frighted her that she turned aside into the fielde pass it; this so annoyed the man that he struck compelled her to go on with them; further on, shes same again and refused to go further, whereupon her with his staff; she remonstrated with him forhis asking him some pointed questions; this, and her to go forward, so enraged him, that he threatenedif a weapon he would have killed her. He afterwardsl she had saved his life. Who was this man P r was sheP She has been dead many years; but neither in heaven nor yet in hell. Who is she, nid can she beP Also, was there anything particulara h language which we should do well to regard? Allington. GEosur I</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h2 id="classification">Classification</h2>
+<p>Question: Are riddles distinguishable from each other based on (a) date of publication and (b) publication source? If so, what are distinguishing features of those riddles?
+All classification was conducted using the Gale dataset.</p>
+
+<h1 id="findings">Findings</h1>
+<p>Using logistic regression, I classified riddles based on their period. Riddles were split into two sets: pre-1878 and post-1878. Of the 2,166 riddles tagged by year, half occur before 1878 and half occur afterwards. The earliest riddle is from 1800, and the latest riddle is from 1899. Every riddle tagged with a date was published in London.</p>
+
+<p>Below is a list of the top 10 features associated with each set using five-fold cross-validation, which was 73% accurate with 15% standard deviation.
+The most distinctive features of late riddles (in order from most to least predictive) are “bi”, “tourna”, “shark”, “agan”, “wastes”, “picnics”, “sixpence”, “teviot”, “riddle”, and “privelege”. The most distinctive features of early riddles (in the same order): “puzzled”, “charad”, “pilford”, “num”, “christened”, lettre”, “dots”, and “behavior”.
+A 30-fold classifier was 79% accurate with a 16\% standard deviation. The most distinctive features are were similar to the first list.</p>
+
+<p>I then classified the set of riddles using the subset of riddles published by the four publications who published the highest number of riddles. There are riddles from 43 different journals in this dataset. Riddles published only in the four most journals with the highest number of riddles published comprise 38\% of the total riddles. All of the four journals were published in London. The first pass was to classify only the riddles from those journals by period, using the same specifications as above. The accuracy was 88\% with a standard deviation of 16\%. The most distinctive features of late riddles only published in the most popular journals are “ridd”, “friendless”, “friday”, “nigger”, “wordl”, “doth”, “saxon”, “sixpence”, “wora”, and “ogle”. The most distinctive features of early riddles only published in the most popular journals are “character”, “eni”, “iho”, “engish”, “lettere”, “instance”, “peop”, “curses”, and “fourt”.
+Then, I classified by publication using only riddles from the four most popular journals where each of the jounals is considered a class. Using 30-fold classification, the accuracy of the classifier was 97.4% with 3.7% standard deviation. Using the 5-fold classifier, the model was 96.6% accurate with 2.1% standard deviation.</p>
+
+<p>Finally, I defined a binary comparison between riddles from the four most popular journals and riddles published in any of the other 39 journals. Using a 30-fold classifier, the model was 90.8\% accurate with a 7.5\% standard deviation. The most distinctive features of journals with fewer riddles are “puzzledomians”, “pasted”, “enigia”, “dotted”, “answered”, “thns”, “agatha”, “pictobial”, “appealed”, and “puzzled”. The most distinctive features of journals with more riddles: “accept”, “tours”, “tourna”, “iute”, “enigm”, “crabbe”, “downs”, “engish”, “friendless”, and “charad”</p>
+
+<h1 id="implications">Implications</h1>
+<p>Riddles are far more distinguishable based on source of publication than based on time of publication. The much lower accuracy rate of the classifier when determining the binary early/late period of the riddle as opposed to sorting the riddle into one of four distinct classes (the most popular publications) shows a strong bias towards publisher when considering what differentiates sets of riddles.</p>
+
+<p>The different distinguishing features, particularly classifying the language of the most popular journals over time, suggests ways in which the lexicon of riddling shifted over time. Meta-words (“enigma”, “tourna”, “charad”, etc.) naming the riddles show how a definition of riddling changed. and the n-word as a distinguishing feature of late-period popular riddles suggests racial influences on riddling.</p>
+
+<p>Differences in the distinctive features of riddling publications with more riddles and riddling publications with fewer riddles are largely in the type of riddle being published. For instance, whether a riddle is a “puzzledomain” or a “charade” distinguishes the publications from one another.</p>
+
+<h1 id="possible-problems-and-future-work">Possible problems and future work</h1>
+<p>The riddles contained in this data set are messy. Their content is transcribed digitally, so there are many strange characters and nonsense words in the data. This could lead to problems with the feature collection of the classifier: different spellings can lead to errors or missed patterns. Several of the most distinctive words are nonsense words.</p>
+
+<p>I have not yet compiled a distinctive feature set for each of the four most popular publications. Because it is a non-binary comparison, identifying distinctive features requires a pair-wise comparison between each of the journals. This could be completed in future work. Riddles could also be classified between publications intended for male audiences and publications intended for female audiences to study the gendered differences in publishing.</p>
+
+<p>There are also possible confounders in the results. When classifying based on time, it is possible that certain words never appear in early riddles and only appear in late riddles. This demonstrates a shift in lexicon, but does not show that a word is more distinctive in its tangible usage in one text as compared to another. This trend could be studied by analyzing the appearances of distinctive words over time and visualizing those appearances in order to gauge language that is more or less distinctive in its relative usage.</p>
+
+<h2 id="mapping">Mapping</h2>
+<p>Question: How does the location of riddling change over time?
+This is an ongoing project. The plan is to build a JS time-slider using Mapbox that visualizes riddle publication locations over time. 
+Update: The time slider portion of this project is complete and accessible on this website!</p>
+
+<h2 id="gale-digital-scholar-lab">Gale Digital Scholar Lab</h2>
+<h1 id="sentiment-analysis-and-clustering">Sentiment analysis and clustering</h1>
+<p><img src="https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/chart.png" alt="Sentiment analysys from Galer" title="Sentiment analysis from Gale" />
+<img src="https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/chart(1).png" alt="Clustering from Gale" title="Clustering from Gale" /></p>
+
+<p>I also used the Gale digital scholar lab to perform basic DH analysis on the texts. While incredibly convenient, the Gale analyses lack data transparency that would be useful to extrapolate a better understanding of the texts being used.</p>
+
+<p>Sentiment analysis offers an interesting look at how sentiment varies over time using the accepted AFINN model for sentiment analysis. It would be useful to offer other models for different studies in sentiment. For instance, NRC Emotion Lexicon could help analyse the text in more terms than simply positive-negative, and Bing Liu’s sentiment dictionary could offer a second model for positive-negative to compare to the AFINN model.</p>
+
+<p>The unsupervised clustering offered here would be interesting to compare to the supervised classification work offered above. It would be  useful if purity scores based on metadata were offered for the classes. Even though there are two transparent clusters generated in the Lab, it is unclear exactly what those clusters represent. It is possible to merge the dataframe representing the clustering with the existing metadata using document IDs, but given the non-standard naming scheme for documents, this is not trivial. Offering built-in purity scores for each metadata for the documents would be incredibly useful. It could answer questions about the natural tendency for documents to group together based on publication, time period, or textual content, based on distinguishing features of the different clusters. In addition, inclusion of supervised classification based on metadata, such as in the earlier section, would also be another interesting way to view the data.</p>
+
+<h1 id="n-grams-and-part-of-speech-comparisons">N-grams and part-of-speech comparisons</h1>
+<p><img src="https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/chart3.png" alt="n-gram analysis from the Gale digital scholar lab" title="n-gram analysis from the Gale digital scholar lab" />
+<img src="https://raw.githubusercontent.com/riddlesproject/riddles-dh/master/visuals/dh-blog-post/chart4.png" alt="part-of-speech comparisons from the Gale digital scholar lab" title="part-of-speech comparisons from the Gale digital scholar lab" /></p>
+
+<p>Other tests are also interesting, but lack transparency or strong metadata inclusion. It is difficult to understand patterns in data without comparisons. The part-of-speech tagger is a very interesting tool, but only tracks based on author. It would be very useful to have a native analyzer where the metadata to be tracked can be chosen. How does adverb usage compare between publications?</p>
+
+<p>It would also be useful if non-dictionary words could be removed from the dataset in the cleaning configuration. Removal of non-alphabet characters is a very useful feature, but further parsing the data would also help clarify the results.</p>
+
+<h2 id="conclusions">Conclusions</h2>
+<p>Generally speaking, the Gale Digital Scholar lab offers incredibly powerful tools that are very intuitive to use. However, it is difficult to dig deeper below the surface of the data without being able to customize the results. Automatic identification of documents that are outliers to the data, feature identification, and additional metadata tagging would be make the tools in the lab incredibly useful alongside their convenience and ease of use.</p>
+
+<p>More information in the help section of each tool would also be useful. Further clarification on the specific algorithm for each test and its strengths and weaknesses would help inform users about the tools at their disposal and guide users to choose the right tools for their dataset.</p>
+
+
+  </div><a class="u-url" href="/features/2019/07/12/digital-humanities.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">The Riddle Project</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">McGill University Library</li><li><a class="u-email" href="mailto:timelessriddles@gmail.com">timelessriddles@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a rel="me" href="https://www.facebook.com/timelessriddles" title="timelessriddles"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#facebook"></use></svg></a></li><li><a rel="me" href="https://github.com/riddleproject" title="riddleproject"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/Time1essRiddles" title="Time1essRiddles"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>The Riddle Project is an ROAAr project dedicated to transcribing, solving, and researching riddles in early manuscripts.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

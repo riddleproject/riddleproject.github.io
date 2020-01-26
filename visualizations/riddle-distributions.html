@@ -1,0 +1,106 @@
+---
+title: Hot Points for Riddling
+layout: story-layout
+---
+<div id='features'>
+<section id='introduction' class='active'>
+    <h3>When were riddle events most popular?</h3>
+        <p>Although our dataset includes riddles from between 1733 and 1971, the hottest point for riddling was from 1890 to 1920.</p>
+        <div style="text-align:center; margin: 0 auto;"><small>Scroll down to begin</small></div>
+        <p style=" margin: 0 auto; width:15%"><img src="/visualizations/images/scroll-down.png" style="width:100%">
+</section>
+<section id='distro'>
+    <h3>Riddle Distribution</h3>
+        <p style="text-align:center;"><img src="/visualizations/images/riddle-release-distribution.png" alt="Distribution of riddles by release date" style="width:100%">
+        <p>The hottest period of riddling was from the late 1800s to the early 1900s. More than 90% of the riddles from this data set were published between 1890 and 1920.</p>
+</section>
+<section id='focusing'>
+    <h3>Focusing on a Period (1890-1920)</h3>
+        <p>Let's focus in on that period, and see exactly what happened--particularly by moving through five-year blocks of riddling. Shown here are all riddle events published between 1890-1920. What do these events look like? What themes were most important to riddlers in this period?</p>
+</section>
+<section id='first-period'>
+    <h3>1890-1895</h3>
+        <p>We'll start with the first five years of the period. 22% of all riddles from the set were published in this period. Notice the strong localization around New England.</p>
+</section>
+<section id='first-britain'>
+     <h3>1890-1895 - Britain</h3>
+        <p>Only three riddles from this early period were published in Britain. Click on them to show the riddles--you'll notice some lines that often appear in later riddles. For instance, "A Divine Part of Mankind" reappears frequently in British riddles.</p>
+</section>
+<section id='first-ny'>
+     <h3>1890-1895 - New York</h3>
+        <p>Many of the riddles from our New York dataset (shown in red) make up this period in riddling. Although only 17% of riddle events published in NYS or Fulton were from this period, 45% of the NYS/Fulton riddle events in this period were between 1890 and 1895.</p>
+</section>
+
+<section id='first-ny2'>
+     <h3>1890-1895 - New York</h3>
+        <p>Here's the same set of riddles, but now only the riddle events that contain menus are shown. Click on points to explore their contents.</p>
+</section>
+
+<section id='second-na'>
+     <h3>1895-1905 - North America</h3>
+        <p>Now, let's move on to a later set of riddles. </p>
+</section>
+</div>
+<script>
+    var chapters = {
+  "introduction": {
+    bearing: 0,
+    center: [-62.88620, 48.62161],
+    zoom: .8,
+    pitch: 0,
+    filter: null,
+  },
+  "distro": {
+    bearing: 0,
+    center: [-62.88620, 48.62161],
+    zoom: .6,
+    pitch: 0,
+    filter: null,
+  },
+  "focusing": {
+    bearing: 0,
+    center: [-62.88620, 48.62161],
+    zoom: .8,
+    pitch: 0,
+    filter: ['all', ['>=', ['number', ['get', 'Year']], 1890], ['<=', ['number', ['get', 'Year']], 1920]],
+  },
+  "first-period": {
+    bearing: 0,
+    center: [-62.88620, 48.62161],
+    zoom: .8,
+    pitch: 0,
+    filter: ['all', ['>=', ['number', ['get', 'Year']], 1890], ['<=', ['number', ['get', 'Year']], 1895]],
+  },
+  "first-britain": {
+    center: [-0.96226, 53.22680],
+    zoom: 4.64,
+    pitch: 53.50,
+    bearing: 16.80,
+    filter: ['all', ['>=', ['number', ['get', 'Year']], 1890], ['<=', ['number', ['get', 'Year']], 1895]],
+  },
+  "first-ny": {
+    center: [-73.29002, 42.80616],
+    zoom: 4.95,
+    pitch: 0.00,
+    bearing: 0,
+    filter: ['all', ['>=', ['number', ['get', 'Year']], 1890], ['<=', ['number', ['get', 'Year']], 1895]],
+  },
+  "first-ny2": {
+    center: [-73.29002, 42.80616],
+    zoom: 4.95,
+    pitch: 0.00,
+    bearing: 0,
+    filter: ['all', ['>=', ['number', ['get', 'Year']], 1890], ['<=', ['number', ['get', 'Year']], 1895], ['==', ['number', ['get', 'has_menu']], 1]],
+  },
+  "second-na": {
+    center: [-94.89875, 38.89857],
+    zoom: 3.14,
+    pitch: 0.00,
+    bearing: -0.05,
+    filter: ['all', ['>=', ['number', ['get', 'Year']], 1895], ['<=', ['number', ['get', 'Year']], 1905]],
+  },
+};
+
+
+</script>
+
