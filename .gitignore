@@ -1,4 +1,7 @@
-data/.DS_Store
-.DS_Store
-# _includes/head.html
+# git rm -r --cached .
+# git add .
+
+
 _site
+.jekyll-cache
+*.DS_Store

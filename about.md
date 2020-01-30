@@ -8,7 +8,7 @@ The Riddle Project is led by Nathalie Cooke, Associate Dean of ROAAr, and includ
 ## The Team
 Prof. Nathalie Cooke, Associate Dean of ROAAr and project lead
 
-Leehu Sigler, project manager and current masters student in English
+Leehu Sigler, project coordinator and current masters student in English
 
 Nathan Drezner, developer and undergraduate student in English and Computer Science
 
