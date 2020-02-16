@@ -5,19 +5,19 @@ title: Story Maps
 # Story Maps
 
 <h2>Introduction to the Story Map</h2>
+<p><a href="visualizations/introduction" target="_blank">View full screen</a></p>
 <iframe src="visualizations/introduction"
         width="100%" height="500px" frameBorder="0">
 </iframe>
-<p><a href="visualizations/introduction" target="_blank">View full screen</a></p>
 
 <p>Scroll through the story map to see the ways different riddles connect. The story map helps clarify questions about riddle patterns and movement identified over the course of the project.</p><br><br>
 
 
 <h2>Peaks in Riddling Events</h2>
+<p><a href="visualizations/riddle-distributions" target="_blank">View full screen</a></p>
 <iframe src="visualizations/riddle-distributions"
         width="100%" height="500px" frameBorder="0">
 </iframe>
-<p><a href="visualizations/riddle-distributions" target="_blank">View full screen</a></p>
 
 <p>This story map illuminates the riddles from the hottest period of riddling, from 1890 to 1920, where more than 90% of the riddles from our dataset were published.</p>
 <p>Here's a graphic illustrating the distribution of riddles from our dataset by year:</p>
@@ -25,10 +25,10 @@ title: Story Maps
 
 
 <h2>Riddling Events Over the Holidays</h2>
+<p><a href="visualizations/holiday-riddles" target="_blank">View full screen</a></p>
 <iframe src="visualizations/holiday-riddles"
         width="100%" height="500px" frameBorder="0">
 </iframe>
-<p><a href="visualizations/holiday-riddles" target="_blank">View full screen</a></p>
 
 <p>What about the holidays? How do they affect riddling practices?</p>
 <p>Here's the graphic breaking down riddling events by day of the year. There's a strong peak around the winter holidays, and a deep drop in the summertime.
