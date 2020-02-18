@@ -20,7 +20,7 @@ title: Story Maps
         width="100%" height="550px" frameBorder="0">
 </iframe>
 <a href="https://immense-hollows-50938.herokuapp.com/" target="_blank">View full screen</a>
-<p>Hover over the graph for more detailed information.</p><br><br>
+<p>What does this tell us? For one, riddling events weren't particularly popular in the summertime. It's also clear that weekend nights were the most common times of the week for riddling events to occur. You can also see that major period of riddling in the late 1800s and early 1900s: More than 90% of our dataset is concentrated between 1890 and 1920.</p><br><br>
 
 
 <h2>Peaks in Riddling Events</h2>
