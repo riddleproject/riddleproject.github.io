@@ -17,7 +17,7 @@ title: Story Maps
 <p>Now that we have a sense of the distribution of riddles by location, let's take a deep dive into the distribution of riddling events over time. This interactive chart allows you to see how riddles are distributed over the week, year, and even across the entire 300-year period of riddling.</p>
 <p>Toggling between "event date" and "newspaper publication date" shows differences in when the events actually occurred and when they were reported on.</p>
 <iframe src="https://immense-hollows-50938.herokuapp.com/"
-        width="100%" height="550px" frameBorder="0">
+        width="100%" height="510px" frameBorder="0">
 </iframe>
 <a href="https://immense-hollows-50938.herokuapp.com/" target="_blank">View full screen</a>
 <p>What does this tell us? For one, riddling events weren't particularly popular in the summertime. It's also clear that weekend nights were the most common times of the week for riddling events to occur. You can also see that major period of riddling in the late 1800s and early 1900s: More than 90% of our dataset is concentrated between 1890 and 1920.</p><br><br>
