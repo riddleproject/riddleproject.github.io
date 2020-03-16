@@ -92,7 +92,7 @@ window.onscroll = function() {
 };
 
 
-var activeChapterName = "introduction";
+var activeChapterName = "0";
 function setActiveChapter(chapterName) {
   if (chapterName === activeChapterName) return;
   map.flyTo(chapters[chapterName]);
