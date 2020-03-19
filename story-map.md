@@ -16,14 +16,16 @@ title: Story Maps
 
 <h2>Diving into the riddles</h2>
 <p>Now that we have a sense of the distribution of riddles by location, let's take a deep dive into the distribution of riddling events over time. This interactive chart allows you to see how riddles are distributed over the week, year, and even across the entire 300-year period of riddling.</p>
-<p>Toggling between "event date" and "newspaper publication date" shows differences in when the events actually occurred and when they were reported on.</p>
+<p>The interactive graph below also shows how riddling events were distributed by the days of the week, by the month, and across an approximately 250-year period.  Toggling between "event date" and "newspaper issue date" shows differences in when the events actually occurred and when they were reported on. Event dates represent the days in which the riddling suppers took place. Newspaper dates indicate when the culinary events were publicised.</p>
 <iframe src="https://immense-hollows-50938.herokuapp.com/"
         width="100%" height="510px" frameBorder="0">
 </iframe>
 <a href="https://immense-hollows-50938.herokuapp.com/" target="_blank">View full screen</a>
-<p>What does this tell us? For one, riddling events weren't particularly popular in the summertime. It's also clear that weekend nights were the most common times of the week for riddling events to occur. You can also see a major period of riddling in the late 1800s and early 1900s: More than 90% of our dataset is concentrated between 1890 and 1920.</p>
+<p>By looking at the monthly distribution of events, we can see that riddling events were not typically held in the summer. When looking at event scheduling by week, it becomes clear that riddling events were usually held on the weekends. A birds-eye view of the dataset shows that riddling events were most popular between 1890 and 1920.</p> 
+<p>The graph further indicates that the popularity of Conundrum Suppers peaked first in the United States, then in the United Kingdom, and finally in Canada. Earliest events appear in the UK, suggesting that riddling dinners originated in Europe before moving the US. Might the popularity of culinary riddles in the US have influenced their renewed popularity in the UK during the early 20th century?</p>
+<p>It is difficult to offer definitive conclusions. Many of the newspaper archives consulted are incomplete, and the availability of archival information has inevitably influenced the results of our findings. However, the sheer number of events identified is itself suggestive. More research is warranted, and we hope that our exhibition will pique interest and prompt others to join our journey of exploration.</p> 
 
-<p>Looking at the boxplots of publication over time, it's also clear that in our dataset riddling events peaked first in the United States, then in England, and finally in Canada. However, the earliest events appear in the UK. To that end, riddles originated in the UK before moving the United States and quickly increasing in popularity. This popularity also pushed up the popularity of riddles in the UK, with the trend following in Canada shortly thereafter.</p><br><br>
+<br><br>
 
 
 <h2>Peaks in Riddling Events</h2>

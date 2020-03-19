@@ -7,3 +7,4 @@ _site
 *.DS_Store
 Gemfile
 Gemfile.lock
+journal_word
