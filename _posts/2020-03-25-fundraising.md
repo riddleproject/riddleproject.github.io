@@ -9,7 +9,7 @@ author: "The Riddles Team"
 
 <div>
     <img
-        src = "https://github.com/riddleproject/riddleproject.github.io/blob/master/assets/images/fundr.JPG"
+        src = "/assets/images/fundr.JPG"
         alt = "fundraising"
         style = "width: 350px; float:left; padding: 8px">
 </div>
@@ -23,6 +23,9 @@ The craze for Conundrum Socials dwindles by 1920, but why? Could it be related t
 Find out more [here](https://riddleproject.github.io/). Do you have a Conundrum Social story to share? Reach out to @McGillLib, @McGillRoaar or email nathalie [dot] cooke@mcgill [dot] ca.
 
 [1] The Port Jervis Union May 13, 1892
+
 [2] The Yonkers Statesman February 21, 1902
+
 [3] The Goodland republic March 04, 1898
+
 [4] St. Lawrence Republican and Ogdensburgh Weekly Journal December 20, 1911
