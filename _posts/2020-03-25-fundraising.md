@@ -7,6 +7,13 @@ author: "The Riddles Team"
 
 >“All who attend will be assured of having a good social time, an excellent supper, and of becoming acquainted with the wonders and mysteries of a ‘Conundrum Supper’.”[1]
 
+<div>
+    <img
+        src = "assets/images/fundr.JPG"
+        alt = "fundraising"
+        style = "width: 350px; float:left; padding: 8px">
+</div>
+
 Eager participants in Conundrum Socials, fashionable dining entertainments of late 19th and early 20th century America, preferred the pleasures of puzzling food descriptions to plainer ones. Care to have some “Boston’s Overthrow” with your meal? If so, you would receive tea!
 
 Conundrum Socials were fun, flexible and very functional as fundraising events. To date we have found more than 1,361 Conundrum events. Games customarily took place before eating, and conundrum-themed performances accompanied the meal. Guests might even arrive in costume.[2] Most often, innovative menus included dishes described entirely in riddling form. One menu was composed of Shakespearean quotes.[3] Another references chemical formulas. A dish described as “H2O, 100 Degrees Centrigrade, with Alpho-Amida-acetic acid” would be soup![4] Ordering from these riddling menus was a culinary adventure for diners. 
