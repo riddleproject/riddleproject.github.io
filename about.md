@@ -18,5 +18,7 @@ Chelsea Woodhouse, MSc. and first year MISt student
 
 Deniz Cevik
 
+Owen Lewis, undergraduate student in Computer Science and Mathematics
+
 ### Former team members
 Nora Shaalan, former project manager and masters student in English
