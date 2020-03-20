@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "What *is* this?!"
+title: "What is this?!"
 categories: Announcements
 author: "The Riddles Team"
 ---
