@@ -11,7 +11,7 @@ author: "The Riddles Team"
     <img
         src = "/assets/images/fundr.JPG"
         alt = "fundraising"
-        style = "width: 350px; float:left; padding-right: 15px; transform: rotate(90deg)">
+        style = "width: 350px; float:left; padding-right: 15px">
 </div>
 
 Eager participants in Conundrum Socials, fashionable dining entertainments of late 19th and early 20th century America, preferred the pleasures of puzzling food descriptions to plainer ones. Care to have some “Boston’s Overthrow” with your meal? If so, you would receive tea!
