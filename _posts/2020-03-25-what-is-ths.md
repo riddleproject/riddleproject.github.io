@@ -7,6 +7,12 @@ author: "The Riddles Team"
 
 Look closely at this page from an 1804 British manuscript and you might notice the diagram for a table setting. Do the labels reveal what diners might have enjoyed for dinner at a 19th century mansion? Well, yes and no. While it shows what will be on the table and where, the names of the dishes themselves are only given as riddles. *A Baronet*? (Sir Loin!) 
 
+<div>
+    <img src = "/assets/images/intro.png"
+        alt = "nomenclature"
+        style = "width: 345px; float:left; padding-right: 15px">
+</div>
+
 This single page was our first clue that such a puzzling pastime existed. It is mentioned neither by food scholars nor social historians. 
 
 And so, our hunt began, and turned into *The Riddle Project*. 
