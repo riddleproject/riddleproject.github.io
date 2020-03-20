@@ -5,6 +5,12 @@ categories: Features
 author: "The Riddles Team"
 ---
 
+<div>
+    <img src = "/assets/images/shakespeare.png"
+        alt = "shakespeare"
+        style = "width: 500px; float:right; padding: 8px">
+</div>
+
 Shakespeare added thousands of words to the English language, wrote both drama and poetry, and even bought himself a noble title! But was he a riddler? Apparently, literature and riddles have always been related.[1] As *The Riddle Project* dove into Conundrum Supper events from the 20th century (events in which guests ordered from menus all in riddles) we came across a unique specimen.
 
 “A Shakespearean Luncheon” is the title of an 1898 Kansas newspaper article. It contains the description of a Conundrum social hosted by ladies of the “Christian church” along with its menu -- described in unsolved riddles, all constructed from Shakespearean quotations! Conundrum Suppers were flexible affairs, and so lent themselves to addressing different themes. Not surprisingly, literature-themed socials were favoured when organized by such literary societies as “Social Purity Band and Literary Club,” the “St. James Amateur Dramatic and Literary Society,” and the “Warwick Road Literary and Debating Society.”
