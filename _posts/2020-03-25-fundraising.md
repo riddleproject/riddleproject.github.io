@@ -9,7 +9,7 @@ author: "The Riddles Team"
 
 <div>
     <img
-        src = "assets/images/fundr.JPG"
+        src = "https://github.com/riddleproject/riddleproject.github.io/blob/master/assets/images/fundr.JPG"
         alt = "fundraising"
         style = "width: 350px; float:left; padding: 8px">
 </div>
