@@ -16,9 +16,9 @@ Andrea Wahba, MISt graduate 2018 and current masters student in English
 
 Chelsea Woodhouse, MSc. and first year MISt student 
 
-Deniz Cevik
-
 Owen Lewis, undergraduate student in Computer Science and Mathematics
+
+Deniz Cevik
 
 ### Former team members
 Nora Shaalan, former project manager and masters student in English
