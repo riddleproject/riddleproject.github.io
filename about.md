@@ -10,8 +10,6 @@ Prof. Nathalie Cooke, Associate Dean of ROAAr and project lead
 
 Leehu Sigler, project coordinator and current masters student in English
 
-Nathan Drezner, developer and undergraduate student in English and Computer Science
-
 Andrea Wahba, MISt graduate 2018 and current masters student in English
 
 Chelsea Woodhouse, MSc. and first year MISt student 
@@ -22,3 +20,6 @@ Deniz Cevik
 
 ### Former team members
 Nora Shaalan, former project manager and masters student in English
+
+Nathan Drezner, developer and undergraduate student in English and Computer Science
+
