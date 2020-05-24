@@ -16,7 +16,7 @@ Chelsea Woodhouse, MSc. and first year MISt student
 
 Owen Lewis, undergraduate student in Computer Science and Mathematics
 
-Deniz Cevik
+Deniz Cevik, M.A History, 2016 and MISt Information Studies, 2020
 
 ### Former team members
 Nora Shaalan, former project manager and masters student in English
