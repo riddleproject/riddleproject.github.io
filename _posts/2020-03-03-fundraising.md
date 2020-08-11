@@ -20,7 +20,7 @@ Conundrum Socials were fun, flexible and very functional as fundraising events. 
 
 The craze for Conundrum Socials dwindles by 1920, but why? Could it be related to the introduction of Prohibition in the US? To a changed social mood post WW1? To the popularity of radio, which drew audiences away from live, locally organized events? These questions underpin our current research in *The Riddle Project.*
 
-Find out more [here](https://riddleproject.github.io/). Do you have a Conundrum Social story to share? Reach out to @McGillLib, @McGillRoaar or email nathalie [dot] cooke@mcgill [dot] ca.
+Find out more [here](https://riddleproject.github.io/). Do you have a Conundrum Social story to share? You can also reach out to [@McGillLib](https://twitter.com/McGillLib), [@McGillRoaar](https://twitter.com/McGill_ROAAr) or email theriddleprojectmcgill@gmail.com. For more timeless riddles check out our [Instagram account](https://www.instagram.com/riddles_in_time/?hl=en), we post weekly! 
 
 [1] The Port Jervis Union May 13, 1892
 
