@@ -14,12 +14,14 @@ Andrea Wahba, MISt graduate 2018 and current masters student in English
 
 Chelsea Woodhouse, MSc. and first year MISt student 
 
-Owen Lewis, undergraduate student in Computer Science and Mathematics
-
 Deniz Cevik, M.A History, 2016 and MISt Information Studies, 2020
+
+Julia Trolio, research assistant and current undergraduate student in Psychology
 
 ### Former team members
 Nora Shaalan, former project manager and masters student in English
 
 Nathan Drezner, developer and undergraduate student in English and Computer Science
+
+Owen Lewis, undergraduate student in Computer Science and Mathematics
 
