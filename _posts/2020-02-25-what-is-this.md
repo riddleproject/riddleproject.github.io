@@ -23,4 +23,4 @@ These menus are still puzzling today, and not only for obvious reasons. What was
 
 To answer these questions, we first had to find more examples. To date we have found dozens of Enigmatic Bills of Fare from North America and the UK containing hundreds of unique riddles. 
 
-We are now looking for solutions sets. To do this and provide reading pleasure we have made riddles from our menus accessible online. Find out more [here](https://riddleproject.github.io/), and please send any ideas about solutions to @McGillLib,  @McGill_ROAAr or email Nathalie [dot] cooke [at] mcgill.ca. 
+Find out more [here](https://riddleproject.github.io). To stay involved, follow us on [Instagram](https://www.instagram.com/riddles_in_time/?hl=en)! You can also reach out to [@McGillLib](https://twitter.com/McGillLib), [@McGillRoaar](https://twitter.com/McGill_ROAAr) or email theriddleprojectmcgill@gmail.com.
