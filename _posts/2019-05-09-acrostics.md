@@ -57,7 +57,7 @@ See how the first letter of each sentence makes up a name? The solution to this 
 
 Chime in – we would love to know if you have any guesses for this acrostic enigma. Please feel free to comment in the form below. We had a similar riddle competition last year, and you can see the answers as well. Don’t forget to tune in next time for the answer.
 
-Don’t forget to follow @McGillLib, @McGill_ROAAr, and @CookeNathalie on Twitter as well, without which this project would not be possible.
+Find out more [here](https://riddleproject.github.io). To stay involved, follow us on [Instagram](https://www.instagram.com/riddles_in_time/?hl=en)! You can also reach out to [@McGillLib](https://twitter.com/McGillLib), [@McGillRoaar](https://twitter.com/McGill_ROAAr) or email theriddleprojectmcgill@gmail.com.
 
 Keep calm and riddle on!
 
