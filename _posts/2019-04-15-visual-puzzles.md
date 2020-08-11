@@ -82,7 +82,7 @@ Rebuses can come in many different shapes and forms. How about you try this one 
 
 Don’t forget that the visual aspect is key! Tune in text time for the solution and more tongue-tying Timeless Riddles!
 
-Don’t forget to follow @McGillLib, @McGill_ROAAr, and @CookeNathalie on Twitter as well, without which this project would not be possible.
+Find out more [here](https://riddleproject.github.io). To stay involved, follow us on [Instagram](https://www.instagram.com/riddles_in_time/?hl=en)! You can also reach out to [@McGillLib](https://twitter.com/McGillLib), [@McGillRoaar](https://twitter.com/McGill_ROAAr) or email theriddleprojectmcgill@gmail.com.
 
 Keep calm and riddle on!
 
