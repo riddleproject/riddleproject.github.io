@@ -17,7 +17,7 @@ Shakespeare added thousands of words to the English language, wrote both drama a
 
 Shakespeare was not the exclusive literary rite of Conundrum Suppers! As another newspaper from 1898 demonstrates, organizers scoured works by Christopher Marlowe, Alexander Pope, and more for quotations to construct their riddle questions.[2] How many can you find?
 
-Find out more [here](https://riddleproject.github.io/). Do you have a Conundrum Supper story to recount? Reach out to @McGillLib, @McGillRoaar or email nathalie [dot] cooke@mcgill [dot] ca.
+Find out more [here](https://riddleproject.github.io/). Do you have a Conundrum Supper story to recount? Let us know on our [Instagram account](https://www.instagram.com/riddles_in_time/?hl=en), we post weekly! You can also reach out to [@McGillLib](https://twitter.com/McGillLib), [@McGillRoaar](https://twitter.com/McGill_ROAAr) or email theriddleprojectmcgill@gmail.com.  
 
 [1] Even Sappho, widely regarded as the first poet in Western Culture, was known for riddling. See Elanor Cook’s Enigmas and Riddles in Literature, especially pp. 137. 
 [2] The daily morning journal and courier February 21, 1898.
