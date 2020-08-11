@@ -102,3 +102,5 @@ Generally speaking, the Gale Digital Scholar lab offers incredibly powerful tool
 
 More information in the help section of each tool would also be useful. Further clarification on the specific algorithm for each test and its strengths and weaknesses would help inform users about the tools at their disposal and guide users to choose the right tools for their dataset.
 
+
+To learn more about The Riddle Project visit our [website](https://riddleproject.github.io). To stay involved, follow us on [Instagram](https://www.instagram.com/riddles_in_time/?hl=en)! You can also reach out to [@McGillLib](https://twitter.com/McGillLib), [@McGillRoaar](https://twitter.com/McGill_ROAAr) or email theriddleprojectmcgill@gmail.com.
