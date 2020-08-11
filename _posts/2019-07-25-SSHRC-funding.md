@@ -16,3 +16,4 @@ Here is a taste of the work to come from Project lead, Nathalie Cooke:
 
 Congratulations to the Team!
 
+Find out more [here](https://riddleproject.github.io). To stay involved, follow us on [Instagram](https://www.instagram.com/riddles_in_time/?hl=en)! You can also reach out to [@McGillLib](https://twitter.com/McGillLib), [@McGillRoaar](https://twitter.com/McGill_ROAAr) or email theriddleprojectmcgill@gmail.com.
