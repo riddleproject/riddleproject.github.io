@@ -58,5 +58,7 @@ The riddles in this app represent a large portion of the dataset collected by th
 
 <p>What about the holidays? How do they affect riddling practices?</p>
 <p>Here's the graphic breaking down riddling events by day of the year. There's a strong peak around the winter holidays, and a deep drop in the summertime.
+<img src="/visualizations/images/riddle-release-distribution.png" alt="graph" width="100%" height="510px">
+
 <br><br>
 <br><br>
